@@ -133,3 +133,97 @@ select {
   left: 0 !important;
   margin: 0 auto;
 }
+
+/* --------------- Sec 5 ------------------------ */
+.sec5 h3 {
+  padding-left: 20px;
+}
+
+.tiles-card {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #13184f;
+  padding: 40px;
+  -webkit-transition: all 0.3s ease;
+  height: 100%;
+}
+
+.tiles-card:hover {
+  background-color: rgba(244, 126, 32, 1);
+  /* transform: translateY(-5px); */
+  color: #13184f;
+  -webkit-transform: translateY(-5px);
+}
+
+.tiles-card i {
+  font-size: 40px;
+  margin-right: 15px;
+  color: white;
+}
+.tiles-card h5 {
+  font-size: 17px;
+  color: white;
+}
+.tiles-card p {
+  margin-top: 20px;
+  color: white;
+  font-size: 14px;
+}
+
+/* ----------------- Sec 6 ------------------- */
+.project-whole-card {
+  padding: 0 30px;
+}
+
+.site-details {
+  padding: 10px 30px;
+  background-color: #13184f;
+  color: white;
+  /* height: 100%; */
+  height: 16.5rem;
+  border-radius: 10px;
+  margin: 0 10px;
+}
+
+.site-img {
+  /* height: 100%; */
+  height: 16.5rem;
+}
+
+.sub-detail-container {
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+.sub-detail-container h4 {
+  font-size: 15px;
+  margin: 0;
+}
+
+.site-sub-details {
+  margin-top: 30px !important;
+}
+
+.detail-icon {
+  width: 20px !important;
+  height: 20px !important;
+  margin-right: 15px;
+}
+
+.view-property-btn {
+  width: 100%;
+  height: 30px;
+  background-color: #f47e20;
+  border-radius: 10px;
+  border: none;
+  color: white;
+}
+
+.site-offer {
+  /* height: 100%; */
+  height: 16.5rem;
+  background-color: #f47e20;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
