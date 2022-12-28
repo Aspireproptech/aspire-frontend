@@ -1,0 +1,135 @@
+.ad-sec2-left {
+  text-align: center;
+}
+
+.head-underline {
+  height: 5px;
+  border-radius: 20px;
+  width: 135px;
+  background: linear-gradient(90deg, #13184f, #f47e20 94.96%);
+  margin: 0 auto;
+}
+
+.left-card {
+  background-color: #13184f;
+  width: 25%;
+  margin: 0 auto;
+  padding: 20px 30px;
+  border-radius: 10px;
+}
+.left-card h5 {
+  line-height: 30px;
+  color: white;
+}
+
+.ad-card-img i {
+  font-size: 40px;
+  color: rgba(244, 126, 32, 1);
+}
+
+.register-box {
+  box-shadow: 0px 0px 5px gray;
+  border-radius: 10px;
+}
+
+.register-box h5 {
+  height: 50px;
+  text-align: center;
+  padding: 15px;
+  background-color: #13184f;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.register-field {
+  display: flex;
+  flex-direction: column;
+  background-color: #f3e6c4;
+  padding: 0 10px;
+}
+
+.register-field input,
+select {
+  margin: 10px 0;
+  height: 35px;
+  border: 2px solid rgba(244, 126, 32, 1);
+  border-radius: 10px;
+  background: transparent;
+}
+
+.register-field input::placeholder {
+  padding-left: 10px;
+  color: gray;
+}
+.register-field select {
+  padding-left: 8px;
+  color: gray;
+}
+
+.register-field p {
+  font-size: 15px;
+}
+
+.register-field a {
+  color: rgba(244, 126, 32, 1);
+}
+
+.register-btn {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.register-btn button {
+  width: 120px;
+  height: 40px;
+  border: none;
+  background-color: rgba(244, 126, 32, 1);
+  color: white;
+  border-radius: 10px;
+}
+
+/* -------------- Sec 3- -------------------- */
+.sec3-container {
+  padding: 50px 70px;
+  background-color: #f1efef;
+}
+.sec3-container h3 {
+  font-size: 25px;
+  text-align: center;
+}
+
+.sec-list ul li {
+  line-height: 30px;
+}
+
+.project-list {
+  flex-wrap: wrap;
+}
+
+.flat-card {
+  width: 40%;
+}
+
+.flat-img {
+  width: 100%;
+  height: 60%;
+}
+
+/* -------------------- Sec 4 ----------------- */
+.sec4-container h3 {
+  text-align: center;
+}
+
+.project-underline {
+  height: 5px;
+  border-radius: 20px;
+  width: 115px;
+  background: linear-gradient(90deg, #13184f, #f47e20 94.96%);
+  margin: 0 auto;
+}
+
+.align-item-card {
+  left: 0 !important;
+  margin: 0 auto;
+}

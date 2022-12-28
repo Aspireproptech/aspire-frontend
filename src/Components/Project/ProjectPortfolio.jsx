@@ -147,6 +147,7 @@ function ProjectPortfolio() {
                     );
                   })}
                 </div>
+                
                 <div className="col px-lg-4 pt-5 pt-md-0 pt-lg-0">
                   <Map
                     lat={propertyMap?.lat && parseFloat(propertyMap?.lat)}
