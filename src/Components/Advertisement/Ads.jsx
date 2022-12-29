@@ -91,6 +91,15 @@ const Ads = () => {
                     </Col>
                 </Row>
             </Container>
+            <div className="sec3-container mt-5">
+                <h3>Integrated Townships • Apartments • Townhouses • Villas • Penthouses • Plots</h3>
+                <div className="sec-list mt-3">
+                    <ul className='m-0'>
+                        <li>Projects across Bengaluru - Aerospace Park, Banashankari, Budigere Cross, Devanahalli, Hebbal, Jakkur, Jalahalli, Kanakapura Road, Kogilu Road, Mysore Road, Old Madras Road, Padmanabhanagar, Sarjapur Road & Whitefield-Sarjapur Road</li>
+                        <li>Also in CHENNAI, HYDERABAD & MYSURU</li>
+                    </ul>
+                </div>
+            </div>
             {/* ------------ Tiles ----------- */}
             <Container fluid className='mt-5'>
                 <div className="sec5">
