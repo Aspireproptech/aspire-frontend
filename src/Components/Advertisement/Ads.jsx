@@ -66,6 +66,7 @@ const Ads = () => {
             }
             const data = await RegisterData(payload);
             setPassSeq(data)
+            setShow(false)
             setShowPass(true)
             setTimeout(() => {
                 handleDownload()
@@ -338,8 +339,8 @@ const Ads = () => {
                     <h5>Register Your Interest<i onClick={handleClose} class="fa-solid fa-circle-xmark close-cancel-btn"></i></h5>
                     <div className="register-field">
                         <form onSubmit={handleClick}>
-                            <input name="firstName" type="text" pattern="[A-Za-z]{20}" title="Only Character" onChange={handleChange} placeholder='First Name' />
-                            <input name="lastName" type="text" pattern="[A-Za-z]{20}" title="Only Character" onChange={handleChange} placeholder='last Name' />
+                            <input name="firstName" type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} placeholder='First Name' />
+                            <input name="lastName" type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} placeholder='last Name' />
                             <select onChange={handleChange} name="projectName">
                                 <option value="" selected>Please choose country code</option>
                                 {
