@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
+import { Col, Container, Row, Modal } from 'react-bootstrap'
 import AdsImage from "../../Assets/Ads/Ad1-old.jpg"
 import Portfolio from '../HomePage/Portfolio'
 import "./ads.css"
@@ -10,8 +10,12 @@ import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 import HomeIcon from "@mui/icons-material/Home";
 import BedroomChildIcon from "@mui/icons-material/BedroomChild";
 import { Link } from "react-router-dom";
-import { FetchPropertyData } from "../API/Api";
+import { FetchPropertyData, ImageEmailData, RegisterData } from "../API/Api";
 import GetInTouch from '../Contact/GetInTouch'
+import PatioPass from "../../Assets/Ads/patio-pass.png"
+import RoashanPass from "../../Assets/Ads/roshan-pass.png"
+import TerrazaPass from "../../Assets/Ads/terraza-pass.png"
+import html2canvas from "html2canvas";
 
 const Ads = () => {
 
@@ -19,7 +23,87 @@ const Ads = () => {
     const [portfolioItems, setportfolioItems] = useState([]);
     const [PortfolioDetail, setPortfolioDetail] = useState();
     const [propertyMap, setPropertyMap] = useState({});
+    const [show, setShow] = useState(false);
+    const [showPass, setShowPass] = useState(false)
+    const [passSeq, setPassSeq] = useState({})
+    const [projectImg, setProjectImg] = useState()
 
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
+    const [register, setRegister] = useState({
+        firstName: "",
+        lastName: "",
+        projectName: "",
+        phone: "",
+        email: ""
+    });
+
+    const handleChange = (e) => {
+        const { name, value } = e.target
+        setRegister({ ...register, [name]: value })
+    }
+
+    const handleClick = async (e) => {
+        e.preventDefault()
+        try {
+            const payload = {
+                firstName: register.firstName,
+                lastName: register.lastName,
+                projectName: register.projectName,
+                email: register.email,
+                number: register.phone
+            };
+
+            if (register.projectName.toLowerCase().includes("speckles patio")) {
+                setProjectImg(PatioPass)
+            } else if (register.projectName.toLowerCase().includes("roshan gardenia")) {
+                setProjectImg(RoashanPass)
+            } else if (register.projectName.toLowerCase().includes("terraza")) {
+                setProjectImg(TerrazaPass)
+            } else {
+                setProjectImg(TerrazaPass)
+            }
+            const data = await RegisterData(payload);
+            setPassSeq(data)
+            setShowPass(true)
+            setTimeout(() => {
+                handleDownload()
+            }, 3000);
+            console.log(data)
+        } catch (error) {
+            console.log(error);
+        }
+        console.log(register)
+    }
+
+    const handleDownload = () => {
+        var nodePass = document.getElementById("pass")
+        html2canvas(nodePass).then(async function (canvas) {
+            var img = canvas.toDataURL(`image/png`);
+            var link = document.createElement("a");
+            link.download = "pass." + "png";
+            link.href = img;
+            console.log(link.href)
+            link.click();
+            setRegister({
+                firstName: "",
+                lastName: "",
+                projectName: "",
+                phone: "",
+                email: ""
+            })
+            const payload = {
+                image: link.href,
+                email: register.email,
+            };
+            const data = await ImageEmailData(payload);
+            // setPassSeq(data)
+            // setShowPass(true)
+            console.log(data)
+
+        });
+    }
     const fetchPortfolio = async () => {
         try {
             const { data } = await FetchPropertyData();
@@ -31,6 +115,7 @@ const Ads = () => {
             console.log(error);
         }
     };
+
     useEffect(() => {
         fetchPortfolio();
     }, []);
@@ -74,18 +159,24 @@ const Ads = () => {
                         <div className="register-box">
                             <h5>Register Your Interest</h5>
                             <div className="register-field">
-                                <input type="text" placeholder='First Name' />
-                                <input type="text" placeholder='last Name' />
-                                <select name="" id="">
-                                    <option value="" selected>Please choose country code</option>
-                                </select>
-                                <input type="text" placeholder='Phone' />
-                                <input type="text" placeholder='Email' />
-                                <p>I Agree to the <a href="">Terms & Conditions.</a></p>
-
-                                <div className="register-btn ">
-                                    <button>Register</button>
-                                </div>
+                                <form onSubmit={handleClick}>
+                                    <input name="firstName" type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} placeholder='First Name' />
+                                    <input name="lastName" type="text" pattern="[A-Za-z]{2,30}" title="Only Character" onChange={handleChange} placeholder='last Name' />
+                                    <select onChange={handleChange} name="projectName">
+                                        <option value="" selected>Please choose project name</option>
+                                        {
+                                            portfolioItems.map((e) => (
+                                                <option>{e?.name}</option>
+                                            ))
+                                        }
+                                    </select>
+                                    <input type="phone" maxLength={10} pattern="[0-9]{10}" title='Enter Valid Phone No.' name="phone" onChange={handleChange} placeholder='Phone' />
+                                    <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter Valid Email" onChange={handleChange} placeholder='Email' />
+                                    <p>I Agree to the <a href="">Terms & Conditions.</a></p>
+                                    <div className="register-btn ">
+                                        <button>Register</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </Col>
@@ -203,8 +294,8 @@ const Ads = () => {
                                                     <h4>{data?.BHK},BHK</h4>
                                                 </div>
                                             </div>
+                                            <button onClick={handleShow} className='view-property-btn'>View Property</button>
                                             <Link to={`/property/${data?._id}`}>
-                                                <button className='view-property-btn'>View Property</button>
                                             </Link>
                                         </div>
                                     </Col>
@@ -221,6 +312,52 @@ const Ads = () => {
             </div>
             {/* --------------------- Contact Us ------------- */}
             <GetInTouch />
+
+            {
+                showPass && (
+                    <div class="boq-service">
+                        <div className="card-achv box-shadow justify-center box-shadow shadow-2xl">
+                            <div className="priority-container" id="pass">
+                                <img src={projectImg} style={{ width: "100%", height: "100%" }} alt="" />
+                                <div className="user-id">
+                                    <h3>#{passSeq?.data?.data}</h3>
+                                </div>
+                            </div>
+                            <div onClick={handleDownload} className="download-button">
+                                <button> <i class="fa-solid fa-download"></i> Download</button>
+                            </div>
+                            <i onClick={() => setShowPass(false)} class="fa-solid fa-circle-xmark close-pass-btn"></i>
+                        </div>
+                    </div>
+
+                )
+            }
+
+            <Modal show={show} onHide={handleClose} centered>
+                <div className="register-box">
+                    <h5>Register Your Interest<i onClick={handleClose} class="fa-solid fa-circle-xmark close-cancel-btn"></i></h5>
+                    <div className="register-field">
+                        <form onSubmit={handleClick}>
+                            <input name="firstName" type="text" pattern="[A-Za-z]{20}" title="Only Character" onChange={handleChange} placeholder='First Name' />
+                            <input name="lastName" type="text" pattern="[A-Za-z]{20}" title="Only Character" onChange={handleChange} placeholder='last Name' />
+                            <select onChange={handleChange} name="projectName">
+                                <option value="" selected>Please choose country code</option>
+                                {
+                                    portfolioItems.map((e) => (
+                                        <option>{e?.name}</option>
+                                    ))
+                                }
+                            </select>
+                            <input type="text" name="phone" pattern="[0-9]{10}" title='Enter Valid Phone No.' onChange={handleChange} placeholder='Phone' />
+                            <input type="text" name="email" onChange={handleChange} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter Valid Email" placeholder='Email' />
+                            <p>I Agree to the <a href="">Terms & Conditions.</a></p>
+                            <div className="register-btn ">
+                                <button>Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </Modal>
         </>
     )
 }
