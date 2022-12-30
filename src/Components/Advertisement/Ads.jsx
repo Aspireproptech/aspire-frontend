@@ -27,9 +27,14 @@ const Ads = () => {
     const [showPass, setShowPass] = useState(false)
     const [passSeq, setPassSeq] = useState({})
     const [projectImg, setProjectImg] = useState()
+    const [projectName, setProjectName] = useState()
 
     const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
+    const handleShow = (projName) => {
+        console.log(projName)
+        setRegister({ ...register, projectName: projName })
+        setShow(true);
+    }
 
     const [register, setRegister] = useState({
         firstName: "",
@@ -43,6 +48,8 @@ const Ads = () => {
         const { name, value } = e.target
         setRegister({ ...register, [name]: value })
     }
+
+
 
     const handleClick = async (e) => {
         e.preventDefault()
@@ -295,7 +302,7 @@ const Ads = () => {
                                                     <h4>{data?.BHK},BHK</h4>
                                                 </div>
                                             </div>
-                                            <button onClick={handleShow} className='view-property-btn'>View Property</button>
+                                            <button onClick={() => handleShow(data?.name)} className='view-property-btn'>View Property</button>
                                             <Link to={`/property/${data?._id}`}>
                                             </Link>
                                         </div>
@@ -342,7 +349,7 @@ const Ads = () => {
                             <input name="firstName" type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} placeholder='First Name' />
                             <input name="lastName" type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} placeholder='last Name' />
                             <select onChange={handleChange} name="projectName">
-                                <option value="" selected>Please choose country code</option>
+                                <option selected>{register.projectName}</option>
                                 {
                                     portfolioItems.map((e) => (
                                         <option>{e?.name}</option>
