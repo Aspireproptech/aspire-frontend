@@ -17,6 +17,7 @@ import RoashanPass from "../../Assets/Ads/roshan-pass.png"
 import TerrazaPass from "../../Assets/Ads/terraza-pass.png"
 import html2canvas from "html2canvas";
 import { storage } from "../../firebase"
+import axios from 'axios';
 import { ref, getDownloadURL, uploadBytesResumable, uploadBytes } from "firebase/storage";
 
 const Ads = () => {
@@ -111,28 +112,39 @@ const Ads = () => {
             link.href = img;
             console.log(link)
             var file = dataURLtoFile(link.href, 'pass.png');
-            const storageRef = ref(storage, `files/pass.png`);
+            // const storageRef = ref(storage, `files/pass.png`);
 
-            uploadBytes(storageRef, file).then((snapshot) => {
-                console.log('Uploaded a blob or file!');
+            // uploadBytes(storageRef, file).then((snapshot) => {
+            //     console.log('Uploaded a blob or file!');
+            // });
+            // console.log(file);
+
+            const formData = new FormData()
+            formData.append('image', file)
+            formData.append('email', register.email)
+
+            const config = {
+                headers: {
+                    'content-type': 'multipart/form-data',
+                },
+            };
+
+            axios.post("https://aspire-kappa.vercel.app/cn/emailpass", formData, config).then((response) => {
+                console.log(response)
             });
-            console.log(file);
-            link.click();
+
             setRegister({
                 firstName: "",
                 lastName: "",
-                projectName: "",
+                projectName: "Please choose project name",
                 phone: "",
                 email: ""
             })
-            const payload = {
-                image: link.href,
-                email: register.email,
-            };
-            const data = await ImageEmailData(payload);
+            link.click();
+            // const data = await ImageEmailData(payload);
             // setPassSeq(data)
             // setShowPass(true)
-            console.log(data)
+            // console.log(data)
 
         });
     }
@@ -192,18 +204,18 @@ const Ads = () => {
                             <h5>Register Your Interest</h5>
                             <div className="register-field">
                                 <form onSubmit={handleClick}>
-                                    <input name="firstName" type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} placeholder='First Name' />
-                                    <input name="lastName" type="text" pattern="[A-Za-z]{2,30}" title="Only Character" onChange={handleChange} placeholder='last Name' />
-                                    <select onChange={handleChange} name="projectName">
-                                        <option value="" selected>Please choose project name</option>
+                                    <input name="firstName" value={register.firstName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} placeholder='First Name' />
+                                    <input name="lastName" value={register.lastName} type="text" pattern="[A-Za-z]{2,30}" title="Only Character" onChange={handleChange} placeholder='last Name' />
+                                    <select value={register.projectName} onChange={handleChange} name="projectName">
+                                        <option selected>Please choose project name</option>
                                         {
                                             portfolioItems.map((e) => (
                                                 <option>{e?.name}</option>
                                             ))
                                         }
                                     </select>
-                                    <input type="phone" maxLength={10} pattern="[0-9]{10}" title='Enter Valid Phone No.' name="phone" onChange={handleChange} placeholder='Phone' />
-                                    <input type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter Valid Email" onChange={handleChange} placeholder='Email' />
+                                    <input type="phone" value={register.phone} maxLength={10} pattern="[0-9]{10}" title='Enter Valid Phone No.' name="phone" onChange={handleChange} placeholder='Phone' />
+                                    <input type="email" value={register.email} name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter Valid Email" onChange={handleChange} placeholder='Email' />
                                     <p>I Agree to the <a href="">Terms & Conditions.</a></p>
                                     <div className="register-btn ">
                                         <button>Register</button>
@@ -370,9 +382,9 @@ const Ads = () => {
                     <h5>Register Your Interest<i onClick={handleClose} class="fa-solid fa-circle-xmark close-cancel-btn"></i></h5>
                     <div className="register-field">
                         <form onSubmit={handleClick}>
-                            <input name="firstName" type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} placeholder='First Name' />
-                            <input name="lastName" type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} placeholder='last Name' />
-                            <select onChange={handleChange} name="projectName">
+                            <input name="firstName" value={register.firstName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} placeholder='First Name' />
+                            <input name="lastName" value={register.lastName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} placeholder='last Name' />
+                            <select value={register.projectName} onChange={handleChange} name="projectName">
                                 <option selected>{register.projectName}</option>
                                 {
                                     portfolioItems.map((e) => (
@@ -380,8 +392,8 @@ const Ads = () => {
                                     ))
                                 }
                             </select>
-                            <input type="text" name="phone" pattern="[0-9]{10}" title='Enter Valid Phone No.' onChange={handleChange} placeholder='Phone' />
-                            <input type="text" name="email" onChange={handleChange} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter Valid Email" placeholder='Email' />
+                            <input type="text" value={register.phone} name="phone" pattern="[0-9]{10}" title='Enter Valid Phone No.' onChange={handleChange} placeholder='Phone' />
+                            <input type="text" value={register.email} name="email" onChange={handleChange} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter Valid Email" placeholder='Email' />
                             <p>I Agree to the <a href="">Terms & Conditions.</a></p>
                             <div className="register-btn ">
                                 <button>Register</button>
