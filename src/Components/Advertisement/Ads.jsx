@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { Col, Container, Row, Modal } from 'react-bootstrap'
-import AdsImage from "../../Assets/Ads/Ad1-old.jpg"
+import AdsImage from "../../Assets/Ads/Adds.jpeg"
 import Portfolio from '../HomePage/Portfolio'
 import "./ads.css"
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -16,6 +16,8 @@ import PatioPass from "../../Assets/Ads/patio-pass.png"
 import RoashanPass from "../../Assets/Ads/roshan-pass.png"
 import TerrazaPass from "../../Assets/Ads/terraza-pass.png"
 import html2canvas from "html2canvas";
+import { storage } from "../../firebase"
+import { ref, getDownloadURL, uploadBytesResumable, uploadBytes } from "firebase/storage";
 
 const Ads = () => {
 
@@ -85,6 +87,21 @@ const Ads = () => {
         console.log(register)
     }
 
+    function dataURLtoFile(dataurl, filename) {
+
+        var arr = dataurl.split(','),
+            mime = arr[0].match(/:(.*?);/)[1],
+            bstr = atob(arr[1]),
+            n = bstr.length,
+            u8arr = new Uint8Array(n);
+
+        while (n--) {
+            u8arr[n] = bstr.charCodeAt(n);
+        }
+
+        return new File([u8arr], filename, { type: mime });
+    }
+
     const handleDownload = () => {
         var nodePass = document.getElementById("pass")
         html2canvas(nodePass).then(async function (canvas) {
@@ -92,7 +109,14 @@ const Ads = () => {
             var link = document.createElement("a");
             link.download = "pass." + "png";
             link.href = img;
-            console.log(link.href)
+            console.log(link)
+            var file = dataURLtoFile(link.href, 'pass.png');
+            const storageRef = ref(storage, `files/pass.png`);
+
+            uploadBytes(storageRef, file).then((snapshot) => {
+                console.log('Uploaded a blob or file!');
+            });
+            console.log(file);
             link.click();
             setRegister({
                 firstName: "",
