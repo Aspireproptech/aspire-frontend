@@ -11,14 +11,23 @@ import HomeIcon from "@mui/icons-material/Home";
 import BedroomChildIcon from "@mui/icons-material/BedroomChild";
 import { Link } from "react-router-dom";
 import { FetchPropertyData, ImageEmailData, RegisterData } from "../API/Api";
-import GetInTouch from '../Contact/GetInTouch'
+
+
 import PatioPass from "../../Assets/Ads/patio-pass.png"
 import RoashanPass from "../../Assets/Ads/roshan-pass.png"
 import TerrazaPass from "../../Assets/Ads/terraza-pass.png"
+import AlpinePass from "../../Assets/Ads/alpine-pass.png"
+import BilberryPass from "../../Assets/Ads/bilberry-pass.png"
+import EstellaPass from "../../Assets/Ads/estella-pass.png"
+import GreenFieldsPass from "../../Assets/Ads/greenfields-pass.png"
+import PinnaclePass from "../../Assets/Ads/pinnacle-pass.png"
+import WatsoniaPass from "../../Assets/Ads/watsonia-pass.png"
+
 import html2canvas from "html2canvas";
 import { storage } from "../../firebase"
 import axios from 'axios';
 import { ref, getDownloadURL, uploadBytesResumable, uploadBytes } from "firebase/storage";
+import AdsContact from './AdsContact'
 
 const Ads = () => {
 
@@ -71,8 +80,20 @@ const Ads = () => {
                 setProjectImg(RoashanPass)
             } else if (register.projectName.toLowerCase().includes("terraza")) {
                 setProjectImg(TerrazaPass)
+            } else if (register.projectName.toLowerCase().includes("pyramid bilberry")) {
+                setProjectImg(BilberryPass)
+            } else if (register.projectName.toLowerCase().includes("greenfields")) {
+                setProjectImg(GreenFieldsPass)
+            } else if (register.projectName.toLowerCase().includes("amigo estella")) {
+                setProjectImg(EstellaPass)
+            } else if (register.projectName.toLowerCase().includes("alpine pyramid")) {
+                setProjectImg(AlpinePass)
+            } else if (register.projectName.toLowerCase().includes("watsonia")) {
+                setProjectImg(WatsoniaPass)
+            } else if (register.projectName.toLowerCase().includes("pinnacle")) {
+                setProjectImg(PinnaclePass)
             } else {
-                setProjectImg(TerrazaPass)
+                setProjectImg(PinnaclePass)
             }
             const data = await RegisterData(payload);
             setPassSeq(data)
@@ -80,8 +101,7 @@ const Ads = () => {
             setShowPass(true)
             setTimeout(() => {
                 handleDownload()
-            }, 3000);
-            console.log(data)
+            }, 2000);
         } catch (error) {
             console.log(error);
         }
@@ -110,7 +130,6 @@ const Ads = () => {
             var link = document.createElement("a");
             link.download = "pass." + "png";
             link.href = img;
-            console.log(link)
             var file = dataURLtoFile(link.href, 'pass.png');
             // const storageRef = ref(storage, `files/pass.png`);
 
@@ -175,37 +194,38 @@ const Ads = () => {
                 <Row className='align-items-center'>
                     <Col lg={8}>
                         <div className="ad-sec2-left">
-                            <h3>Brigade Year End Bonanza</h3>
+                            <h3>Celebrating the Feeling of Coming Home</h3>
                             <div className="head-underline"></div>
                             <div className="d-flex ad-sec2-list mt-4">
                                 <div className="left-card">
                                     <div className="ad-card-img mb-4">
+                                        <i class="fa-solid fa-building"></i>
+                                    </div>
+                                    <h5>8 Projects, 16 Days</h5>
+                                </div>
+                                <div className="left-card">
+                                    <div className="ad-card-img mb-4">
                                         <i class="fa-solid fa-indian-rupee-sign"></i>
                                     </div>
-                                    <h5>Homes From ₹30L - 4.6 Cr*</h5>
+                                    <h5>Homes From 40 Lakhs to 2.5 Cr</h5>
                                 </div>
+
                                 <div className="left-card">
                                     <div className="ad-card-img mb-4">
                                         <i class="fa-sharp fa-solid fa-gift"></i>
                                     </div>
-                                    <h5>Exclusive Deals</h5>
-                                </div>
-                                <div className="left-card">
-                                    <div className="ad-card-img mb-4">
-                                        <i class="fa-solid fa-building"></i>
-                                    </div>
-                                    <h5>Over 35+ Projects</h5>
+                                    <h5>Mega Offers & Discounts</h5>
                                 </div>
                             </div>
                         </div>
                     </Col>
                     <Col lg={4}>
                         <div className="register-box">
-                            <h5>Register Your Interest</h5>
+                            <h5>Register for HOME FEST</h5>
                             <div className="register-field">
                                 <form onSubmit={handleClick}>
                                     <input name="firstName" value={register.firstName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} placeholder='First Name' />
-                                    <input name="lastName" value={register.lastName} type="text" pattern="[A-Za-z]{2,30}" title="Only Character" onChange={handleChange} placeholder='last Name' />
+                                    <input name="lastName" value={register.lastName} type="text" pattern="[A-Za-z]{2,30}" title="Only Character" onChange={handleChange} placeholder='Last Name' />
                                     <select value={register.projectName} onChange={handleChange} name="projectName">
                                         <option selected>Please choose project name</option>
                                         {
@@ -214,8 +234,8 @@ const Ads = () => {
                                             ))
                                         }
                                     </select>
-                                    <input type="phone" value={register.phone} maxLength={10} pattern="[0-9]{10}" title='Enter Valid Phone No.' name="phone" onChange={handleChange} placeholder='Phone' />
-                                    <input type="email" value={register.email} name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter Valid Email" onChange={handleChange} placeholder='Email' />
+                                    <input type="phone" value={register.phone} maxLength={10} pattern="[0-9]{10}" title='Enter Valid Phone No.' name="phone" required onChange={handleChange} placeholder='Phone Number*' />
+                                    <input type="email" value={register.email} name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter Valid Email" required onChange={handleChange} placeholder='Email *' />
                                     <p>I Agree to the <a href="">Terms & Conditions.</a></p>
                                     <div className="register-btn ">
                                         <button>Register</button>
@@ -227,78 +247,64 @@ const Ads = () => {
                 </Row>
             </Container>
             <div className="sec3-container mt-5">
-                <h3>Integrated Townships • Apartments • Townhouses • Villas • Penthouses • Plots</h3>
+                <h3>Are you ready to find the home of your dreams?</h3>
                 <div className="sec-list mt-3">
-                    <ul className='m-0'>
-                        <li>Projects across Bengaluru - Aerospace Park, Banashankari, Budigere Cross, Devanahalli, Hebbal, Jakkur, Jalahalli, Kanakapura Road, Kogilu Road, Mysore Road, Old Madras Road, Padmanabhanagar, Sarjapur Road & Whitefield-Sarjapur Road</li>
-                        <li>Also in CHENNAI, HYDERABAD & MYSURU</li>
-                    </ul>
+                    <p>Bengaluru's biggest home fest of the year 2023 is here!
+                        <br /><br />
+                        This is an opportunity you don't want to miss out on.
+                        <br /><br />
+                        We’ve got exclusive deals on Ready to Move in Homes and some of the newest blockbuster Launches within your budget, so don’t miss this chance to grab a better future for yourself and your family by choosing the home that truly suits your lifestyle.
+                        <br /><br />
+                        Register now to get exclusive deals that make home buying easier.
+                    </p>
+
                 </div>
             </div>
             {/* ------------ Tiles ----------- */}
             <Container fluid className='mt-5'>
                 <div className="sec5">
-                    <h3>THE 6 PILLARS OF OUR SUCCESS</h3>
+                    <h3>4 Easy Steps to Buy Your Dream Home</h3>
                 </div>
                 <Row className="mt-4">
-                    <Col lg={4}>
+                    <Col lg={6}>
                         <div className="tiles-card">
                             <div>
                                 <div className='d-flex align-items-center'>
-                                    <i class="fa-solid fa-circle-check"></i>
-                                    <h5>QUALITY</h5>
+                                    <i class="fa-solid fa-1"></i>
+                                    <h5> Go to www.aspireprop.com and click on the project of your choice.
+                                    </h5>
                                 </div>
-                                <p>Delivering high quality projects forms the bedrock of whatever we do</p>
                             </div>
                         </div>
                     </Col>
-                    <Col lg={4}>
+                    <Col lg={6}>
                         <div className="tiles-card">
                             <div className='d-flex align-items-center'>
-                                <i class="fa-solid fa-location-dot"></i>
-                                <h5>EFFICIENT SPACE PLANNING</h5>
+                                <i class="fa-solid fa-2"></i>
+                                <h5>Click on ‘Register Now!’ to get yourself registered  for the home fest.</h5>
                             </div>
-                            <p>Our team ensures that the space planning is done in the most efficient way</p>
-                        </div>
-                    </Col>
-                    <Col lg={4}>
-                        <div className="tiles-card">
-                            <div className='d-flex align-items-center'>
-                                <i class="fa fa-pencil-square"></i>
-                                <h5>EFFICIENT SPACE PLANNING</h5>
-                            </div>
-                            <p>Our team will constantly work on cost efficiency so that the end user will enjoy it.</p>
                         </div>
                     </Col>
                 </Row>
                 <Row className='mt-4'>
-                    <Col lg={4}>
+                    <Col lg={6}>
                         <div className="tiles-card">
                             <div>
                                 <div className='d-flex align-items-center'>
-                                    <i class="fa fa-clock-o"></i>
-                                    <h5>TIMELY DELIVERY</h5>
+                                    <i class="fa-solid fa-3"></i>
+                                    <h5>You’ll receive a priority pass via mail. Show your ‘Priority Pass’ during the site visit.</h5>
                                 </div>
-                                <p>Our team delivers quality and on time as per our promises</p>
+                                {/* <p>Our team delivers quality and on time as per our promises</p> */}
                             </div>
                         </div>
                     </Col>
-                    <Col lg={4}>
+                    <Col lg={6}>
                         <div className="tiles-card">
                             <div className='d-flex align-items-center'>
-                                <i class="fa fa-users"></i>
-                                <h5>BUILDING WITH TRUST & HONESTY</h5>
+                                <i class="fa-solid fa-4"></i>
+                                <h5> Don’t forget to use the unique pass code while booking your dream home to avail the offers.
+                                </h5>
                             </div>
-                            <p>Our values our built on the foundation of trust and honesty</p>
-                        </div>
-                    </Col>
-                    <Col lg={4}>
-                        <div className="tiles-card">
-                            <div className='d-flex align-items-center'>
-                                <i class="fa fa-user-circle-o"></i>
-                                <h5>EXPERTS AT WORK</h5>
-                            </div>
-                            <p>Our team comprises of exceptional construction & real estate experts</p>
                         </div>
                     </Col>
                 </Row>
@@ -355,7 +361,7 @@ const Ads = () => {
                 </div>
             </div>
             {/* --------------------- Contact Us ------------- */}
-            <GetInTouch />
+            <AdsContact />
 
             {
                 showPass && (
@@ -379,7 +385,7 @@ const Ads = () => {
 
             <Modal show={show} onHide={handleClose} centered>
                 <div className="register-box">
-                    <h5>Register Your Interest<i onClick={handleClose} class="fa-solid fa-circle-xmark close-cancel-btn"></i></h5>
+                    <h5>Register for HOME FEST<i onClick={handleClose} class="fa-solid fa-circle-xmark close-cancel-btn"></i></h5>
                     <div className="register-field">
                         <form onSubmit={handleClick}>
                             <input name="firstName" value={register.firstName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} placeholder='First Name' />
@@ -392,8 +398,8 @@ const Ads = () => {
                                     ))
                                 }
                             </select>
-                            <input type="text" value={register.phone} name="phone" pattern="[0-9]{10}" title='Enter Valid Phone No.' onChange={handleChange} placeholder='Phone' />
-                            <input type="text" value={register.email} name="email" onChange={handleChange} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter Valid Email" placeholder='Email' />
+                            <input type="text" value={register.phone} name="phone" required pattern="[0-9]{10}" title='Enter Valid Phone No.' onChange={handleChange} placeholder='Phone Number *' />
+                            <input type="text" value={register.email} name="email" required onChange={handleChange} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter Valid Email" placeholder='Email *' />
                             <p>I Agree to the <a href="">Terms & Conditions.</a></p>
                             <div className="register-btn ">
                                 <button>Register</button>

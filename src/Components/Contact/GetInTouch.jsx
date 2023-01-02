@@ -4,6 +4,7 @@ import "../../Assets/Contact/GetInTouch.css";
 import img1 from "../../Assets/Images/getintouch.svg";
 import { PostGetintouchData } from "../API/Api";
 import { useNavigate } from "react-router";
+
 function GetInTouch() {
   const [Getintouch, setGetintouch] = useState({
     phone: "",
