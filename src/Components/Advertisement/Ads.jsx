@@ -320,7 +320,7 @@ const Ads = () => {
                                 <Row className='mt-4'>
                                     <Col lg={4}>
                                         <div className="site-img">
-                                            <img src={data?.pictures} style={{ width: "100%", height: "100%", borderRadius: "10px" }} alt="" />
+                                            <img src={data?.pictures} className="ads-property-img" alt="" />
                                         </div>
                                     </Col>
                                     <Col lg={4}>
