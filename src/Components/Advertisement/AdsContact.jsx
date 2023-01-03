@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import "../../Assets/Contact/GetInTouch.css";
 import img1 from "../../Assets/Images/adscontact.png";
-import { PostGetintouchData } from "../API/Api";
+import { PostGetintouchData, FestEnquiry } from "../API/Api";
 import { useNavigate } from "react-router";
 
 const AdsContact = () => {
@@ -10,7 +10,7 @@ const AdsContact = () => {
         phone: "",
         name: "",
         email: "",
-        comment: ""
+        comments: ""
     });
     const [disable, setdisable] = useState([]);
     const location = useNavigate();
@@ -23,9 +23,8 @@ const AdsContact = () => {
     const handlesubmit = async (e) => {
         e.preventDefault();
         try {
-            const data = await PostGetintouchData(Getintouch);
+            const data = await FestEnquiry(Getintouch);
             console.log(data);
-            location("/");
         } catch (error) {
             console.log(error);
         }
@@ -84,7 +83,7 @@ const AdsContact = () => {
                                     <input
                                         type="text"
                                         onChange={handleChange}
-                                        name="comment"
+                                        name="comments"
                                         placeholder="Comments"
                                     />
                                 </span>

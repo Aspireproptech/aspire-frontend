@@ -30,3 +30,5 @@ export const PostPriceData = (data) => API.post(`/cn/addForm`, data);
 export const RegisterData = (data) => API.post("/cn/passcode", data);
 
 export const ImageEmailData = (data) => API.post("/cn/emailpass", data);
+
+export const FestEnquiry = (data) => API.post("/cn/addFestEnquiry", data);
