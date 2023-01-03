@@ -285,6 +285,12 @@ function NewNav() {
                   >
                     Other Blogs
                   </HashLink>
+                  <HashLink
+                    style={{ padding: "8px 15px", display: "flex" }}
+                    to="/ads"
+                  >
+                    Advertisement
+                  </HashLink>
                 </NavDropdown.Item>
               </NavDropdown>
             </Col>
