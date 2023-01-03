@@ -311,3 +311,37 @@ select {
   top: 24rem;
   left: 4rem;
 }
+@media only screen and (max-width: 820px) {
+  .ad-sec2-left {
+    margin-bottom: 20px;
+  }
+  .tiles-margin {
+    margin: 10px 0;
+  }
+  .site-details {
+    height: auto;
+    margin: 0;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .ad-sec2-list {
+    flex-direction: column;
+  }
+  .left-card {
+    background-color: #13184f;
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px 30px;
+    border-radius: 10px;
+  }
+  .sec3-container {
+    padding: 50px 30px;
+  }
+  .tiles-margin {
+    margin: 10px 0;
+  }
+  .site-details {
+    height: auto;
+    margin: 0;
+  }
+}

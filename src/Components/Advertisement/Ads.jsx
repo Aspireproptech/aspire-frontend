@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import { Col, Container, Row, Modal } from 'react-bootstrap'
-import AdsImage from "../../Assets/Ads/Adds.jpeg"
+import AdsImage from "../../Assets/Ads/Adds.jpg"
 import Portfolio from '../HomePage/Portfolio'
 import "./ads.css"
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -266,7 +266,7 @@ const Ads = () => {
                     <h3>4 Easy Steps to Buy Your Dream Home</h3>
                 </div>
                 <Row className="mt-4">
-                    <Col lg={6}>
+                    <Col lg={6} className="tiles-margin">
                         <div className="tiles-card">
                             <div>
                                 <div className='d-flex align-items-center'>
@@ -277,7 +277,7 @@ const Ads = () => {
                             </div>
                         </div>
                     </Col>
-                    <Col lg={6}>
+                    <Col lg={6} className="tiles-margin">
                         <div className="tiles-card">
                             <div className='d-flex align-items-center'>
                                 <i class="fa-solid fa-2"></i>
@@ -287,7 +287,7 @@ const Ads = () => {
                     </Col>
                 </Row>
                 <Row className='mt-4'>
-                    <Col lg={6}>
+                    <Col lg={6} className="tiles-margin">
                         <div className="tiles-card">
                             <div>
                                 <div className='d-flex align-items-center'>
@@ -298,7 +298,7 @@ const Ads = () => {
                             </div>
                         </div>
                     </Col>
-                    <Col lg={6}>
+                    <Col lg={6} className="tiles-margin">
                         <div className="tiles-card">
                             <div className='d-flex align-items-center'>
                                 <i class="fa-solid fa-4"></i>
