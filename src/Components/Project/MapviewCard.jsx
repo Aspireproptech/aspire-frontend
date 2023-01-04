@@ -9,6 +9,7 @@ import Map2 from "../Contact/Map2";
 import BedroomChildIcon from "@mui/icons-material/BedroomChild";
 import { Link } from "react-router-dom";
 import "../../Assets/HomePage/portfolio.css";
+import Loader from "../Common/Loader";
 function MapviewCard({ data }) {
   const [heightmap, setheightmap] = useState("450px");
 
@@ -27,12 +28,7 @@ function MapviewCard({ data }) {
             style={{ width: "95%", height: "40vh" }}
           />
         ) : (
-          <h2
-            style={{ height: "40vh" }}
-            className="border-none alternate-text-property"
-          >
-            No Image For Property
-          </h2>
+          <Loader />
         )}
         <div className="propertyDescription-map-view">
           <div className="description">

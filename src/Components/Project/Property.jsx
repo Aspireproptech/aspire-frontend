@@ -26,6 +26,7 @@ import {
   FetchSingleDeveloperData,
   FetchSinglePropertyData,
   FetchUSP,
+  PostQuote,
 } from "../API/Api";
 import MapWithAMarker from "../Contact/Map";
 import ScrollTrigger from "react-scroll-trigger";
@@ -40,6 +41,8 @@ import HomeBlogCard from "../Homeloan/HomeBlogCard";
 import CarouselComponent from "../Partners/Carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function Property() {
   const [propertyData, setpropertyData] = useState({});
   const [unit, setunit] = useState(0);
@@ -47,12 +50,24 @@ function Property() {
   const [showSideform, setshowSideform] = useState(false);
   const [unitDetails, setunitDetails] = useState();
   const [showAmenity, setshowAmenity] = useState(false);
-
+  const pName = propertyData?.name;
   const [quote, setquote] = useState({
     name: "",
     phone: "",
     email: "",
+    property: pName,
   });
+
+  console.log(pName);
+  useEffect(() => {
+    setquote({
+      name: "",
+      phone: "",
+      email: "",
+      property: pName,
+    });
+  }, [pName]);
+  console.log(quote);
   const location = useLocation();
   const param = useParams();
   // console.log(propertyData);
@@ -62,7 +77,24 @@ function Property() {
   };
 
   const handleShowsideform = () => setshowSideform(true);
+  const quoteSubmit = async () => {
+    try {
+      const data = await PostQuote(quote);
+      console.log(data);
+      toast.success(" We Will Contact you soon!", {
+        position: "bottom-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
 
+        theme: "light",
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
   // api call
 
   const fetchsingleproperty = async () => {
@@ -149,6 +181,18 @@ function Property() {
 
   return (
     <>
+      <ToastContainer
+        position="bottom-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <Container
         fluid
         className="property-Single "
@@ -215,10 +259,9 @@ function Property() {
                     name="email"
                   />
                 </span>
-              </Row>
-
-              <Row className="property-sideform-btn">
-                <button>Get Best Quote</button>
+                <Row className="property-sideform-btn">
+                  <button onClick={() => quoteSubmit()}>Get Best Quote</button>
+                </Row>
               </Row>
             </div>
           </Modal.Body>
@@ -246,18 +289,32 @@ function Property() {
 
             <Row xs={12} className="property-sideform-input">
               <span>
-                <input type="text" placeholder="Name" />
+                <input
+                  type="text"
+                  placeholder="Name"
+                  onChange={handleQuoteChange}
+                  name="name"
+                />
               </span>
               <span>
-                <input type="text" placeholder="Phone" />
+                <input
+                  type="tel"
+                  placeholder="Phone"
+                  onChange={handleQuoteChange}
+                  name="phone"
+                />
               </span>
               <span>
-                <input type="text" placeholder="Email" />
+                <input
+                  type="email"
+                  placeholder="Email"
+                  onChange={handleQuoteChange}
+                  name="email"
+                />
               </span>
-            </Row>
-
-            <Row className="property-sideform-btn">
-              <button>Get Best Quote</button>
+              <Row className="property-sideform-btn">
+                <button onClick={() => quoteSubmit()}>Get Best Quote</button>
+              </Row>
             </Row>
           </div>
         </div>
