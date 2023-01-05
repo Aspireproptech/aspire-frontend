@@ -3,6 +3,8 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import { Col, Container, Row, Modal } from 'react-bootstrap'
 import AdsImage from "../../Assets/Ads/Adds.jpg"
+import AdsMobileImage from "../../Assets/Ads/Adds-mobile.jpg"
+
 import Portfolio from '../HomePage/Portfolio'
 import "./ads.css"
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -187,21 +189,22 @@ const Ads = () => {
         <>
             {/*-------- Banner ----------  */}
             <div className="banner-container">
-                <img src={AdsImage} style={{ width: "100%", height: "100%" }} alt="" />
+                <img src={AdsImage} className="ads-banner-web" style={{ width: "100%", height: "100%" }} alt="" />
+                <img src={AdsMobileImage} className="ads-banner-mob" style={{ width: "100%", height: "100%" }} alt="" />
             </div>
             {/* ----------- Register Form ------- */}
             <Container fluid className='mt-5' style={{ padding: "0 30px" }}>
                 <Row className='align-items-center'>
                     <Col lg={8}>
                         <div className="ad-sec2-left">
-                            <h3>Celebrating the Feeling of Coming Home</h3>
+                            <h3>Great Choice of Homes + Great Offers</h3>
                             <div className="head-underline"></div>
                             <div className="d-flex ad-sec2-list mt-4">
                                 <div className="left-card">
                                     <div className="ad-card-img mb-4">
                                         <i class="fa-solid fa-building"></i>
                                     </div>
-                                    <h5>8 Projects, 16 Days</h5>
+                                    <h5>9 Projects<br /> 16 Days</h5>
                                 </div>
                                 <div className="left-card">
                                     <div className="ad-card-img mb-4">
@@ -247,15 +250,13 @@ const Ads = () => {
                 </Row>
             </Container>
             <div className="sec3-container mt-5">
-                <h3>Are you ready to find the home of your dreams?</h3>
+                <h3>Your Dream Home is Here</h3>
                 <div className="sec-list mt-3">
-                    <p>Bengaluru's biggest home fest of the year 2023 is here!
+                    <p>We present to you <strong>Aspire Home Fest 2023</strong> - a fest that promises to take you a step closer to the home of your dreams.
                         <br /><br />
-                        This is an opportunity you don't want to miss out on.
+                        With <strong>9 projects</strong> to choose from, in various <strong>prime locations of North, East, and South Bangalore</strong>, and with offers that are difficult to resist, <strong>Aspire Home Fest</strong> brings you the best opportunity in 2023 to finally get the home you desire!
                         <br /><br />
-                        We’ve got exclusive deals on Ready to Move in Homes and some of the newest blockbuster Launches within your budget, so don’t miss this chance to grab a better future for yourself and your family by choosing the home that truly suits your lifestyle.
-                        <br /><br />
-                        Register now to get exclusive deals that make home buying easier.
+                        <strong>Register now</strong> to get exclusive deals and offers that make home buying a lot easier, simpler, and lighter on your pocket.
                     </p>
 
                 </div>
@@ -263,7 +264,7 @@ const Ads = () => {
             {/* ------------ Tiles ----------- */}
             <Container fluid className='mt-5'>
                 <div className="sec5">
-                    <h3>4 Easy Steps to Buy Your Dream Home</h3>
+                    <h3>4 Easy Steps to Buy Your Dream Home-</h3>
                 </div>
                 <Row className="mt-4">
                     <Col lg={6} className="tiles-margin">
@@ -271,7 +272,7 @@ const Ads = () => {
                             <div>
                                 <div className='d-flex align-items-center'>
                                     <i class="fa-solid fa-1"></i>
-                                    <h5> Go to www.aspireprop.com and click on the project of your choice.
+                                    <h5>Go to <strong>www.aspireprop.com</strong> and click on the project of your choice.
                                     </h5>
                                 </div>
                             </div>
@@ -281,7 +282,7 @@ const Ads = () => {
                         <div className="tiles-card">
                             <div className='d-flex align-items-center'>
                                 <i class="fa-solid fa-2"></i>
-                                <h5>Click on ‘Register Now!’ to get yourself registered  for the home fest.</h5>
+                                <h5>Click on <strong>‘Register Now!’</strong> to get yourself registered  for the home fest.</h5>
                             </div>
                         </div>
                     </Col>
@@ -292,7 +293,7 @@ const Ads = () => {
                             <div>
                                 <div className='d-flex align-items-center'>
                                     <i class="fa-solid fa-3"></i>
-                                    <h5>You’ll receive a priority pass via mail. Show your ‘Priority Pass’ during the site visit.</h5>
+                                    <h5>You’ll receive a priority pass via mail. Show your <strong>‘Priority Pass’</strong> during the site visit.</h5>
                                 </div>
                                 {/* <p>Our team delivers quality and on time as per our promises</p> */}
                             </div>
@@ -302,7 +303,7 @@ const Ads = () => {
                         <div className="tiles-card">
                             <div className='d-flex align-items-center'>
                                 <i class="fa-solid fa-4"></i>
-                                <h5> Don’t forget to use the unique pass code while booking your dream home to avail the offers.
+                                <h5>Don’t forget to use <strong>the unique pass code</strong> while booking your dream home to avail the offers.
                                 </h5>
                             </div>
                         </div>
@@ -329,11 +330,11 @@ const Ads = () => {
                                             <div className="site-sub-details">
                                                 <div className="d-flex sub-detail-container">
                                                     <LocationOnIcon className="detail-icon" />
-                                                    <h4>{data?.location}</h4>
+                                                    <h4><strong>{data?.location}</strong></h4>
                                                 </div>
                                                 <div className="d-flex sub-detail-container">
                                                     <LocalAtmIcon className="detail-icon" />
-                                                    <h4>{data?.price}</h4>
+                                                    <h4><strong>{data?.price}</strong></h4>
                                                 </div>
                                                 <div className="d-flex sub-detail-container">
                                                     <HomeIcon className="detail-icon" />
@@ -341,7 +342,7 @@ const Ads = () => {
                                                 </div>
                                                 <div className="d-flex sub-detail-container">
                                                     <BedroomChildIcon className="detail-icon" />
-                                                    <h4>{data?.BHK},BHK</h4>
+                                                    <h4><strong>{data?.BHK} BHK</strong></h4>
                                                 </div>
                                             </div>
                                             <button onClick={() => handleShow(data?.name)} className='view-property-btn'>View Property</button>
