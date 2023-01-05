@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import axios from "axios";
 import { FetchPropertyData } from "../API/Api";
+import Loader from "../Common/Loader";
 function Portfolio() {
   const [indexColor, setindexColor] = useState(0);
   const [active, setactive] = useState(0);
@@ -124,17 +125,13 @@ function Portfolio() {
               classNames="item"
             >
               <Col className="px-lg-4 px-0 px-md-4 mb-5 border-none mb-sm-0">
-                {PortfolioDetail?.pictures[0]?.length > 0 ? (
+                {PortfolioDetail?.pictures[0]?.length > 0 && (
                   <img
                     src={PortfolioDetail?.pictures}
                     className={` property-img property-img-height border-none`}
                     alt=""
                     style={{ width: "100%" }}
                   />
-                ) : (
-                  <h2 className="border-none alternate-text-property">
-                    No Image For Porperty
-                  </h2>
                 )}
               </Col>
             </CSSTransition>

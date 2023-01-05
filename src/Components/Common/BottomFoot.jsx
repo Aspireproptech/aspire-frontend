@@ -6,12 +6,20 @@ import CallIcon from "@mui/icons-material/Call";
 import EmailIcon from "@mui/icons-material/Email";
 import { Link } from "react-router-dom";
 import { YoutubeSearchedForOutlined } from "@mui/icons-material";
-import YouTubeIcon from '@mui/icons-material/YouTube';
+import YouTubeIcon from "@mui/icons-material/YouTube";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import LinkedInIcon from '@mui/icons-material/LinkedIn';  
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 function BottomFoot() {
+  const redirectMail = () => {
+    debugger;
+    window.open(
+      "https://mail.google.com/mail/?view=cm&fs=1&to=hello@aspireprop.com&su=SUBJECT&body=Your Message",
+      "",
+      "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=350,width=480"
+    );
+  };
   return (
     <div className="footerDiv container-fluid pb-5">
       <div className="container">
@@ -31,16 +39,25 @@ function BottomFoot() {
             className=" my-xs-3 visible-xs d-flex align-items-end justify-content-end"
           >
             <span className="ShareIcon">
-              <a href="https://www.facebook.com/AspireProptech "><FacebookIcon /> </a>
+              <a href="https://www.facebook.com/AspireProptech ">
+                <FacebookIcon />{" "}
+              </a>
             </span>
             <span className="ShareIcon">
-              <a href="https://www.instagram.com/prop_aspire/ "><InstagramIcon /></a>
+              <a href="https://www.instagram.com/prop_aspire/ ">
+                <InstagramIcon />
+              </a>
             </span>
             <span className="ShareIcon">
-              <a href="https://www.youtube.com/channel/UCjKyaI9f6Vvl5s9LJpn4RPw "><YouTubeIcon /></a>
+              <a href="https://www.youtube.com/channel/UCjKyaI9f6Vvl5s9LJpn4RPw ">
+                <YouTubeIcon />
+              </a>
             </span>
             <span className="ShareIcon">
-              <a href="https://www.linkedin.com/company/13609537/"> <LinkedInIcon /></a>
+              <a href="https://www.linkedin.com/company/13609537/">
+                {" "}
+                <LinkedInIcon />
+              </a>
             </span>
           </Col>
         </Row>
@@ -64,7 +81,14 @@ function BottomFoot() {
                   <h5>+91 9886660229</h5>
                 </h4>
               </div>
-              <button>Call Now</button>
+              <button>
+                <a
+                  style={{ textDecoration: "none", color: "white" }}
+                  href="tel:+91 9886660229"
+                >
+                  Call Now
+                </a>
+              </button>
             </div>
 
             <div className="MailBlock ">
@@ -75,7 +99,7 @@ function BottomFoot() {
                   <h5> hello@aspireprop.com</h5>
                 </h4>
               </div>
-              <button>Email Now</button>
+              <button onClick={() => redirectMail()}>Email Now</button>
             </div>
           </Col>
 

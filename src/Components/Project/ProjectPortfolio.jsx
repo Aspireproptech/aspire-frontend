@@ -9,12 +9,14 @@ import HomeIcon from "@mui/icons-material/Home";
 import BedroomChildIcon from "@mui/icons-material/BedroomChild";
 import { Link } from "react-router-dom";
 import Map from "../Contact/Map";
+import Loader from "../../Components/Common/Loader";
 
 import Portfolio from "../HomePage/Portfolio";
 import { FetchPropertyData } from "../API/Api";
 
 function ProjectPortfolio() {
   const [mapview, setmapview] = useState(0);
+  const [loading, setLoading] = useState(false);
   const [indexColor, setindexColor] = useState(0);
   const [portfolioItems, setportfolioItems] = useState([]);
   const [PortfolioDetail, setPortfolioDetail] = useState();
@@ -27,14 +29,17 @@ function ProjectPortfolio() {
   window.matchMedia("(min-width: 768px)").addEventListener("change", setheight);
 
   const fetchPortfolio = async () => {
+    setLoading(true);
     try {
       const { data } = await FetchPropertyData();
       setportfolioItems(data?.data);
       setPortfolioDetail(data?.data[0]);
 
       console.log(data);
+      setLoading(false);
     } catch (error) {
       console.log(error);
+      setLoading(false);
     }
   };
   useEffect(() => {
@@ -100,12 +105,7 @@ function ProjectPortfolio() {
                             style={{ width: "95%", height: "40vh" }}
                           />
                         ) : (
-                          <h2
-                            style={{ height: "40vh" }}
-                            className="border-none alternate-text-property"
-                          >
-                            No Image For Property
-                          </h2>
+                          <Loader />
                         )}
                         <div className="propertyDescription-map-view">
                           <div className="description">
@@ -147,7 +147,7 @@ function ProjectPortfolio() {
                     );
                   })}
                 </div>
-                
+
                 <div className="col px-lg-4 pt-5 pt-md-0 pt-lg-0">
                   <Map
                     lat={propertyMap?.lat && parseFloat(propertyMap?.lat)}

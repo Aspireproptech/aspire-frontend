@@ -32,7 +32,7 @@
 }
 .property-img{
     animation-name: img;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-iteration-count: once;
     z-index: -1;
     transition: ease;

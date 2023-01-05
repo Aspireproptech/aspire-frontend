@@ -4,6 +4,7 @@ import "../../Assets/Contact/GetInTouch.css";
 import img1 from "../../Assets/Images/getintouch.svg";
 import { PostGetintouchData } from "../API/Api";
 import { useNavigate } from "react-router";
+import { ToastContainer, toast } from "react-toastify";
 
 function GetInTouch() {
   const [Getintouch, setGetintouch] = useState({
@@ -23,13 +24,56 @@ function GetInTouch() {
     try {
       const data = await PostGetintouchData(Getintouch);
       console.log(data);
-      location("/");
+      setGetintouch({
+        phone: "",
+        name: "",
+      });
+      if (data?.status === 200) {
+        debugger;
+        toast.success(" We Will Contact you soon!", {
+          position: "bottom-left",
+
+          autoClose: 10000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+
+          theme: "light",
+        });
+      }
     } catch (error) {
       console.log(error);
+      toast.error("Something is wrong!", {
+        position: "bottom-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      setGetintouch({
+        phone: "",
+        name: "",
+      });
     }
   };
   return (
     <>
+      <ToastContainer
+        position="bottom-left"
+        autoClose={10000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
       <Container fluid className=" GetInTouch">
         <Row lg={12}>
           <Col lg={7} className=" GetInTouch-imgsection ">
@@ -53,6 +97,7 @@ function GetInTouch() {
                 <span>
                   <input
                     type="text"
+                    value={Getintouch?.name}
                     onChange={handleChange}
                     name="name"
                     placeholder="Name"
@@ -61,6 +106,7 @@ function GetInTouch() {
                 <span>
                   <input
                     type="tel"
+                    value={Getintouch?.phone}
                     onChange={handleChange}
                     name="phone"
                     placeholder="Phone Number"
