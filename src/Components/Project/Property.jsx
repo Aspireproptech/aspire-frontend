@@ -81,6 +81,12 @@ function Property() {
     try {
       const data = await PostQuote(quote);
       console.log(data);
+      setquote({
+        name: "",
+        phone: "",
+        email: "",
+        property: pName,
+      });
       toast.success(" We Will Contact you soon!", {
         position: "bottom-left",
         autoClose: 5000,
@@ -132,8 +138,9 @@ function Property() {
   // best quote
 
   const handleQuoteChange = (e) => {
-    let name = e.target.name;
-    setquote({ ...quote, [name]: e.target.value });
+    const { name, value } = e.target;
+
+    setquote({ ...quote, [name]: value });
   };
 
   //Modal property
@@ -238,6 +245,7 @@ function Property() {
                 <span>
                   <input
                     type="text"
+                    value={quote?.name}
                     placeholder="Name"
                     onChange={handleQuoteChange}
                     name="name"
@@ -247,6 +255,7 @@ function Property() {
                   <input
                     type="tel"
                     placeholder="Phone"
+                    value={quote?.phone}
                     onChange={handleQuoteChange}
                     name="phone"
                   />
@@ -255,6 +264,7 @@ function Property() {
                   <input
                     type="email"
                     placeholder="Email"
+                    value={quote?.email}
                     onChange={handleQuoteChange}
                     name="email"
                   />
@@ -292,6 +302,7 @@ function Property() {
                 <input
                   type="text"
                   placeholder="Name"
+                  value={quote?.name}
                   onChange={handleQuoteChange}
                   name="name"
                 />
@@ -300,6 +311,7 @@ function Property() {
                 <input
                   type="tel"
                   placeholder="Phone"
+                  value={quote?.phone}
                   onChange={handleQuoteChange}
                   name="phone"
                 />
@@ -308,6 +320,7 @@ function Property() {
                 <input
                   type="email"
                   placeholder="Email"
+                  value={quote?.email}
                   onChange={handleQuoteChange}
                   name="email"
                 />

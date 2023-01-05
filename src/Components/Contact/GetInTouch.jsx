@@ -24,7 +24,10 @@ function GetInTouch() {
     try {
       const data = await PostGetintouchData(Getintouch);
       console.log(data);
-
+      setGetintouch({
+        phone: "",
+        name: "",
+      });
       if (data?.status === 200) {
         debugger;
         toast.success(" We Will Contact you soon!", {
@@ -50,6 +53,10 @@ function GetInTouch() {
         draggable: true,
         progress: undefined,
         theme: "light",
+      });
+      setGetintouch({
+        phone: "",
+        name: "",
       });
     }
   };
@@ -90,6 +97,7 @@ function GetInTouch() {
                 <span>
                   <input
                     type="text"
+                    value={Getintouch?.name}
                     onChange={handleChange}
                     name="name"
                     placeholder="Name"
@@ -98,6 +106,7 @@ function GetInTouch() {
                 <span>
                   <input
                     type="tel"
+                    value={Getintouch?.phone}
                     onChange={handleChange}
                     name="phone"
                     placeholder="Phone Number"
