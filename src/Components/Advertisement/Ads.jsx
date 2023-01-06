@@ -338,7 +338,7 @@ const Ads = () => {
                                                 </div>
                                                 <div className="d-flex sub-detail-container">
                                                     <HomeIcon className="detail-icon" />
-                                                    <h4>{data?.ready ? "Ready To move" : "Posession Soon"}</h4>
+                                                    <h4><strong>{data?.ready ? "Ready To move" : "Posession Soon"}</strong></h4>
                                                 </div>
                                                 <div className="d-flex sub-detail-container">
                                                     <BedroomChildIcon className="detail-icon" />
