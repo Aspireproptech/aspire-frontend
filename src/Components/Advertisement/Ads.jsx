@@ -143,6 +143,7 @@ const Ads = () => {
             const formData = new FormData()
             formData.append('image', file)
             formData.append('email', register.email)
+            formData.append('name', register.firstName + " " + register.lastName || "")
 
             const config = {
                 headers: {
