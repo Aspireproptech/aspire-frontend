@@ -312,7 +312,7 @@ const Ads = () => {
             </Container>
             {/* ----------- Project List ---------- */}
             <div className="sec4-container mt-5">
-                <h3>Projects</h3>
+                <h3 className="project-heading">Projects</h3>
                 <div className="project-underline"></div>
                 <div className="project-whole-card">
                     <Container fluid className='mt-5'>
