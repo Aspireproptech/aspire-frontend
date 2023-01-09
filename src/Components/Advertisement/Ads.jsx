@@ -357,7 +357,7 @@ const Ads = () => {
                                                                 ? null
                                                                 : ","}
                                                         </p>
-                                                    ))} BHK</strong></span>
+                                                    ))} <p>BHK</p></strong></span>
                                                 </div>
                                             </div>
                                             <button onClick={() => handleShow(data?.name)} className='view-property-btn'>View Property</button>

@@ -145,7 +145,7 @@ function Homeloan() {
   const handleSlider1 = (e, name) => {
     const val = e.target.value.slice(1, e.target.value.length).replaceAll(",", "")
     console.log(val)
-    setLoanData({ ...LoanData, loan: val })
+    setLoanData({ ...LoanData, loan: val || 0 })
   }
 
   const [EMI, setEMI] = useState(0)
@@ -264,7 +264,7 @@ function Homeloan() {
                     <div className="d-flex justify-content-between ">
                       <h6>Loan Amount</h6>
                       <div>
-                        <CurrencyInput value={ LoanData.loan}
+                        <CurrencyInput value={LoanData.loan}
                           onChange={(e) => handleSlider1(e, "loan")}
                           intlConfig={{ locale: 'en-IN', currency: 'INR' }} />
                       </div>

@@ -370,6 +370,7 @@ select {
 .bhk-show p {
   font-size: 0.8rem;
   margin: 0 5px;
+  font-weight: bold;
 }
 
 .comming-soon {
