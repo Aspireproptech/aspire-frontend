@@ -21,7 +21,14 @@ function NewNav() {
               <NavLink to={"/"}>
                 <img src={logo} alt="img" />
               </NavLink>
+              <NavLink to="/aspire-homefest2023">
+                <div className="fest-img">
+                  Fest
+                </div>
+              </NavLink>
             </Col>
+
+
 
             <Col xs={9} className="Links-Container">
               <Col className="Links ">
@@ -116,12 +123,6 @@ function NewNav() {
                         to="/blogs#others"
                       >
                         Other Blogs
-                      </HashLink>
-                      <HashLink
-                        style={{ padding: "8px 15px", display: "flex" }}
-                        to="/ads"
-                      >
-                        Advertisement
                       </HashLink>
                     </NavDropdown.Item>
                   </NavDropdown>

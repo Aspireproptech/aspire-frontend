@@ -1,152 +1,157 @@
-.footerDiv{
-    background-color: rgba(28, 27, 77, 1);
-    width: 100%;
-    margin-right: 0 !important;
+.footerDiv {
+  background-color: rgba(28, 27, 77, 1);
+  width: 100%;
+  margin-right: 0 !important;
 }
 
-.dreamReality{
-    color: white; 
-    font-size: 40px;
+.dreamReality {
+  color: white;
+  font-size: 40px;
 }
 
-.blueFooter{
-    background-color: #13184F;
-    color: white;
-    margin-top: 100px;
+.blueFooter {
+  background-color: #13184f;
+  color: white;
+  margin-top: 100px;
 }
 
-.blueFootDiv{
-    width: 70%;
-    margin: auto;
-    text-align: center;
-    padding: 100px 50px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.blueFootDiv {
+  width: 70%;
+  margin: auto;
+  text-align: center;
+  padding: 100px 50px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.footerContent{
-    width: 90%;
-    margin: auto;
-    padding: 30px 10px 10px 10px;
-    font-size: 12px;
+.footerContent {
+  width: 90%;
+  margin: auto;
+  padding: 30px 10px 10px 10px;
+  font-size: 12px;
 }
-.ShareIcon{
+.ShareIcon {
 }
-.ShareIcon svg{
-    color: white;
-    margin: 0 20px;
-    font-size: 2.5rem;
+.ShareIcon svg {
+  color: white;
+  margin: 0 20px;
+  font-size: 2.5rem;
 }
 
 /* callblock */
 
-.CallBlock{
-    margin-top: 20px;
-    color: white;
-    border : 1px solid rgba(255, 117, 39, 0.5);
-    padding: 15px;
-    display: flex;
-    padding: 15px 30px;
-    border-radius: 20px;
-    flex-direction: column;
-    justify-content: center;
+.CallBlock {
+  margin-top: 20px;
+  color: white;
+  border: 1px solid rgba(255, 117, 39, 0.5);
+  padding: 15px;
+  display: flex;
+  padding: 15px 30px;
+  border-radius: 20px;
+  flex-direction: column;
+  justify-content: center;
 }
-.call-content{
-    display: flex;
+.call-content {
+  display: flex;
 }
-.call-content svg{
-    font-size: 2rem;
-    font-weight: 700;
-    margin-right: 15px;
-
+.call-content svg {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-right: 15px;
 }
-.call-content h4{
-    font-size: 1rem;
+.call-content h4 {
+  font-size: 1rem;
 }
-.call-content h5{
-    font-size: 0.8rem;
-    margin: 10px 0;
-    font-weight: 300;
+.call-content h5 {
+  font-size: 0.8rem;
+  margin: 10px 0;
+  font-weight: 300;
 }
-.CallBlock button{
-    background-color: rgba(255, 117, 39, 0.2);
-    color: rgba(255, 117, 39, 0.8);
-    border: none;
-    border-radius: 10px;
-    padding: 8px;
-    font-size: 0.9rem;
+.CallBlock button {
+  /* background-color: rgba(255, 117, 39, 0.2);
+  color: rgba(255, 117, 39, 0.8); */
+  color: white;
+  background-color: rgba(255, 117, 39, 0.8);
+  border: none;
+  border-radius: 10px;
+  padding: 8px;
+  font-size: 0.9rem;
 }
-.CallBlock button:hover{
-    background-color: var(--orangeColor);
-    color: white;
-    transition: 0.3s;
+.CallBlock button:hover {
+  /* background-color: var(--orangeColor);
+  color: white;
+  transition: 0.3s; */
+  background-color: rgba(255, 117, 39, 0.5);
+  color: var(--orangeColor);
+  transition: 0.3s;
 }
 
 /* mail block */
-.MailBlock{
-    margin-top: 20px;
-    color: white;
-    border-radius: 5px;
-    border : 1px solid rgba(255, 117, 39, 0.5);
-    padding: 15px 30px;
-    display: flex;
-    margin-left:20px ;
-    flex-direction: column;
-    justify-content: center;
-    border-radius: 20px;
+.MailBlock {
+  margin-top: 20px;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 117, 39, 0.5);
+  padding: 15px 30px;
+  display: flex;
+  margin-left: 20px;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
 }
 
-.mail-content{
-    display: flex;
+.MailBlock button {
+  color: white;
+  background-color: rgba(255, 117, 39, 0.8);
+  border: none;
+  border-radius: 10px;
+  padding: 8px;
+  font-size: 0.9rem;
 }
-.mail-content svg{
+.MailBlock button:hover {
+  background-color: rgba(255, 117, 39, 0.5);
+  color: var(--orangeColor);
+  transition: 0.3s;
+}
+
+.mail-content {
+  display: flex;
+}
+.mail-content svg {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-right: 15px;
+}
+.mail-content h4 {
+  font-size: 1rem;
+}
+.mail-content h5 {
+  font-size: 0.8rem;
+  margin: 10px 0;
+  font-weight: 300;
+}
+
+@media (max-width: 568px) {
+  .ShareIcon svg {
     font-size: 2rem;
-    font-weight: 700;
-    margin-right: 15px;
-
-}
-.mail-content h4{
-    font-size: 1rem;
-}
-.mail-content h5{
-    font-size: 0.8rem;
-    margin: 10px 0;
-    font-weight: 300;
-}
-.MailBlock button{
-    color: white;
-    background-color: rgba(255, 117, 39, 0.8);
-    border: none;
-    border-radius: 10px;
-    padding: 8px;
-    font-size: 0.9rem;
-}
-.MailBlock button:hover{
-    background-color: rgba(255, 117, 39, 0.5);
-    color: var(--orangeColor);
-    transition: 0.3s;
-}
-@media (max-width: 568px){
-    .ShareIcon svg{
-        font-size: 2rem;
-        margin: 0 10px;
-    }
-    .footer-blocks{
-        flex-direction: column;
-        align-items: center !important;
-        justify-content: center;
-    }
-    .MailBlock{
-        margin: 0;
-        margin: 20px 0;
-        width: 100%;
-    }
-    .dreamReality{
-        font-size: 35px;
-    }
-    .CallBlock{ 
-        width: 100%;
-    }
+    margin: 0 10px;
+  }
+  .footer-blocks {
+    flex-direction: column;
+    align-items: center !important;
+    justify-content: center;
+  }
+  .MailBlock {
+    margin: 0;
+    margin: 20px 0;
+    width: 100%;
+  }
+  .dreamReality {
+    font-size: 35px;
+  }
+  .CallBlock {
+    width: 100%;
+  }
 }

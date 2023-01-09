@@ -236,7 +236,7 @@ function Property() {
                 </Col>
                 <Col lg={10} md={9} xs={10}>
                   <span className="property-sideform-head ">
-                    <h5>Get the best Quote!</h5>
+                    <h5>Get the Best Quote!</h5>
                   </span>
                 </Col>
               </Row>
@@ -292,7 +292,7 @@ function Property() {
               </Col>
               <Col lg={8} md={9} sm={10}>
                 <span className="property-sideform-head w-100">
-                  <h5>Get the best Quote!</h5>
+                  <h5>Get the Best Quote!</h5>
                 </span>
               </Col>
             </Row>
@@ -374,49 +374,43 @@ function Property() {
               <Col lg={9} className="property-navigate-container flex-wrap">
                 <a
                   href={"#overview"}
-                  className={`${
-                    location?.hash == "#overview" ? "navigate-active" : ""
-                  } property-navigate-links`}
+                  className={`${location?.hash == "#overview" ? "navigate-active" : ""
+                    } property-navigate-links`}
                 >
                   Overview
                 </a>
                 <a
                   href={"#amenities"}
-                  className={`${
-                    location?.hash == "#amenities" ? "navigate-active" : ""
-                  } property-navigate-links`}
+                  className={`${location?.hash == "#amenities" ? "navigate-active" : ""
+                    } property-navigate-links`}
                 >
                   Amenities
                 </a>
                 <a
                   href={"#location"}
-                  className={`${
-                    location?.hash == "#location" ? "navigate-active" : ""
-                  } property-navigate-links`}
+                  className={`${location?.hash == "#location" ? "navigate-active" : ""
+                    } property-navigate-links`}
                 >
                   Location
                 </a>
                 <a
                   href={"#units"}
-                  className={`${
-                    location?.hash == "#units" ? "navigate-active" : ""
-                  } property-navigate-links`}
+                  className={`${location?.hash == "#units" ? "navigate-active" : ""
+                    } property-navigate-links`}
                 >
                   Units
                 </a>
                 <a
                   href={"#about"}
-                  className={`${
-                    location?.hash == "#about" ? "navigate-active" : ""
-                  } property-navigate-links`}
+                  className={`${location?.hash == "#about" ? "navigate-active" : ""
+                    } property-navigate-links`}
                 >
                   About Developer
                 </a>
                 <a
                   href={"#faq"}
-                  className={`${
-                    location?.hash == "#faq" ? "navigate-active" : ""
-                  } property-navigate-links`}
+                  className={`${location?.hash == "#faq" ? "navigate-active" : ""
+                    } property-navigate-links`}
                 >
                   FAQs
                 </a>
@@ -616,9 +610,8 @@ function Property() {
                       return (
                         <button
                           key={index}
-                          className={`${
-                            unit == index ? "property-units-head-active " : ""
-                          }`}
+                          className={`${unit == index ? "property-units-head-active " : ""
+                            }`}
                           onClick={() => {
                             setunitDetails(item?.detail);
                             setunit(index);
@@ -725,7 +718,7 @@ function Property() {
                       "Q3. Will Aspire proptech charge me a brokerage fee?"
                     }
                     answer={
-                      "You would receive a call back from us within 10-15 minutes of placing your enquiry with us, provided you have posted your requirements between 9 am and 6 pm. Otherwise, we would be reaching you the next day."
+                      "No, Never! We don’t charge any brokerage."
                     }
                   />
                   <CustomizedAccordions

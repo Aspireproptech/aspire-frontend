@@ -52,7 +52,7 @@ function ProjectPortfolio() {
         <Container>
           <Row className="project-property-height">
             <Col xs={6} lg={9}>
-              <h4 className="property-head ms-0">Property</h4>
+              <h4 className="property-head ms-0">Projects</h4>
             </Col>
             <Col xs={6} lg={3} className="property-sidehead">
               <h5

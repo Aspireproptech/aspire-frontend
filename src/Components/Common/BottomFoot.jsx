@@ -109,28 +109,28 @@ function BottomFoot() {
                 <h5 className="mb-2">Details</h5>
                 <div className="d-flex flex-column">
                   <Link
-                    to="/aboutus"
+                    to="/about"
                     className="mt-1 text-decoration-none"
                     style={{ color: "white" }}
                   >
                     About Us
                   </Link>
                   <Link
-                    to="/aboutus"
+                    to="/homeloan"
                     className="mt-1 text-decoration-none"
                     style={{ color: "white" }}
                   >
                     Home Loan
                   </Link>
                   <Link
-                    to="/aboutus"
+                    to="/partners"
                     className="mt-1 text-decoration-none"
                     style={{ color: "white" }}
                   >
                     Partners
                   </Link>
                   <Link
-                    to="/aboutus"
+                    to="/contact"
                     className="mt-1 text-decoration-none"
                     style={{ color: "white" }}
                   >
@@ -142,14 +142,14 @@ function BottomFoot() {
                 <h5 className="mb-2 ">Info</h5>
                 <div className="d-flex flex-column">
                   <Link
-                    to="/aboutus"
+                    to="/blogs"
                     className="mt-1 text-decoration-none"
                     style={{ color: "white" }}
                   >
                     Blogs
                   </Link>
                   <Link
-                    to="/aboutus"
+                    to="/career"
                     className="mt-1 text-decoration-none"
                     style={{ color: "white" }}
                   >

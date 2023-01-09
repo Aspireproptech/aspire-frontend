@@ -21,6 +21,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'
 import ScrollToTop from './Components/Common/ScrollToTop';
 import Ads from './Components/Advertisement/Ads';
+import HomeFest from './Components/Common/HomeFest';
 function App() {
   const [loading, setloading] = useState(true)
   useEffect(() => {
@@ -38,6 +39,7 @@ function App() {
 
             <>
               <NewNav />
+              <HomeFest />
               <Routes>
                 <Route exact path='/' element={<Home />} />
                 <Route exact path='/about' element={<About />} />
@@ -51,7 +53,7 @@ function App() {
                 <Route exact path='/blogs' element={<BlogPage />} />
                 <Route exact path='/blogs/:id' element={<Singleblog />} />
                 <Route exact path='/projects' element={<Project />} />
-                <Route exact path='/ads' element={<Ads />} />
+                <Route exact path='/aspire-homefest2023' element={<Ads />} />
               </Routes>
               <BottomFoot />
             </>

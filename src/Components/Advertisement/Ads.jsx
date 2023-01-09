@@ -173,7 +173,9 @@ const Ads = () => {
     const fetchPortfolio = async () => {
         try {
             const { data } = await FetchPropertyData();
-            setportfolioItems(data?.data);
+            const val = data?.data.filter((e) => e.name !== "SLV Icon")
+            console.log(val)
+            setportfolioItems(val);
             setPortfolioDetail(data?.data[0]);
 
             console.log(data);
@@ -319,6 +321,7 @@ const Ads = () => {
                     <Container fluid className='mt-5'>
                         {
                             portfolioItems.map((data) => (
+
                                 <Row className='mt-4'>
                                     <Col lg={4}>
                                         <div className="site-img">
@@ -343,7 +346,18 @@ const Ads = () => {
                                                 </div>
                                                 <div className="d-flex sub-detail-container">
                                                     <BedroomChildIcon className="detail-icon" />
-                                                    <h4><strong>{data?.BHK} BHK</strong></h4>
+                                                    <span className='bhk-show'><strong className='d-flex align-items-center'>{data?.unitDetails.map((item, index) => (
+                                                        <p
+                                                            className="mx-1"
+                                                            style={{ width: "0% !important" }}
+                                                            key={index}
+                                                        >
+                                                            {item?.bhk}
+                                                            {index === PortfolioDetail?.unitDetails.length - 1
+                                                                ? null
+                                                                : ","}
+                                                        </p>
+                                                    ))} BHK</strong></span>
                                                 </div>
                                             </div>
                                             <button onClick={() => handleShow(data?.name)} className='view-property-btn'>View Property</button>
@@ -354,6 +368,10 @@ const Ads = () => {
                                     <Col lg={4}>
                                         <div className="site-offer">
                                             <h3>Offers</h3>
+                                            <div className="comming-soon">
+
+                                                <h4>Coming Soon</h4>
+                                            </div>
                                         </div>
                                     </Col>
                                 </Row>

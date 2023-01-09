@@ -71,7 +71,7 @@ function Singleunit(props) {
             className="getprice-btn"
             onClick={handleOpen}
           >
-            get Price
+            Get Price
           </button>
         </div>
       </div>

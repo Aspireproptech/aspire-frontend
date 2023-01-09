@@ -124,38 +124,43 @@ function Homeloan() {
 
 
 
-// home loan
-const [interest, setinterest] = useState()
-const [LoanData, setLoanData] = useState({
-  loan:10000,
-  year:3,
-  rate:5.5
-})
+  // home loan
+  const [interest, setinterest] = useState()
+  const [LoanData, setLoanData] = useState({
+    loan: 10000,
+    year: 3,
+    rate: 5.5
+  })
 
-const handleSlider = (e,name)=>{
-  if(name=="loan"){
-    console.log(e.target.value)
-    setLoanData({...LoanData,loan:e.target.value})
-  }else if(name=="year"){
-    setLoanData({...LoanData,year:e.target.value})
-  }else{
-    setLoanData({...LoanData,rate:e.target.value})
+  const handleSlider = (e, name) => {
+    if (name == "loan") {
+      setLoanData({ ...LoanData, loan: e.target.value })
+    } else if (name == "year") {
+      setLoanData({ ...LoanData, year: e.target.value })
+    } else {
+      setLoanData({ ...LoanData, rate: e.target.value })
+    }
   }
-}
 
-const [EMI, setEMI] = useState(0)
-var r = LoanData.rate
-var y = LoanData.year
-var l = LoanData.loan
-useEffect(() => {
-  var emi
-  r = r / (12 * 100); // one month interest
-  y = y * 12; // one month period
-  emi = (l * r * Math.pow(1 + r, y)) / (Math.pow(1 + r, y) - 1);
-  setEMI(emi)
+  const handleSlider1 = (e, name) => {
+    const val = e.target.value.slice(1, e.target.value.length).replaceAll(",", "")
+    console.log(val)
+    setLoanData({ ...LoanData, loan: val })
+  }
 
-  setinterest(emi*12*LoanData.year - LoanData.loan);
-}, [l,y,r])
+  const [EMI, setEMI] = useState(0)
+  var r = LoanData.rate
+  var y = LoanData.year
+  var l = LoanData.loan
+  useEffect(() => {
+    var emi
+    r = r / (12 * 100); // one month interest
+    y = y * 12; // one month period
+    emi = (l * r * Math.pow(1 + r, y)) / (Math.pow(1 + r, y) - 1);
+    setEMI(emi)
+
+    setinterest(emi * 12 * LoanData.year - LoanData.loan);
+  }, [l, y, r])
 
   return (
     <>
@@ -257,11 +262,11 @@ useEffect(() => {
                 <div className="col d-flex flex-column">
                   <div className="row ">
                     <div className="d-flex justify-content-between ">
-                      <h6>Loan Amount</h6> 
+                      <h6>Loan Amount</h6>
                       <div>
-                        <CurrencyInput value={LoanData.loan} 
-                      onChange={(e)=>handleSlider(e,"loan")}
-                         intlConfig={{ locale: 'en-IN', currency: 'INR' }} />
+                        <CurrencyInput value={ LoanData.loan}
+                          onChange={(e) => handleSlider1(e, "loan")}
+                          intlConfig={{ locale: 'en-IN', currency: 'INR' }} />
                       </div>
                     </div>
                   </div>
@@ -270,7 +275,7 @@ useEffect(() => {
                       aria-label="Default"
                       min={0}
                       defaultValue={LoanData.loan}
-                      onChange={(e)=>handleSlider(e,"loan")}
+                      onChange={(e) => handleSlider(e, "loan")}
                       max={20000000}
                       style={{ color: "var(--orangeColor)" }}
                       valueLabelDisplay="auto"
@@ -290,7 +295,7 @@ useEffect(() => {
                       min={1}
                       max={30}
                       defaultValue={LoanData.year}
-                      onChange={(e)=>handleSlider(e,"year")}
+                      onChange={(e) => handleSlider(e, "year")}
                       aria-label="Default"
                       style={{ color: "var(--orangeColor)" }}
                       valueLabelDisplay="auto"
@@ -311,7 +316,7 @@ useEffect(() => {
                       max={15.000000}
                       step={0.1}
                       defaultValue={LoanData.rate}
-                      onChange={(e)=>handleSlider(e,"rate")}
+                      onChange={(e) => handleSlider(e, "rate")}
                       aria-label="Default"
                       style={{ color: "var(--orangeColor)" }}
                       valueLabelDisplay="auto"
@@ -321,16 +326,16 @@ useEffect(() => {
               </div>
             </div>
             <div className="w-100 col ps-0 d-flex flex-column align-items-center ps-lg-5 ps-md-5">
-            <div className="w-75 d-flex flex-column justify-content-center">
-              <Chart 
-                interest={interest}
-                loan={LoanData.loan}
-              />
-              <div className="d-flex justify-content-center my-3 align-items-center">
-                <h6 className="m-0 p-0">Monthly Emi -  </h6>
-                <p className="mx-2">₹ {( Math.trunc(EMI) ).toLocaleString(navigator.language, { minimumFractionDigits: 0 })} </p>
+              <div className="w-75 d-flex flex-column justify-content-center">
+                <Chart
+                  interest={interest}
+                  loan={LoanData.loan}
+                />
+                <div className="d-flex justify-content-center my-3 align-items-center">
+                  <h6 className="m-0 p-0">Monthly Emi -  </h6>
+                  <p className="mx-2">₹ {(Math.trunc(EMI)).toLocaleString(navigator.language, { minimumFractionDigits: 0 })} </p>
+                </div>
               </div>
-            </div>
             </div>
           </div>
         </div>

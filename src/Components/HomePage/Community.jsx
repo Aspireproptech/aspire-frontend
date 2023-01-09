@@ -22,7 +22,7 @@ function Community(prop) {
       name: "Priyanka",
       img1: priyanka,
       description:
-        "Professional and transparent services. Had a great experience. Completed the journey of being a proud a home owner with their help. The team has great knowledge of the real estate sector in Bangalore. Would highly recommend them!",
+        "Professional and transparent services. Had a great experience. Completed the journey of being a proud home owner with their help. The team has great knowledge of the real estate sector in Bangalore. Would highly recommend them!",
     },
     {
       name: "Dhruva",
@@ -92,7 +92,7 @@ function Item(props) {
           <img src={props?.item?.img1} alt="" className="image-resize" />
         </Col>
         <Col style={{ padding: 30 }}>
-          <h3 className="CarouselDate">HomeBuyer</h3>
+          <h3 className="CarouselDate">Home Buyer</h3>
           <h2 style={{ fontSize: 34, fontWeight: 600, color: "#525252" }}>
             {props.item.name}
           </h2>

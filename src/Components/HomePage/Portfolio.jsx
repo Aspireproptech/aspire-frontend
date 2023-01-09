@@ -40,7 +40,7 @@ function Portfolio() {
   return (
     <div>
       <Container className="portfolioContainer">
-        {}
+        { }
 
         <div className="propertyDescription">
           <div className="description">
@@ -89,11 +89,11 @@ function Portfolio() {
           <div className="d-flex flex-lg-row mt-4 flex-md-row flex-column-reverse">
             <Col className="w-100 location-container">
               <Row className="mb-4 mx-1">
-                <Col xs={4} lg={2}>
+                <Col xs={4} lg={4}>
                   <h6>Location</h6>
                 </Col>
-                <Col xs={4} lg={4}>
-                  <h6>Properties</h6>
+                <Col xs={4} lg={6}>
+                  <h6>Projects</h6>
                 </Col>
               </Row>
               <Col className="countryContainer w-100">
@@ -101,9 +101,8 @@ function Portfolio() {
                   <Row
                     key={index}
                     onMouseOver={() => setPortfolioDetail(data)}
-                    className={`${
-                      active === index ? "activeportfolio " : ""
-                    } newhover portfolioItem  `}
+                    className={`${active === index ? "activeportfolio " : ""
+                      } newhover portfolioItem  `}
                     onClick={() => {
                       setactive(index);
                       setPortfolioDetail(data);
