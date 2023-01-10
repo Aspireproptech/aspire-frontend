@@ -34,6 +34,7 @@ import AdsContact from './AdsContact'
 const Ads = () => {
 
 
+
     const [portfolioItems, setportfolioItems] = useState([]);
     const [PortfolioDetail, setPortfolioDetail] = useState();
     const [propertyMap, setPropertyMap] = useState({});
@@ -49,6 +50,7 @@ const Ads = () => {
         setRegister({ ...register, projectName: projName })
         setShow(true);
     }
+
 
     const [register, setRegister] = useState({
         firstName: "",
@@ -173,10 +175,17 @@ const Ads = () => {
     const fetchPortfolio = async () => {
         try {
             const { data } = await FetchPropertyData();
+            var arr = []
             const val = data?.data.filter((e) => e.name !== "SLV Icon")
-            console.log(val)
-            setportfolioItems(val);
-            setPortfolioDetail(data?.data[0]);
+            const seq = ["Speckles Patio", "Sree Urban Pinnacle", "Terraza by SA Lifetsyle", "Pyramid Bilberry", "Amigo Estella", "Pyramid Watsonia", "Aryav Greenfields", "Alpine Pyramid", "Roshan Gardenia"]
+
+            for (let i = 0; i < seq.length; i++) {
+                const newarr = data?.data.filter((e) => e.name.includes(seq[i]))
+                arr.push(newarr[0])
+            }
+            console.log(arr)
+            setportfolioItems(arr);
+            // setPortfolioDetail(data?.data[0]);
 
             console.log(data);
         } catch (error) {
@@ -200,14 +209,14 @@ const Ads = () => {
                 <Row className='align-items-center'>
                     <Col lg={8}>
                         <div className="ad-sec2-left">
-                            <h3>Great Choice of Homes + Great Offers</h3>
+                            <h3>Great Selection Of Projects + Great Offers</h3>
                             <div className="head-underline"></div>
                             <div className="d-flex ad-sec2-list mt-4">
                                 <div className="left-card">
                                     <div className="ad-card-img mb-4">
                                         <i class="fa-solid fa-building"></i>
                                     </div>
-                                    <h5>9 Projects<br /> 16 Days</h5>
+                                    <h5>9 Projects<br /> 12 Days</h5>
                                 </div>
                                 <div className="left-card">
                                     <div className="ad-card-img mb-4">
@@ -267,7 +276,7 @@ const Ads = () => {
             {/* ------------ Tiles ----------- */}
             <Container fluid className='mt-5'>
                 <div className="sec5">
-                    <h3>4 Easy Steps to Buy Your Dream Home-</h3>
+                    <h3>4 Easy Steps to Buy Your Dream Home</h3>
                 </div>
                 <Row className="mt-4">
                     <Col lg={6} className="tiles-margin">
@@ -346,18 +355,52 @@ const Ads = () => {
                                                 </div>
                                                 <div className="d-flex sub-detail-container">
                                                     <BedroomChildIcon className="detail-icon" />
-                                                    <span className='bhk-show'><strong className='d-flex align-items-center'>{data?.unitDetails.map((item, index) => (
-                                                        <p
-                                                            className="mx-1"
-                                                            style={{ width: "0% !important" }}
-                                                            key={index}
-                                                        >
-                                                            {item?.bhk}
-                                                            {index === PortfolioDetail?.unitDetails.length - 1
-                                                                ? null
-                                                                : ","}
-                                                        </p>
-                                                    ))} <p>BHK</p></strong></span>
+                                                    <h4 className='bhk-show'>
+                                                        {
+                                                            data?.unitDetails?.length === 2 ? (
+                                                                <strong className='d-flex align-items-center'>
+                                                                    {data?.unitDetails?.map((item, index) => (
+                                                                        <>
+                                                                            <p className="mx-1" style={{ width: "0% !important" }} key={index}>
+                                                                                {+ item?.bhk}
+                                                                            </p>
+                                                                            {index === data?.unitDetails.length - 1 ? null : " & "}
+                                                                        </>
+                                                                    ))}
+                                                                    <p>BHK</p>
+                                                                </strong>
+                                                            ) : (
+                                                                <strong className='d-flex align-items-center'>
+                                                                    {data?.unitDetails?.map((item, index) => (
+                                                                        <>
+                                                                            <p className="mx-1" style={{ width: "0% !important" }} key={index}>
+                                                                                {item?.bhk}
+                                                                                {index === data?.unitDetails.length - 2 || index === data?.unitDetails.length - 1
+                                                                                    ? null
+                                                                                    : ","}
+                                                                            </p>
+                                                                            {index === data?.unitDetails.length - 2 && "&"}
+                                                                        </>
+                                                                    ))}
+                                                                    <p>BHK</p>
+                                                                </strong>
+                                                            )
+                                                        }
+
+                                                        {/* <strong className='d-flex align-items-center'>
+                                                            {data?.unitDetails.map((item, index) => (
+                                                                <p className="mx-1" style={{ width: "0% !important" }} key={index}>
+                                                                    {item?.bhk}
+                                                                    {index === PortfolioDetail?.unitDetails.length - 1
+                                                                        ? null
+                                                                        : ","}
+                                                                    {index === PortfolioDetail?.unitDetails.length - 1
+                                                                        ? null
+                                                                        : ","}
+                                                                </p>
+                                                            ))} <p>BHK</p>
+                                                        </strong> */}
+                                                    </h4>
                                                 </div>
                                             </div>
                                             <button onClick={() => handleShow(data?.name)} className='view-property-btn'>View Property</button>

@@ -368,7 +368,7 @@ select {
 }
 
 .bhk-show p {
-  font-size: 0.8rem;
+  /* font-size: 0.8rem; */
   margin: 0 5px;
   font-weight: bold;
 }
