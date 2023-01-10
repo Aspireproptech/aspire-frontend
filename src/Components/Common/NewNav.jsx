@@ -10,6 +10,8 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { HashLink } from "react-router-hash-link";
+import HomeFest from "../../Assets/Ads/fest-header.png"
+
 function NewNav() {
   const location = useLocation();
   return (
@@ -23,7 +25,7 @@ function NewNav() {
               </NavLink>
               <NavLink to="/aspire-homefest2023">
                 <div className="fest-img">
-                  Fest
+                  <img src={HomeFest} alt="" />
                 </div>
               </NavLink>
             </Col>
