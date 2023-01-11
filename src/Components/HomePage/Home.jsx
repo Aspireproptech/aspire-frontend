@@ -15,12 +15,14 @@ import BottomFoot from "../Common/BottomFoot";
 import NewNav from "../Common/NewNav";
 import "../../Assets/HomePage/Help.css";
 import "../../Assets/HomePage/portfolio.css";
+import HomeFest from "../Common/HomeFest";
 
 function Home() {
   return (
     <>
       <div className=""></div>
       <HomeBuying />
+      <HomeFest />
       {/* <Help/> */}
       <div className="horrizontal"></div>
       <HomeChoice />

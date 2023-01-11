@@ -13,6 +13,7 @@ import Loader from "../../Components/Common/Loader";
 
 import Portfolio from "../HomePage/Portfolio";
 import { FetchPropertyData } from "../API/Api";
+import HomeFest from "../Common/HomeFest";
 
 function ProjectPortfolio() {
   const [mapview, setmapview] = useState(0);
@@ -48,6 +49,7 @@ function ProjectPortfolio() {
   console.log(portfolioItems);
   return (
     <div>
+
       <div className="property">
         <Container>
           <Row className="project-property-height">
@@ -126,8 +128,8 @@ function ProjectPortfolio() {
                                 <HomeIcon />{" "}
                                 <h4>
                                   {data?.ready
-                                    ? "Ready To move"
-                                    : "Posession Soon"}{" "}
+                                    ? "Ready to Move-In"
+                                    : "Possession Soon"}{" "}
                                 </h4>
                               </span>
                               <span>
@@ -140,7 +142,7 @@ function ProjectPortfolio() {
                           </div>
 
                           <Link to={`/property/${data._id}`}>
-                            <button>View Property</button>
+                            <button>View Projects</button>
                           </Link>
                         </div>
                       </div>

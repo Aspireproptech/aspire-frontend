@@ -20,6 +20,7 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import HomeFest from '../Common/HomeFest';
 
 const style = {
   position: 'absolute',
@@ -95,6 +96,7 @@ const PostData = async()=>{
 console.log(ApplicationData)
   return (
     <>
+    <HomeFest />
       <div className="container-fluid " style={{ backgroundColor: "#ebebeb" }} >
         {/* title */}
         <div className="container d-flex py-5 flex-lg-row flex-column flex-md-row">

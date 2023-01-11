@@ -24,6 +24,7 @@ import Sobha from "../../Assets/Images/Sobha_Ltd_Logo.jpg";
 import speckles from "../../Assets/Images/speckles.jpg";
 
 import img2 from "../../Assets/Images/partner2.gif";
+import HomeFest from "../Common/HomeFest";
 
 function Partner() {
   const labels = [
@@ -60,6 +61,7 @@ function Partner() {
   return (
     <>
       {/* prepare */}
+      <HomeFest />
       <div className="container  partner-front my-lg-5 ">
         <div className="row">
           <div className="col-lg-6  ">

@@ -58,7 +58,7 @@ function Portfolio() {
               <span>
                 <HomeIcon />{" "}
                 <h4>
-                  {PortfolioDetail?.ready ? "Ready To move" : "Posession Soon"}{" "}
+                  {PortfolioDetail?.ready ? "Ready to Move-In" : "Possession Soon"}{" "}
                 </h4>
               </span>{" "}
               <span>
@@ -81,7 +81,7 @@ function Portfolio() {
           </div>
 
           <Link to={`/property/${PortfolioDetail?._id} `}>
-            <button>View Property</button>
+            <button>View Projects</button>
           </Link>
         </div>
 

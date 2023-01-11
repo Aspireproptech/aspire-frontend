@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import moment from "moment";
 import { FetchCategoryBlog } from "../API/Api";
+import HomeFest from "../Common/HomeFest";
 
 function BlogPage() {
   const [blogData, setblogData] = useState([]);
@@ -117,7 +118,7 @@ function BlogPage() {
           </div>
         </Row>
       </Container>
-
+      <HomeFest />
       <div id="knowledgeSeries" className="blogsDiv">
         <h3 className="blogMainHeading">Knowledge Series</h3>
         <Row className="d-flex justify-content-center">

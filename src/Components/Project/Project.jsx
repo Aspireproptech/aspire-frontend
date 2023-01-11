@@ -6,12 +6,14 @@ import AspireAdvantage from './AspireAdvantage'
 import SoldProject from './SoldProject'
 import NewNav from '../Common/NewNav'
 import ProjectPortfolio from './ProjectPortfolio'
+import HomeFest from '../Common/HomeFest'
 
 function Project() {
   return (
     <>
-    <ProjectPortfolio/>
-            {/* <BrowseTop/>
+      <ProjectPortfolio />
+      <HomeFest />
+      {/* <BrowseTop/>
             <AspireAdvantage/>
             <SoldProject/> */}
     </>

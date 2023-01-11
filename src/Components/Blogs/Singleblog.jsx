@@ -31,6 +31,7 @@ import {
   WhatsappShareButton,
   LinkedinShareButton,
 } from "react-share";
+import HomeFest from "../Common/HomeFest";
 
 const percentage = 25;
 
@@ -85,15 +86,15 @@ function Singleblog() {
   console.log(singleblogData);
   return (
     <>
+      <HomeFest />
       <Container
         fluid
         className="Singleblog-container"
         style={{
-          background: `linear-gradient(to right top, rgba(28, 27, 77, 0.7), rgba(28, 27, 77, 0.6), rgba(28, 27, 77, 0.5),rgba(28, 27, 77, 0.5) ,rgba(11, 11, 11,0.5)), url(${
-            singleblogData?.picture || singleblogData?.picture?.length > 0
+          background: `linear-gradient(to right top, rgba(28, 27, 77, 0.7), rgba(28, 27, 77, 0.6), rgba(28, 27, 77, 0.5),rgba(28, 27, 77, 0.5) ,rgba(11, 11, 11,0.5)), url(${singleblogData?.picture || singleblogData?.picture?.length > 0
               ? singleblogData?.picture
               : singleBG
-          }) no-repeat center center/cover`,
+            }) no-repeat center center/cover`,
         }}
       >
         <Container>

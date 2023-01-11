@@ -43,6 +43,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import HomeFest from "../Common/HomeFest";
 function Property() {
   const [propertyData, setpropertyData] = useState({});
   const [unit, setunit] = useState(0);
@@ -200,6 +201,8 @@ function Property() {
         pauseOnHover
         theme="light"
       />
+
+      <HomeFest />
       <Container
         fluid
         className="property-Single "
@@ -476,8 +479,8 @@ function Property() {
                         <CheckBoxIcon />
                         <h5>
                           {propertyData?.ready
-                            ? "Ready to move"
-                            : "Posession Soon"}
+                            ? "Ready to Move-In"
+                            : "Possession Soon"}
                         </h5>
                       </div>
                     </Col>
@@ -866,7 +869,7 @@ function Property() {
                 </Col>
                 <Col xs={9} lg={10}>
                   <h5 className="text-center">
-                    {propertyData?.ready ? "Ready to Move" : "Posession Soon"}
+                    {propertyData?.ready ? "Ready to Move-In" : "Possession Soon"}
                   </h5>
                 </Col>
               </Row>

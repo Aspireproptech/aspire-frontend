@@ -24,6 +24,7 @@ import {
   PostTalkToExpertData,
 } from "../API/Api";
 import { height } from "@mui/system";
+import HomeFest from "../Common/HomeFest";
 
 function Homeloan() {
   const [show1, setShow] = useState(false);
@@ -164,6 +165,7 @@ function Homeloan() {
 
   return (
     <>
+      <HomeFest />
       <div className="container homeloan my-5">
         <div className="row homeloan-head">
           <h3>How it works</h3>

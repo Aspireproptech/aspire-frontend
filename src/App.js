@@ -17,7 +17,6 @@ import BottomFoot from './Components/Common/BottomFoot';
 import Partner from './Components/Partners/Partner';
 import Loader from './Components/Common/Loader';
 import Homeloan from './Components/Homeloan/Homeloan';
-import AOS from 'aos';
 import 'aos/dist/aos.css'
 import ScrollToTop from './Components/Common/ScrollToTop';
 import Ads from './Components/Advertisement/Ads';
@@ -39,7 +38,6 @@ function App() {
 
             <>
               <NewNav />
-              <HomeFest />
               <Routes>
                 <Route exact path='/' element={<Home />} />
                 <Route exact path='/about' element={<About />} />

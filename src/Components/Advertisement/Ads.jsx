@@ -30,6 +30,7 @@ import { storage } from "../../firebase"
 import axios from 'axios';
 import { ref, getDownloadURL, uploadBytesResumable, uploadBytes } from "firebase/storage";
 import AdsContact from './AdsContact'
+import HomeFest from '../Common/HomeFest'
 
 const Ads = () => {
 
@@ -199,6 +200,7 @@ const Ads = () => {
 
     return (
         <>
+            <HomeFest />
             {/*-------- Banner ----------  */}
             <div className="banner-container">
                 <img src={AdsImage} className="ads-banner-web" style={{ width: "100%", height: "100%" }} alt="" />
@@ -351,7 +353,15 @@ const Ads = () => {
                                                 </div>
                                                 <div className="d-flex sub-detail-container">
                                                     <HomeIcon className="detail-icon" />
-                                                    <h4><strong>{data?.ready ? "Ready To move" : "Posession Soon"}</strong></h4>
+                                                    <h4>
+                                                        {
+                                                            data?.name === "Sree Urban Pinnacle" ? (
+                                                                <strong>New Launch</strong>
+                                                            ) : (
+                                                                <strong>{data?.ready ? "Ready to Move-In" : "Possession Soon"}</strong>
+                                                            )
+                                                        }
+                                                    </h4>
                                                 </div>
                                                 <div className="d-flex sub-detail-container">
                                                     <BedroomChildIcon className="detail-icon" />
@@ -403,7 +413,7 @@ const Ads = () => {
                                                     </h4>
                                                 </div>
                                             </div>
-                                            <button onClick={() => handleShow(data?.name)} className='view-property-btn'>View Property</button>
+                                            <button onClick={() => handleShow(data?.name)} className='view-property-btn'>View Projects</button>
                                             <Link to={`/property/${data?._id}`}>
                                             </Link>
                                         </div>
@@ -452,7 +462,7 @@ const Ads = () => {
                     <div className="register-field">
                         <form onSubmit={handleClick}>
                             <input name="firstName" value={register.firstName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} placeholder='First Name' />
-                            <input name="lastName" value={register.lastName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} placeholder='last Name' />
+                            <input name="lastName" value={register.lastName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} placeholder='Last Name' />
                             <select value={register.projectName} onChange={handleChange} name="projectName">
                                 <option selected>{register.projectName}</option>
                                 {

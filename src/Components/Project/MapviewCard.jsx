@@ -45,7 +45,7 @@ function MapviewCard({ data }) {
               </span>
               <span>
                 <HomeIcon />{" "}
-                <h4>{data?.ready ? "Ready To move" : "Posession Soon"} </h4>
+                <h4>{data?.ready ? "Ready to Move-In" : "Possession Soon"} </h4>
               </span>
               <span>
                 {" "}
@@ -55,7 +55,7 @@ function MapviewCard({ data }) {
           </div>
 
           <Link to={`/property/${data._id}`}>
-            <button>View Property</button>
+            <button>View Projects</button>
           </Link>
         </div>
         <div className="col px-lg-4 pt-5 pt-md-0 pt-lg-0">

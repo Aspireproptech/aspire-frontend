@@ -11,6 +11,7 @@ import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import InputBase from "@mui/material/InputBase";
 import IconButton from "@mui/material/IconButton";
+import HomeFest from "../Common/HomeFest";
 
 function Career() {
   const [careerData, setcareerData] = useState([]);
@@ -28,8 +29,7 @@ function Career() {
   const fetchcareerData = async () => {
     try {
       const data = await axios.get(
-        `https://aspire-kappa.vercel.app/cr/getAllCareer?department${
-          Department ? `=${Department}` : ""
+        `https://aspire-kappa.vercel.app/cr/getAllCareer?department${Department ? `=${Department}` : ""
         }&location${Location ? `=${Location}` : ""}  `
       );
       console.log(data);
@@ -61,6 +61,8 @@ function Career() {
   return (
     <>
       <div className="careerPage">
+
+        <HomeFest />
         <Row className="careerRow w-100 d-flex justify-content-center align-items-center">
           <Col xs={11}>
             <div className="careerInputDiv">
@@ -144,33 +146,33 @@ function Career() {
           <Col xs={11}>
             {searchInput.length > 1
               ? filterData?.map((item, index) => {
-                  return (
-                    <CareerCard
-                      key={index}
-                      department={item.department}
-                      description={item.description}
-                      experience={item.experience}
-                      location={item.location}
-                      name={item.name}
-                      salary={item.salary}
-                      id={item._id}
-                    />
-                  );
-                })
+                return (
+                  <CareerCard
+                    key={index}
+                    department={item.department}
+                    description={item.description}
+                    experience={item.experience}
+                    location={item.location}
+                    name={item.name}
+                    salary={item.salary}
+                    id={item._id}
+                  />
+                );
+              })
               : careerData?.map((item, index) => {
-                  return (
-                    <CareerCard
-                      key={index}
-                      department={item.department}
-                      description={item.description}
-                      experience={item.experience}
-                      location={item.location}
-                      name={item.name}
-                      salary={item.salary}
-                      id={item._id}
-                    />
-                  );
-                })}
+                return (
+                  <CareerCard
+                    key={index}
+                    department={item.department}
+                    description={item.description}
+                    experience={item.experience}
+                    location={item.location}
+                    name={item.name}
+                    salary={item.salary}
+                    id={item._id}
+                  />
+                );
+              })}
           </Col>
         </Row>
       </div>

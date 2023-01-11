@@ -13,6 +13,7 @@ import ArrowRightAltIcon from "@mui/icons-material/ArrowRightAlt";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import TimeLine from "./TimeLine";
+import HomeFest from "../Common/HomeFest";
 
 function About() {
   AOS.init();
@@ -22,6 +23,7 @@ function About() {
 
   return (
     <>
+      <HomeFest />
       <div className="container-fluid py-5">
         <div className="row px-4 d-flex about-card-img">
           <div
@@ -69,7 +71,7 @@ function About() {
           </div>
         </div>
       </div>
-{/* 
+      {/* 
       <div className="continer-fluid">
         <div className="about-helpDiv ">
           <div className=" about-helpsection helpSection ">
