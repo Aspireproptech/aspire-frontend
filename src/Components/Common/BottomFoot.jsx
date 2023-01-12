@@ -155,6 +155,20 @@ function BottomFoot() {
                   >
                     Career
                   </Link>
+                  <Link
+                    to="/disclaimer"
+                    className="mt-1 text-decoration-none"
+                    style={{ color: "white" }}
+                  >
+                    Disclaimer
+                  </Link>
+                  <Link
+                    to="/privacy-policy"
+                    className="mt-1 text-decoration-none"
+                    style={{ color: "white" }}
+                  >
+                    Privacy Policy
+                  </Link>
                 </div>
               </Col>
               {/* <Col xs={4} style={{color: "white"}}>

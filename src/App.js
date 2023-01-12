@@ -21,6 +21,9 @@ import 'aos/dist/aos.css'
 import ScrollToTop from './Components/Common/ScrollToTop';
 import Ads from './Components/Advertisement/Ads';
 import HomeFest from './Components/Common/HomeFest';
+import CopyRight from './Components/Common/CopyRight';
+import Disclaimer from './Components/Common/Disclaimer';
+import PrivacyPolicy from './Components/Common/PrivacyPolicy';
 function App() {
   const [loading, setloading] = useState(true)
   useEffect(() => {
@@ -52,8 +55,11 @@ function App() {
                 <Route exact path='/blogs/:id' element={<Singleblog />} />
                 <Route exact path='/projects' element={<Project />} />
                 <Route exact path='/aspire-homefest2023' element={<Ads />} />
+                <Route exact path='/disclaimer' element={<Disclaimer />} />
+                <Route exact path='/privacy-policy' element={<PrivacyPolicy />} />
               </Routes>
               <BottomFoot />
+              <CopyRight />
             </>
           )
         }

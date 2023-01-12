@@ -40,3 +40,19 @@ body {
   width: 100%;
   height: 100%;
 }
+
+.copy-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: rgba(28, 27, 77, 1);
+  color: white;
+}
+
+.privacy-page h3 {
+  color: #303030;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: left;
+}
