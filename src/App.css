@@ -56,3 +56,9 @@ body {
   font-weight: 600;
   text-align: left;
 }
+
+@media (max-width: 420px) {
+  .fest-icon {
+    width: 110px;
+  }
+}
