@@ -639,7 +639,7 @@ function Property() {
                 </Row>
                 <Row>
                   {unitDetails?.map((item, index) => {
-                    return <Singleunit key={index} data={item} />;
+                    return <Singleunit key={index} data={item} propertyData={propertyData} />;
                   })}
                 </Row>
               </Col>

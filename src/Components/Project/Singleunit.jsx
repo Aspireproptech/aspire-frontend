@@ -21,6 +21,7 @@ const style = {
   p: 4,
 };
 function Singleunit(props) {
+
   const [open, setOpen] = React.useState(false);
   const [open1, setOpen1] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -31,6 +32,7 @@ function Singleunit(props) {
     name: "",
     email: "",
     phone: "",
+    property: props.propertyData.name
   });
 
   const [disable, setdisable] = useState(false);
