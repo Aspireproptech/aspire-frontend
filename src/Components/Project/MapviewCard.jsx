@@ -55,7 +55,7 @@ function MapviewCard({ data }) {
           </div>
 
           <Link to={`/property/${data._id}`}>
-            <button>View Projects</button>
+            <button>View Project</button>
           </Link>
         </div>
         <div className="col px-lg-4 pt-5 pt-md-0 pt-lg-0">

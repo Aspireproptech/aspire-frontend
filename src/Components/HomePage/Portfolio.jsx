@@ -81,7 +81,7 @@ function Portfolio() {
           </div>
 
           <Link to={`/property/${PortfolioDetail?._id} `}>
-            <button>View Projects</button>
+            <button>View Project</button>
           </Link>
         </div>
 
