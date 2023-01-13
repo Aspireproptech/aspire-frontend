@@ -112,6 +112,7 @@ function Singleunit(props) {
                   onChange={handleChange}
                   name="phone"
                   aria-describedby="emailHelp"
+                  required
                 />
               </div>
 
@@ -124,6 +125,7 @@ function Singleunit(props) {
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
                   name="email"
+                  required
                 />
               </div>
             </form>

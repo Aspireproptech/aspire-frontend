@@ -110,6 +110,7 @@ function GetInTouch() {
                     onChange={handleChange}
                     name="phone"
                     placeholder="Phone Number"
+                    required
                   />
                 </span>
               </div>

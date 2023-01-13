@@ -261,6 +261,7 @@ function Property() {
                     value={quote?.phone}
                     onChange={handleQuoteChange}
                     name="phone"
+                    required
                   />
                 </span>
                 <span>
@@ -270,6 +271,7 @@ function Property() {
                     value={quote?.email}
                     onChange={handleQuoteChange}
                     name="email"
+                    required
                   />
                 </span>
                 <Row className="property-sideform-btn">
