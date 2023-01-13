@@ -289,7 +289,7 @@ select {
   align-items: center;
   justify-content: center;
   padding: 0 1rem;
-  z-index: 1000;
+  z-index: 10000000000;
   opacity: 1;
   visibility: visible;
   transition: 0.3s;
@@ -564,5 +564,48 @@ select {
   }
   .ads-banner-mob {
     display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-achv {
+    flex-direction: column;
+    z-index: 100000000;
+    width: 100%;
+    position: relative;
+  }
+
+  .boq-service {
+    top: 10%;
+  }
+
+  .modal {
+    z-index: 10000000000000 !important;
+  }
+
+  .register-box h5 {
+    position: relative;
+  }
+
+  .close-cancel-btn {
+    position: absolute;
+    right: 3%;
+    left: 90%;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  .close-pass-btn {
+    color: white;
+    font-size: 22px;
+    position: absolute;
+    bottom: 95%;
+    cursor: pointer;
+    left: 92%;
+  }
+  .download-button {
+    margin-top: 20px !important;
+  }
+  .comming-soon h4 {
+    text-align: center;
   }
 }

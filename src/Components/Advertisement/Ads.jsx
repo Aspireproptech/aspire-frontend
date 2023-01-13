@@ -415,7 +415,7 @@ const Ads = () => {
                                                     </h4>
                                                 </div>
                                             </div>
-                                            <button onClick={() => handleShow(data?.name)} className='view-property-btn'>View Projects</button>
+                                            <button onClick={() => handleShow(data?.name)} className='view-property-btn'>Register Now</button>
                                             <Link to={`/property/${data?._id}`}>
                                             </Link>
                                         </div>
