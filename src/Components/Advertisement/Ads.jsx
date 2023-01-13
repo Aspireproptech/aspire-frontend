@@ -288,7 +288,7 @@ const Ads = () => {
                             <div>
                                 <div className='d-flex align-items-center'>
                                     <i class="fa-solid fa-1"></i>
-                                    <h5>Go to <strong>www.aspireprop.com</strong> and click on the project of your choice.
+                                    <h5>Go to <strong>www.aspireprop.com</strong>, click on the Aspire Home Fest Icon and then click on the project of your choice.
                                     </h5>
                                 </div>
                             </div>
