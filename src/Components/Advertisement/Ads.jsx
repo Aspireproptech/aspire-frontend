@@ -181,10 +181,173 @@ const Ads = () => {
             var arr = []
             const val = data?.data.filter((e) => e.name !== "SLV Icon")
             const seq = ["Speckles Patio", "Sree Urban Pinnacle", "Terraza by SA Lifetsyle", "Pyramid Bilberry", "Amigo Estella", "Pyramid Watsonia", "Aryav Greenfields", "Alpine Pyramid", "Roshan Gardenia"]
+            const offerDetail = [
+                {
+                    head: "Sree Urban Pinnacle",
+                    offer: [
+                        {
+                            line: "Exclusive Launch Price* of Rs.3990/- per sqft (basic rate)"
+                        },
+                        {
+                            line: "50% discount on other charges or EMI Waiver for 15 months"
+                        },
+                        {
+                            line: "EMI Holiday Option from Select Banks and NBFCs"
+                        },
+                        {
+                            line: "Launch Offers applicable on first 21 units only"
+                        },
+                    ]
+                },
+                {
+                    head: "Pyramid Bilberry",
+                    offer: [
+                        {
+                            line: "Waiver of Car Parking Charges worth Rs. 2 Lakhs"
+                        },
+                        {
+                            line: "Flat Discount of Rs.250/- per sqft on basic rate"
+                        },
+                        {
+                            line: "Get a 65” Branded LED for Spot Closures"
+                        },
+                        {
+                            line: "Upto 25% discount on Home Interiors"
+                        },
+                        {
+                            line: "AHF Offers applicable on first 12 units only"
+                        },
+                    ]
+                },
+                {
+                    head: "Pyramid Watsonia",
+                    offer: [
+                        {
+                            line: "Waiver of Car Parking Charges worth Rs. 2 Lakhs"
+                        },
+                        {
+                            line: "Flat Discount of Rs.300/- per sqft on basic rate"
+                        },
+                        {
+                            line: "Get a 65” Branded LED for Spot Closures"
+                        },
+                        {
+                            line: "Upto 25% discount on Home Interiors"
+                        },
+                        {
+                            line: "AHF Offers applicable on first 2 units only"
+                        },
+                    ]
+                },
+                {
+                    head: "Terraza by SA Lifetsyle",
+                    offer: [
+                        {
+                            line: "Flat Discount of Rs.300/- per sqft on basic rate"
+                        },
+                        {
+                            line: "Get 1 Car Park Extra for FREE (worth Rs. 4 Lakhs)"
+                        },
+                        {
+                            line: "Get white goods of your choice worth Rs.2 Lakhs for Spot Closures"
+                        },
+                        {
+                            line: "AHF Offers applicable on first 15 units only"
+                        },
+                    ]
+                },
+                {
+                    head: "Speckles Patio",
+                    offer: [
+                        {
+                            line: "Flat Discount of Rs.300/- per sqft on basic rate"
+                        },
+                        {
+                            line: "Waiver of Car Parking Charges of Rs.4 Lakhs"
+                        },
+                        {
+                            line: "Get white goods of your choice worth Rs.2 Lakhs for Spot Closures"
+                        },
+                        {
+                            line: "AHF Offers applicable on first 6 units only"
+                        },
+                    ]
+                },
+                {
+                    head: "Roshan Gardenia",
+                    offer: [
+                        {
+                            line: "Flat Discount of Rs.350/- per sqft on basic rate"
+                        },
+                        {
+                            line: "Waiver of Car Parking Charges, FRC & PLC Charges"
+                        },
+                        {
+                            line: "Get white goods of your choice worth Rs.2 Lakhs for Spot Closures"
+                        },
+                        {
+                            line: "AHF Offers applicable on first 15 units only"
+                        },
+                    ]
+                },
+                {
+                    head: "Alpine Pyramid",
+                    offer: [
+                        {
+                            line: "Flat Discount of Rs.500/- per sqft on basic rate"
+                        },
+                        {
+                            line: "Complete waiver of all other charges"
+                        },
+                        {
+                            line: "Upto 25% discount on Home Interiors"
+                        },
+                        {
+                            line: "AHF Offers applicable on first 12 units only"
+                        },
+                    ]
+                },
+                {
+                    head: "Amigo Estella",
+                    offer: [
+                        {
+                            line: "Flat Discount of Rs.200/- per sqft on basic rate"
+                        },
+                        {
+                            line: "Attractive offers on Home Loans"
+                        },
+                        {
+                            line: "Upto 25% discount on Home Interiors"
+                        },
+                        {
+                            line: "AHF Offers applicable on first 12 units only"
+                        },
+                    ]
+                },
+                {
+                    head: "Aryav Greenfields",
+                    offer: [
+                        {
+                            line: "Flat Discount of Rs.200/- per sqft on basic rate"
+                        },
+                        {
+                            line: "Reduced charges for Car Parking and Amenities"
+                        },
+                        {
+                            line: "Upto 25% discount on Home Interiors"
+                        },
+                        {
+                            line: "AHF Offers applicable on first 10 units only"
+                        },
+                    ]
+                },
+            ]
 
             for (let i = 0; i < seq.length; i++) {
-                const newarr = data?.data.filter((e) => e.name.includes(seq[i]))
-                arr.push(newarr[0])
+                const newarr = data?.data.find((e) => e.name.includes(seq[i]))
+                const object1 = { ...newarr, offers: offerDetail?.find((e) => e.head.includes(seq[i])) }
+                console.log(object1)
+                arr.push(object1)
             }
             console.log(arr)
             setportfolioItems(arr);
@@ -198,6 +361,7 @@ const Ads = () => {
 
     useEffect(() => {
         fetchPortfolio();
+        document.title = "Aspire Proptech | Home Fest 2023"
     }, []);
 
     return (
@@ -424,8 +588,14 @@ const Ads = () => {
                                         <div className="site-offer">
                                             <h3>Offers</h3>
                                             <div className="comming-soon">
-
-                                                <h4>Coming Soon</h4>
+                                                <ul>
+                                                    {
+                                                        data?.offers?.offer.map((e) => (
+                                                            <li>{e.line}</li>
+                                                        ))
+                                                    }
+                                                </ul>
+                                                {/* <h4>Coming Soon</h4> */}
                                             </div>
                                         </div>
                                     </Col>
