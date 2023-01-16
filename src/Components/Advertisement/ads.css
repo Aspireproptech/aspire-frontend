@@ -266,7 +266,7 @@ select {
   height: 16.5rem;
   background-color: #f47e20;
   color: white;
-  padding: 10px 20px;
+  padding: 20px 20px;
   border-radius: 10px;
 }
 
@@ -377,9 +377,9 @@ select {
   margin: auto 0;
   /* height: 70%; */
   display: flex;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 .comming-soon ul {
   padding-left: 15px;
@@ -387,7 +387,7 @@ select {
 .comming-soon ul li {
   line-height: 25px;
   /* font-size: 16px; */
-  font-weight: 500;
+  font-weight: 700;
 }
 .comming-soon h4 {
   font-size: 41px;
@@ -421,8 +421,12 @@ select {
     height: 40px;
   }
   .site-details {
-    padding: 35px 30px;
+    padding: 20px 30px;
     font-size: 18px;
+  }
+  .comming-soon ul li {
+    line-height: 40px;
+    font-size: 20px;
   }
 }
 
@@ -453,13 +457,12 @@ select {
     height: 40px;
   }
   .site-details {
-    padding: 35px 30px;
+    padding: 20px 30px;
     font-size: 18px;
   }
   .comming-soon ul li {
     line-height: 35px;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 17px;
   }
 }
 
@@ -490,13 +493,12 @@ select {
     height: 40px;
   }
   .site-details {
-    padding: 25px 30px;
+    padding: 20px 30px;
     font-size: 18px;
   }
   .comming-soon ul li {
     line-height: 30px;
-    /* font-size: 16px; */
-    font-weight: 500;
+    font-size: 16px;
   }
 }
 
@@ -511,7 +513,7 @@ select {
     height: 16.5rem;
   }
   .site-details {
-    padding: 15px 30px;
+    padding: 20px 30px;
     font-size: 15px;
   }
   .view-property-btn {
@@ -521,21 +523,12 @@ select {
   .sub-detail-container h4 {
     font-size: 14px;
   }
-  .comming-soon {
-    margin: auto 0;
-    /* height: 70%; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 15px;
-  }
   .comming-soon ul {
     padding-left: 15px;
   }
   .comming-soon ul li {
     line-height: 25px;
-    font-size: 16px;
-    font-weight: 500;
+    font-size: 15px;
   }
 }
 
