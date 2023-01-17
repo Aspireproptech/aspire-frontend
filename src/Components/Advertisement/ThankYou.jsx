@@ -114,18 +114,18 @@ const ThankYou = ({ festinquiry, setFestInquiry }) => {
                             </div>
                         </div>
                     </Col>
-                    <Col lg={7} style={{ height: "100%" }}>
-                        <div className="thank-you-desc">
-                            <h3>Thank You for Registering <br /> Aspire Home Fest</h3>
-                            <div className='thank-you-message'>
-                                <p>We have recived you request.</p>
-                                <p>we will reach you immediately.</p>
-                            </div>
-                            <div onClick={handleDownload} className="pass-download-btn">
-                                <span className='download-message'>Please download your Priority Pass</span>
-                                <button> <i class="fa-solid fa-download"></i> Download</button>
-                            </div>
+                    <Col lg={7} className="thank-you-desc">
+
+                        <h3>Thank You for Registering <br /> Aspire Home Fest</h3>
+                        <div className='thank-you-message'>
+                            <p>We have recived you request.</p>
+                            <p>we will reach you immediately.</p>
                         </div>
+                        <div onClick={handleDownload} className="pass-download-btn">
+                            <span className='download-message'>Please download your Priority Pass</span>
+                            <button> <i class="fa-solid fa-download"></i> Download</button>
+                        </div>
+
                     </Col>
                 </Row>
             </div>
