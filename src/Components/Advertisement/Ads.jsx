@@ -249,7 +249,7 @@ const Ads = () => {
                             line: "Get 1 Car Park Extra for FREE (worth Rs. 4 Lakhs)"
                         },
                         {
-                            line: "Get white goods of your choice worth Rs.2 Lakhs for Spot Closures"
+                            line: "Get a discount of Rs.2 Lakhs for Spot Closures"
                         },
                         {
                             line: "AHF Offers applicable on first 15 units only"
