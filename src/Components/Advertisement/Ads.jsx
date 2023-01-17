@@ -11,7 +11,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 import HomeIcon from "@mui/icons-material/Home";
 import BedroomChildIcon from "@mui/icons-material/BedroomChild";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FetchPropertyData, ImageEmailData, RegisterData } from "../API/Api";
 
 
@@ -32,7 +32,7 @@ import { ref, getDownloadURL, uploadBytesResumable, uploadBytes } from "firebase
 import AdsContact from './AdsContact'
 import HomeFest from '../Common/HomeFest'
 
-const Ads = () => {
+const Ads = ({ festinquiry, setFestInquiry }) => {
 
 
 
@@ -44,6 +44,7 @@ const Ads = () => {
     const [passSeq, setPassSeq] = useState({})
     const [projectImg, setProjectImg] = useState()
     const [projectName, setProjectName] = useState()
+    const navigate = useNavigate()
 
     const handleClose = () => setShow(false);
     const handleShow = (projName) => {
@@ -76,90 +77,11 @@ const Ads = () => {
                 lastName: register.lastName,
                 projectName: register.projectName,
                 email: register.email,
-                number: register.phone
+                phone: register.phone
             };
-
-            if (register.projectName.toLowerCase().includes("speckles patio")) {
-                setProjectImg(PatioPass)
-            } else if (register.projectName.toLowerCase().includes("roshan gardenia")) {
-                setProjectImg(RoashanPass)
-            } else if (register.projectName.toLowerCase().includes("terraza")) {
-                setProjectImg(TerrazaPass)
-            } else if (register.projectName.toLowerCase().includes("pyramid bilberry")) {
-                setProjectImg(BilberryPass)
-            } else if (register.projectName.toLowerCase().includes("greenfields")) {
-                setProjectImg(GreenFieldsPass)
-            } else if (register.projectName.toLowerCase().includes("amigo estella")) {
-                setProjectImg(EstellaPass)
-            } else if (register.projectName.toLowerCase().includes("alpine pyramid")) {
-                setProjectImg(AlpinePass)
-            } else if (register.projectName.toLowerCase().includes("watsonia")) {
-                setProjectImg(WatsoniaPass)
-            } else if (register.projectName.toLowerCase().includes("pinnacle")) {
-                setProjectImg(PinnaclePass)
-            } else {
-                setProjectImg(PinnaclePass)
-            }
             const data = await RegisterData(payload);
-            setPassSeq(data)
-            setShow(false)
-            setShowPass(true)
-            setTimeout(() => {
-                handleDownload()
-            }, 2000);
-        } catch (error) {
-            console.log(error);
-        }
-        console.log(register)
-    }
-
-    function dataURLtoFile(dataurl, filename) {
-
-        var arr = dataurl.split(','),
-            mime = arr[0].match(/:(.*?);/)[1],
-            bstr = atob(arr[1]),
-            n = bstr.length,
-            u8arr = new Uint8Array(n);
-
-        while (n--) {
-            u8arr[n] = bstr.charCodeAt(n);
-        }
-
-        return new File([u8arr], filename, { type: mime });
-    }
-
-    const handleDownload = () => {
-        var nodePass = document.getElementById("pass")
-        html2canvas(nodePass).then(async function (canvas) {
-            var img = canvas.toDataURL(`image/png`);
-            var link = document.createElement("a");
-            link.download = "pass." + "png";
-            link.href = img;
-            var file = dataURLtoFile(link.href, 'pass.png');
-            // const storageRef = ref(storage, `files/pass.png`);
-
-            // uploadBytes(storageRef, file).then((snapshot) => {
-            //     console.log('Uploaded a blob or file!');
-            // });
-            // console.log(file);
-
-            const formData = new FormData()
-            formData.append('image', file)
-            formData.append('email', register.email)
-            formData.append('phone', register.phone)
-            formData.append('project', register.projectName)
-            formData.append('name', register.firstName + " " + register.lastName || "")
-
-            const config = {
-                headers: {
-                    'content-type': 'multipart/form-data',
-                },
-            };
-
-            axios.post("https://aspire-kappa.vercel.app/cn/emailpass", formData, config).then((response) => {
-                console.log(response)
-            });
-
+            setFestInquiry({ festCustomer: payload, CustomerSeq: data.data.data })
+            navigate("/thank-you")
             setRegister({
                 firstName: "",
                 lastName: "",
@@ -167,14 +89,12 @@ const Ads = () => {
                 phone: "",
                 email: ""
             })
-            link.click();
-            // const data = await ImageEmailData(payload);
-            // setPassSeq(data)
-            // setShowPass(true)
-            // console.log(data)
-
-        });
+        } catch (error) {
+            console.log(error);
+        }
     }
+
+
     const fetchPortfolio = async () => {
         try {
             const { data } = await FetchPropertyData();
@@ -407,8 +327,8 @@ const Ads = () => {
                             <h5>Register for HOME FEST</h5>
                             <div className="register-field">
                                 <form onSubmit={handleClick}>
-                                    <input name="firstName" value={register.firstName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} placeholder='First Name' />
-                                    <input name="lastName" value={register.lastName} type="text" pattern="[A-Za-z]{2,30}" title="Only Character" onChange={handleChange} placeholder='Last Name' />
+                                    <input name="firstName" value={register.firstName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} required placeholder='First Name*' />
+                                    <input name="lastName" value={register.lastName} type="text" pattern="[A-Za-z]{2,30}" title="Only Character" onChange={handleChange} required placeholder='Last Name*' />
                                     <select value={register.projectName} onChange={handleChange} name="projectName">
                                         <option selected>Please choose project name</option>
                                         {
@@ -608,7 +528,7 @@ const Ads = () => {
             {/* --------------------- Contact Us ------------- */}
             <AdsContact />
 
-            {
+            {/* {
                 showPass && (
                     <div class="boq-service">
                         <div className="card-achv box-shadow justify-center box-shadow shadow-2xl">
@@ -626,15 +546,15 @@ const Ads = () => {
                     </div>
 
                 )
-            }
+            } */}
 
             <Modal show={show} onHide={handleClose} centered>
                 <div className="register-box">
                     <h5>Register for HOME FEST<i onClick={handleClose} class="fa-solid fa-circle-xmark close-cancel-btn"></i></h5>
                     <div className="register-field">
                         <form onSubmit={handleClick}>
-                            <input name="firstName" value={register.firstName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} placeholder='First Name' />
-                            <input name="lastName" value={register.lastName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} placeholder='Last Name' />
+                            <input name="firstName" value={register.firstName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} required placeholder='First Name*' />
+                            <input name="lastName" value={register.lastName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} required placeholder='Last Name*' />
                             <select value={register.projectName} onChange={handleChange} name="projectName">
                                 <option selected>{register.projectName}</option>
                                 {

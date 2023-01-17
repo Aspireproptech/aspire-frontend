@@ -4,7 +4,7 @@ import NewNav from "../Common/NewNav";
 import { Col, Container, Row } from "react-bootstrap";
 import "../../Assets/Project/property.css";
 import p1 from "../../Assets/Images/p1.svg";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PaidIcon from "@mui/icons-material/Paid";
 import PushPinIcon from "@mui/icons-material/PushPin";
@@ -27,6 +27,7 @@ import {
   FetchSinglePropertyData,
   FetchUSP,
   PostQuote,
+  RegisterData,
 } from "../API/Api";
 import MapWithAMarker from "../Contact/Map";
 import ScrollTrigger from "react-scroll-trigger";
@@ -44,7 +45,8 @@ import { Carousel } from "react-responsive-carousel";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import HomeFest from "../Common/HomeFest";
-function Property() {
+
+function Property({ festinquiry, setFestInquiry }) {
   const [propertyData, setpropertyData] = useState({});
   const [unit, setunit] = useState(0);
   const [showModal, setshowModal] = useState(true);
@@ -58,6 +60,8 @@ function Property() {
     email: "",
     property: pName,
   });
+
+  const navigate = useNavigate()
 
   console.log(pName);
   useEffect(() => {
@@ -102,8 +106,8 @@ function Property() {
       console.log(error);
     }
   };
-  // api call
 
+  // api call
   const fetchsingleproperty = async () => {
     try {
       const singleid = {
@@ -187,6 +191,51 @@ function Property() {
     }
   };
 
+  // Home Fest Register
+  const [register, setRegister] = useState({
+    firstName: "",
+    lastName: "",
+    projectName: propertyData?.name,
+    phone: "",
+    email: ""
+  });
+
+  const [showFest, setShowFest] = useState(false)
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setRegister({ ...register, [name]: value })
+  }
+
+  const handleCloseFest = () => {
+    setShowFest(false)
+  }
+
+  const handleClick = async (e) => {
+    e.preventDefault()
+    try {
+      const payload = {
+        firstName: register.firstName,
+        lastName: register.lastName,
+        projectName: propertyData?.name,
+        email: register.email,
+        phone: register.phone
+      };
+      const data = await RegisterData(payload);
+      setFestInquiry({ festCustomer: payload, CustomerSeq: data.data.data })
+      navigate("/thank-you")
+      setRegister({
+        ...register,
+        firstName: "",
+        lastName: "",
+        phone: "",
+        email: ""
+      })
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
     <>
       <ToastContainer
@@ -210,12 +259,12 @@ function Property() {
       >
         {/* responsive icon */}
 
-        <button
+        {/* <button
           onClick={handleShowsideform}
           className="responsive-sideform-btn btn"
         >
           Quote
-        </button>
+        </button> */}
 
         <Modal
           show={showSideform}
@@ -282,6 +331,46 @@ function Property() {
           </Modal.Body>
         </Modal>
 
+        <button onClick={() => setShowFest(true)} className="responsive-sideform-btn btn">
+          Home Fest
+        </button>
+
+        <Modal show={showFest} onHide={handleCloseFest} centered>
+          <div className="register-box">
+            <h5>Register for HOME FEST<i onClick={handleCloseFest} class="fa-solid fa-circle-xmark close-cancel-btn"></i></h5>
+            <div className="register-field">
+              <form onSubmit={handleClick}>
+                <input name="firstName" value={register.firstName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} required placeholder='First Name*' />
+                <input name="lastName" value={register.lastName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} required placeholder='Last Name*' />
+                <input value={propertyData?.name} type="text" />
+                <input type="text" value={register.phone} name="phone" required pattern="[0-9]{10}" title='Enter Valid Phone No.' onChange={handleChange} placeholder='Phone Number *' />
+                <input type="text" value={register.email} name="email" required onChange={handleChange} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter Valid Email" placeholder='Email *' />
+                <p>I Agree to the <a href="">Terms & Conditions.</a></p>
+                <div className="register-btn ">
+                  <button>Register</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </Modal>
+
+        <div className="property-sideform register-box">
+          <h5>Register for HOME FEST</h5>
+          <div className="register-field">
+            <form onSubmit={handleClick}>
+              <input name="firstName" value={register.firstName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" required onChange={handleChange} placeholder='First Name*' />
+              <input name="lastName" value={register.lastName} type="text" pattern="[A-Za-z]{2,30}" title="Only Character" required onChange={handleChange} placeholder='Last Name*' />
+              <input value={propertyData?.name} type="text" />
+              <input type="phone" value={register.phone} maxLength={10} pattern="[0-9]{10}" title='Enter Valid Phone No.' name="phone" required onChange={handleChange} placeholder='Phone Number*' />
+              <input type="email" value={register.email} name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter Valid Email" required onChange={handleChange} placeholder='Email *' />
+              <p>I Agree to the <a href="">Terms & Conditions.</a></p>
+              <div className="register-btn ">
+                <button>Register</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        {/* 
         <div className="property-sideform p-4 col-lg-4">
           <div className="property-side-form-sticky">
             <Row className=" property-sideform-head-container">
@@ -335,7 +424,7 @@ function Property() {
               </Row>
             </Row>
           </div>
-        </div>
+        </div> */}
 
         <div className="property-block">
           <Container className="d-flex mb-3 ">
@@ -501,7 +590,7 @@ function Property() {
                     __html: propertyData?.description,
                   }}
                   className="px-4 mb-4"
-                  style={{ wordWrap: "breakWord" }}
+                  style={{ wordWrap: "break-word" }}
                 ></div>
 
                 <a

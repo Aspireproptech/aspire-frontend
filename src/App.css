@@ -57,8 +57,143 @@ body {
   text-align: left;
 }
 
+.thank-you-container {
+  padding: 40px;
+}
+
+.thank-you-row {
+  padding: 30px;
+  background: #13184f;
+  border-radius: 10px;
+}
+
+.pass-img {
+  width: 55%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.thank-you-desc {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 100%;
+}
+
+.thank-you-desc h3 {
+  font-size: 40px;
+  color: white;
+  font-weight: 500;
+  line-height: 60px;
+  text-align: center;
+}
+
+.thank-you-message {
+}
+.thank-you-message p {
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+.pass-download-btn {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pass-download-btn button {
+  width: 20%;
+  height: 40px;
+  background-color: #f47e20;
+  color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+.pass-download-btn button:hover {
+  background-color: white;
+  color: #f47e20;
+}
+
+.download-message {
+  color: #f47e20;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+@media (max-width: 950px) {
+  .thank-you-desc {
+    margin-top: 40px;
+  }
+  .thank-you-message {
+    margin: 30px 0;
+  }
+  .user-id h3 {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 820px) {
+  .pass-img {
+    width: 80%;
+  }
+  .thank-you-desc {
+    margin-top: 25px;
+  }
+  .thank-you-desc h3 {
+    font-size: 25px;
+    line-height: 40px;
+  }
+  .thank-you-message {
+    margin: 25px 0;
+  }
+  .pass-download-btn button {
+    width: 50%;
+  }
+  .thank-you-message p {
+    font-size: 16px;
+  }
+}
+
 @media (max-width: 420px) {
   .fest-icon {
     width: 110px;
+  }
+  .user-id h3 {
+    font-size: 25px;
+  }
+}
+
+@media (max-width: 360px) {
+  .user-id {
+    bottom: 5px;
+  }
+  .user-id h3 {
+    font-size: 20px;
+  }
+  .thank-you-desc h3 {
+    font-size: 18px;
+    line-height: 30px;
+  }
+  .thank-you-message p {
+    font-size: 12px;
+  }
+  .download-message {
+    margin-bottom: 15px;
+    font-size: 11px;
+  }
+  .pass-download-btn button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 290px) {
+  .user-id {
+    bottom: 0px !important;
+  }
+  .user-id h3 {
+    font-size: 16px;
   }
 }

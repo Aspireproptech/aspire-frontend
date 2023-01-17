@@ -350,8 +350,8 @@ select {
 .user-id {
   position: absolute;
   color: white;
-  top: 24rem;
-  left: 4rem;
+  bottom: 1rem;
+  left: 2rem;
 }
 
 .ads-property-img {
