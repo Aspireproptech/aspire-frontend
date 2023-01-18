@@ -64,7 +64,7 @@ const ThankYou = ({ festinquiry, setFestInquiry }) => {
             const formData = new FormData()
             formData.append('image', file)
             formData.append('email', festCustomer.email)
-            formData.append('phone', festCustomer.phone)
+            formData.append('phone', festCustomer.number)
             formData.append('project', festCustomer.projectName)
             formData.append('name', festCustomer.firstName + " " + festCustomer.lastName || "")
 

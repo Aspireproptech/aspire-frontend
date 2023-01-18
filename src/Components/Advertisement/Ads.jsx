@@ -77,7 +77,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
                 lastName: register.lastName,
                 projectName: register.projectName,
                 email: register.email,
-                phone: register.phone
+                number: register.phone
             };
             const data = await RegisterData(payload);
             setFestInquiry({ festCustomer: payload, CustomerSeq: data.data.data })
@@ -129,7 +129,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
                             line: "Flat Discount of Rs.250/- per sqft on basic rate"
                         },
                         {
-                            line: "Get a 65” Branded LED for Spot Closures"
+                            line: "Get a 65” Branded LED TV for Spot Closures"
                         },
                         {
                             line: "Upto 25% discount on Home Interiors"
@@ -149,7 +149,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
                             line: "Flat Discount of Rs.300/- per sqft on basic rate"
                         },
                         {
-                            line: "Get a 65” Branded LED for Spot Closures"
+                            line: "Get a 65” Branded LED TV for Spot Closures"
                         },
                         {
                             line: "Upto 25% discount on Home Interiors"
@@ -328,7 +328,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
                             <div className="register-field">
                                 <form onSubmit={handleClick}>
                                     <input name="firstName" value={register.firstName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} required placeholder='First Name*' />
-                                    <input name="lastName" value={register.lastName} type="text" pattern="[A-Za-z]{2,30}" title="Only Character" onChange={handleChange} required placeholder='Last Name*' />
+                                    <input name="lastName" value={register.lastName} type="text" pattern="[A-Za-z]{2,30}" title="Only Character" onChange={handleChange} placeholder='Last Name' />
                                     <select value={register.projectName} onChange={handleChange} name="projectName">
                                         <option selected>Please choose project name</option>
                                         {

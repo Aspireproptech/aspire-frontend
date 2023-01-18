@@ -219,7 +219,7 @@ function Property({ festinquiry, setFestInquiry }) {
         lastName: register.lastName,
         projectName: propertyData?.name,
         email: register.email,
-        phone: register.phone
+        number: register.phone
       };
       const data = await RegisterData(payload);
       setFestInquiry({ festCustomer: payload, CustomerSeq: data.data.data })
@@ -340,8 +340,8 @@ function Property({ festinquiry, setFestInquiry }) {
             <h5>Register for HOME FEST<i onClick={handleCloseFest} class="fa-solid fa-circle-xmark close-cancel-btn"></i></h5>
             <div className="register-field">
               <form onSubmit={handleClick}>
-                <input name="firstName" value={register.firstName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} required placeholder='First Name*' />
-                <input name="lastName" value={register.lastName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} required placeholder='Last Name*' />
+                <input name="firstName" value={register.firstName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} required placeholder='First Name *' />
+                <input name="lastName" value={register.lastName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} placeholder='Last Name' />
                 <input value={propertyData?.name} type="text" />
                 <input type="text" value={register.phone} name="phone" required pattern="[0-9]{10}" title='Enter Valid Phone No.' onChange={handleChange} placeholder='Phone Number *' />
                 <input type="text" value={register.email} name="email" required onChange={handleChange} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter Valid Email" placeholder='Email *' />
@@ -359,7 +359,7 @@ function Property({ festinquiry, setFestInquiry }) {
           <div className="register-field">
             <form onSubmit={handleClick}>
               <input name="firstName" value={register.firstName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" required onChange={handleChange} placeholder='First Name*' />
-              <input name="lastName" value={register.lastName} type="text" pattern="[A-Za-z]{2,30}" title="Only Character" required onChange={handleChange} placeholder='Last Name*' />
+              <input name="lastName" value={register.lastName} type="text" pattern="[A-Za-z]{2,30}" title="Only Character" onChange={handleChange} placeholder='Last Name ' />
               <input value={propertyData?.name} type="text" />
               <input type="phone" value={register.phone} maxLength={10} pattern="[0-9]{10}" title='Enter Valid Phone No.' name="phone" required onChange={handleChange} placeholder='Phone Number*' />
               <input type="email" value={register.email} name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter Valid Email" required onChange={handleChange} placeholder='Email *' />
