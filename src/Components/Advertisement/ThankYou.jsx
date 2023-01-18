@@ -119,7 +119,7 @@ const ThankYou = ({ festinquiry, setFestInquiry }) => {
                         <h3>Thank You for Registering <br /> For Aspire Home Fest 2023</h3>
                         <div className='thank-you-message'>
                             <p>Please save your Priority Pass and show it at the time of your Site Visit.</p>
-                            <p>Feel free to reach to us for any queries. </p>
+                            <p>Feel free to reach out to us for any queries. </p>
                             <div className="d-flex justify-content-center align-items-center" style={{ flexDirection: "column" }}>
                                 <span className='text-white m-1'>Call : 98866 60229</span>
                                 <span className='text-white m-1'>Email : hello@aspireprop.com</span>
