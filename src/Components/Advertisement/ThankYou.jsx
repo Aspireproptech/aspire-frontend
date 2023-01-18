@@ -116,13 +116,17 @@ const ThankYou = ({ festinquiry, setFestInquiry }) => {
                     </Col>
                     <Col lg={7} className="thank-you-desc">
 
-                        <h3>Thank You for Registering <br /> Aspire Home Fest</h3>
+                        <h3>Thank You for Registering <br /> For Aspire Home Fest 2023</h3>
                         <div className='thank-you-message'>
-                            <p>We have recived you request.</p>
-                            <p>we will reach you immediately.</p>
+                            <p>Please save your Priority Pass and show it at the time of your Site Visit.</p>
+                            <p>Feel free to reach to us for any queries. </p>
+                            <div className="d-flex justify-content-center align-items-center" style={{ flexDirection: "column" }}>
+                                <span className='text-white m-1'>Call : 98866 60229</span>
+                                <span className='text-white m-1'>Email : hello@aspireprop.com</span>
+                            </div>
                         </div>
                         <div onClick={handleDownload} className="pass-download-btn">
-                            <span className='download-message'>Please download your Priority Pass</span>
+                            <span className='download-message'>Download your Priority Pass here</span>
                             <button> <i class="fa-solid fa-download"></i> Download</button>
                         </div>
 
