@@ -40,8 +40,6 @@ const ThankYou = ({ festinquiry, setFestInquiry }) => {
             setProjectImg(WatsoniaPass)
         } else if (festCustomer.projectName.toLowerCase().includes("pinnacle")) {
             setProjectImg(PinnaclePass)
-        } else {
-            setProjectImg(PinnaclePass)
         }
         setTimeout(() => {
             if (festinquiry) {

@@ -342,7 +342,7 @@ function Property({ festinquiry, setFestInquiry }) {
               <form onSubmit={handleClick}>
                 <input name="firstName" value={register.firstName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} required placeholder='First Name *' />
                 <input name="lastName" value={register.lastName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} placeholder='Last Name' />
-                <input value={propertyData?.name} type="text" />
+                <input value={propertyData?.name} readOnly type="text" />
                 <input type="text" value={register.phone} name="phone" required pattern="[0-9]{10}" title='Enter Valid Phone No.' onChange={handleChange} placeholder='Phone Number *' />
                 <input type="text" value={register.email} name="email" required onChange={handleChange} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter Valid Email" placeholder='Email *' />
                 <p>I Agree to the <a href="">Terms & Conditions.</a></p>
