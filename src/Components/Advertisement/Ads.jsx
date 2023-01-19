@@ -554,7 +554,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
                     <div className="register-field">
                         <form onSubmit={handleClick}>
                             <input name="firstName" value={register.firstName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} required placeholder='First Name*' />
-                            <input name="lastName" value={register.lastName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} required placeholder='Last Name*' />
+                            <input name="lastName" value={register.lastName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} placeholder='Last Name ' />
                             <input value={register.projectName} readOnly type="text" />
                             {/* <select value={register.projectName} onChange={handleChange} name="projectName">
                                 <option selected>{register.projectName}</option>

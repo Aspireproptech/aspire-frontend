@@ -29,7 +29,7 @@ function Career() {
   const fetchcareerData = async () => {
     try {
       const data = await axios.get(
-        `https://aspire-kappa.vercel.app/cr/getAllCareer?department${Department ? `=${Department}` : ""
+        `http://15.206.116.38:5000/cr/getAllCareer?department${Department ? `=${Department}` : ""
         }&location${Location ? `=${Location}` : ""}  `
       );
       console.log(data);

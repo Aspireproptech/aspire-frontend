@@ -1,8 +1,12 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://aspire-kappa.vercel.app/",
+  baseURL: "http://15.206.116.38:5000/",
 });
+
+// const API = axios.create({
+//   baseURL: "https://aspire-kappa.vercel.app/",
+// });
 
 export const FetchPropertyData = () => API.get(`/prop/getAllProperty`);
 export const FetchUSP = (data) => API.post(`/prop/getUsp`, data);
