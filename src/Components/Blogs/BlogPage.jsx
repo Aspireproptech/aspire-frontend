@@ -25,7 +25,7 @@ function BlogPage() {
   const fetchblogData = async () => {
     try {
       const data = await axios.get(
-        "http://15.206.116.38:5000/blog/getAllBlog"
+        "https://aspire-kappa.vercel.app/blog/getAllBlog"
       );
       setblogData(data?.data?.data);
       console.log(data?.data?.data);

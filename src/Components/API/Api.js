@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://15.206.116.38:5000/",
+  baseURL: "https://aspire-kappa.vercel.app/",
 });
 
 // const API = axios.create({

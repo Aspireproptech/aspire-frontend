@@ -72,7 +72,7 @@ const ThankYou = ({ festinquiry, setFestInquiry }) => {
                 },
             };
 
-            axios.post("http://15.206.116.38:5000/cn/emailpass", formData, config).then((response) => {
+            axios.post("https://aspire-kappa.vercel.app/cn/emailpass", formData, config).then((response) => {
                 console.log(response)
             });
 
