@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { createElement, useEffect, useState } from 'react'
 import html2canvas from "html2canvas";
 import { Col, Container, Row, Modal } from 'react-bootstrap'
 
@@ -99,6 +99,10 @@ const ThankYou = ({ festinquiry, setFestInquiry }) => {
         priorityPass()
     }, [])
 
+    const tagManagerArgs = {
+        gtmId: 'GTM-5JW7F9W'
+    }
+    TagManager.initialize(tagManagerArgs)
 
     return (
         <>
