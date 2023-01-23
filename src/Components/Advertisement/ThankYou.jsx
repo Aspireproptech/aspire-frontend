@@ -13,6 +13,7 @@ import PinnaclePass from "../../Assets/Ads/pinnacle-pass.png"
 import WatsoniaPass from "../../Assets/Ads/watsonia-pass.png"
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import TagManager from 'react-gtm-module'
 
 const ThankYou = ({ festinquiry, setFestInquiry }) => {
 
