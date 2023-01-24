@@ -45,7 +45,7 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  const [festinquiry, setFestInquiry] = useState()
+  const [festinquiry, setFestInquiry] = useState({})
 
   return (
     <BrowserRouter>
@@ -56,7 +56,6 @@ function App() {
 
             <>
               <NewNav />
-              <RedirectHome festinquiry={festinquiry} />
               <Routes>
                 <Route exact path='/' element={<Home />} />
                 <Route exact path='/about' element={<About />} />
@@ -73,9 +72,7 @@ function App() {
                 <Route exact path='/aspire-homefest2023' element={<Ads festinquiry={festinquiry} setFestInquiry={setFestInquiry} />} />
                 <Route exact path='/disclaimer' element={<Disclaimer />} />
                 <Route exact path='/privacy-policy' element={<PrivacyPolicy />} />
-                {
-                  festinquiry && <Route exact path='/thank-you' element={<ThankYou festinquiry={festinquiry} setFestInquiry={setFestInquiry} />} />
-                }
+                <Route exact path='/thank-you' element={<ThankYou festinquiry={festinquiry} setFestInquiry={setFestInquiry} />} />
               </Routes>
               <BottomFoot />
               <CopyRight />

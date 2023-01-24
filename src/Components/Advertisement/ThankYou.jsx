@@ -20,26 +20,25 @@ const ThankYou = ({ festinquiry, setFestInquiry }) => {
     const [projectImg, setProjectImg] = useState()
     const { festCustomer, CustomerSeq } = festinquiry
     const navigate = useNavigate()
-    console.log(festCustomer)
 
     const priorityPass = () => {
         if (festCustomer.projectName.toLowerCase().includes("speckles patio")) {
             setProjectImg(PatioPass)
-        } else if (festCustomer.projectName.toLowerCase().includes("roshan gardenia")) {
+        } else if (festCustomer?.projectName.toLowerCase().includes("roshan gardenia")) {
             setProjectImg(RoashanPass)
-        } else if (festCustomer.projectName.toLowerCase().includes("terraza")) {
+        } else if (festCustomer?.projectName.toLowerCase().includes("terraza")) {
             setProjectImg(TerrazaPass)
-        } else if (festCustomer.projectName.toLowerCase().includes("pyramid bilberry")) {
+        } else if (festCustomer?.projectName.toLowerCase().includes("pyramid bilberry")) {
             setProjectImg(BilberryPass)
-        } else if (festCustomer.projectName.toLowerCase().includes("greenfields")) {
+        } else if (festCustomer?.projectName.toLowerCase().includes("greenfields")) {
             setProjectImg(GreenFieldsPass)
-        } else if (festCustomer.projectName.toLowerCase().includes("amigo estella")) {
+        } else if (festCustomer?.projectName.toLowerCase().includes("amigo estella")) {
             setProjectImg(EstellaPass)
-        } else if (festCustomer.projectName.toLowerCase().includes("alpine pyramid")) {
+        } else if (festCustomer?.projectName.toLowerCase().includes("alpine pyramid")) {
             setProjectImg(AlpinePass)
-        } else if (festCustomer.projectName.toLowerCase().includes("watsonia")) {
+        } else if (festCustomer?.projectName.toLowerCase().includes("watsonia")) {
             setProjectImg(WatsoniaPass)
-        } else if (festCustomer.projectName.toLowerCase().includes("pinnacle")) {
+        } else if (festCustomer?.projectName.toLowerCase().includes("pinnacle")) {
             setProjectImg(PinnaclePass)
         }
         setTimeout(() => {
@@ -97,45 +96,69 @@ const ThankYou = ({ festinquiry, setFestInquiry }) => {
     }
 
     useEffect(() => {
-        priorityPass()
+        if (festinquiry?.festCustomer) {
+            priorityPass()
+        }
     }, [])
-
-    const tagManagerArgs = {
-        gtmId: 'GTM-5JW7F9W'
-    }
-    TagManager.initialize(tagManagerArgs)
 
     return (
         <>
-            <div className="thank-you-container">
-                <Row className='thank-you-row'>
-                    <Col lg={5}>
-                        <div className="pass-img" id="pass">
-                            <img src={projectImg} style={{ width: "100%", height: "100%" }} alt="" />
-                            <div className="user-id">
-                                <h3>#{CustomerSeq}</h3>
-                            </div>
-                        </div>
-                    </Col>
-                    <Col lg={7} className="thank-you-desc">
+            {
+                festinquiry?.festCustomer ? <>
+                    <div className="thank-you-container">
+                        <Row className='thank-you-row'>
+                            <Col lg={5}>
+                                <div className="pass-img" id="pass">
+                                    <img src={projectImg} style={{ width: "100%", height: "100%" }} alt="" />
+                                    <div className="user-id">
+                                        <h3>#{CustomerSeq}</h3>
+                                    </div>
+                                </div>
+                            </Col>
+                            <Col lg={7} className="thank-you-desc">
 
-                        <h3>Thank You for Registering <br /> For Aspire Home Fest 2023</h3>
-                        <div className='thank-you-message'>
-                            <p>Please save your Priority Pass and show it at the time of your Site Visit.</p>
-                            <p>Feel free to reach out to us for any queries. </p>
-                            <div className="d-flex justify-content-center align-items-center" style={{ flexDirection: "column" }}>
-                                <span className='text-white m-1'>Call : 98866 60229</span>
-                                <span className='text-white m-1'>Email : hello@aspireprop.com</span>
-                            </div>
-                        </div>
-                        <div onClick={handleDownload} className="pass-download-btn">
-                            <span className='download-message'>Download your Priority Pass here</span>
-                            <button> <i class="fa-solid fa-download"></i> Download</button>
-                        </div>
+                                <h3>Thank You for Registering <br /> For Aspire Home Fest 2023</h3>
+                                <div className='thank-you-message'>
+                                    <p>Please save your Priority Pass and show it at the time of your Site Visit.</p>
+                                    <p>Feel free to reach out to us for any queries. </p>
+                                    <div className="d-flex justify-content-center align-items-center" style={{ flexDirection: "column" }}>
+                                        <span className='text-white m-1'>Call : 98866 60229</span>
+                                        <span className='text-white m-1'>Email : hello@aspireprop.com</span>
+                                    </div>
+                                </div>
+                                <div onClick={handleDownload} className="pass-download-btn">
+                                    <span className='download-message'>Download your Priority Pass here</span>
+                                    <button> <i class="fa-solid fa-download"></i> Download</button>
+                                </div>
 
-                    </Col>
-                </Row>
-            </div>
+                            </Col>
+                        </Row>
+                    </div>
+                </> : <>
+                    <div className="thank-you-container">
+                        <Row className='thank-you-row'>
+                            <Col lg={12} className="thank-you-desc">
+
+                                <h3>Register <br /> For Aspire Home Fest 2023</h3>
+                                <div className='thank-you-message'>
+                                    <p>Feel free to reach out to us for any queries. </p>
+                                    <div className="d-flex justify-content-center align-items-center" style={{ flexDirection: "column" }}>
+                                        <span className='text-white m-1'>Call : 98866 60229</span>
+                                        <span className='text-white m-1'>Email : hello@aspireprop.com</span>
+                                    </div>
+                                </div>
+                                <div onClick={() => navigate("/aspire-homefest2023")} className="pass-download-btn mt-4">
+                                    <button> Aspire Home Fest</button>
+                                </div>
+
+                            </Col>
+                        </Row>
+                    </div>
+                </>
+            }
+
+
+
         </>
     )
 }
