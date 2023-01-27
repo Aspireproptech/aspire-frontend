@@ -71,7 +71,8 @@ function Singleunit(props) {
           <button
             disabled={disable}
             className="getprice-btn"
-            onClick={handleOpen}
+            onClick={() => props.handleClickFest("Get Price and Offers | AHF 2023")}
+          // onClick={handleOpen}
           >
             Get Price
           </button>

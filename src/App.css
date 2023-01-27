@@ -122,6 +122,18 @@ body {
   margin-bottom: 25px;
 }
 
+.modal-backdrop {
+  backdrop-filter: blur(10px) !important;
+  background-color: transparent !important;
+}
+
+.modal-backdrop.show {
+  opacity: unset !important;
+}
+.modal-backdrop.fade {
+  opacity: unset !important;
+}
+
 @media (max-width: 950px) {
   .thank-you-desc {
     margin-top: 40px;

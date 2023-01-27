@@ -201,13 +201,26 @@ function Property({ festinquiry, setFestInquiry }) {
   });
 
   const [showFest, setShowFest] = useState(false)
+  const [buttonText, setButtonText] = useState("Register for HOME FEST")
 
   const handleChange = (e) => {
     const { name, value } = e.target
     setRegister({ ...register, [name]: value })
   }
 
+  const handleClickFest = (text) => {
+    setButtonText(text)
+
+    setShowFest(true)
+  }
+
   const handleCloseFest = () => {
+    setRegister({
+      ...register, firstName: "",
+      lastName: "",
+      phone: "",
+      email: ""
+    })
     setShowFest(false)
   }
 
@@ -331,13 +344,13 @@ function Property({ festinquiry, setFestInquiry }) {
           </Modal.Body>
         </Modal>
 
-        <button onClick={() => setShowFest(true)} className="responsive-sideform-btn btn">
+        <button onClick={() => handleClickFest("Register")} className="responsive-sideform-btn btn">
           Home Fest
         </button>
 
         <Modal show={showFest} onHide={handleCloseFest} centered>
           <div className="register-box">
-            <h5>Register for HOME FEST<i onClick={handleCloseFest} class="fa-solid fa-circle-xmark close-cancel-btn"></i></h5>
+            <h5>{buttonText}<i onClick={handleCloseFest} class="fa-solid fa-circle-xmark close-cancel-btn"></i></h5>
             <div className="register-field">
               <form onSubmit={handleClick}>
                 <input name="firstName" value={register.firstName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} required placeholder='First Name *' />
@@ -347,7 +360,7 @@ function Property({ festinquiry, setFestInquiry }) {
                 <input type="text" value={register.email} name="email" required onChange={handleChange} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter Valid Email" placeholder='Email *' />
                 <p>I Agree to the <a href="">Terms & Conditions.</a></p>
                 <div className="register-btn ">
-                  <button>Register</button>
+                  <button className="w-auto px-3">Register</button>
                 </div>
               </form>
             </div>
@@ -593,8 +606,8 @@ function Property({ festinquiry, setFestInquiry }) {
                   style={{ wordWrap: "break-word" }}
                 ></div>
 
-                <a
-                  href={propertyData?.broucher}
+                <a onClick={() => handleClickFest("Download Brochure | AHF 2023")}
+                  // href={propertyData?.broucher}
                   target="_blank"
                   className="broucher-btn mx-3 "
                   download
@@ -728,7 +741,7 @@ function Property({ festinquiry, setFestInquiry }) {
                 </Row>
                 <Row>
                   {unitDetails?.map((item, index) => {
-                    return <Singleunit key={index} data={item} propertyData={propertyData} />;
+                    return <Singleunit handleClickFest={handleClickFest} key={index} data={item} propertyData={propertyData} />;
                   })}
                 </Row>
               </Col>
