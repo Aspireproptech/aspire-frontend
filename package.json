@@ -22,6 +22,7 @@
     "faker": "^6.6.6",
     "firebase": "^9.15.0",
     "font-awesome": "^4.7.0",
+    "ga-gtag": "^1.1.7",
     "google-map-react": "^2.1.10",
     "google-maps-react": "^2.0.6",
     "html2canvas": "^1.4.1",

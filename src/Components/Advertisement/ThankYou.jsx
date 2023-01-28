@@ -13,7 +13,7 @@ import PinnaclePass from "../../Assets/Ads/pinnacle-pass.png"
 import WatsoniaPass from "../../Assets/Ads/watsonia-pass.png"
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import TagManager from 'react-gtm-module'
+import { gtag, install } from 'ga-gtag';
 
 const ThankYou = ({ festinquiry, setFestInquiry }) => {
 
@@ -99,13 +99,9 @@ const ThankYou = ({ festinquiry, setFestInquiry }) => {
         if (festinquiry?.festCustomer) {
             priorityPass()
         }
+        gtag('event', 'conversion', { 'send_to': 'AW-11076591953/c94fCJmZkYkYENHC3aEp' });
     }, [])
 
-
-    const tagManagerArgs = {
-        gtmId: 'GTM-5JW7F9W'
-    }
-    TagManager.initialize(tagManagerArgs)
 
     return (
         <>
