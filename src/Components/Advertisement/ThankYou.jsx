@@ -101,6 +101,12 @@ const ThankYou = ({ festinquiry, setFestInquiry }) => {
         }
     }, [])
 
+
+    const tagManagerArgs = {
+        gtmId: 'GTM-5JW7F9W'
+    }
+    TagManager.initialize(tagManagerArgs)
+
     return (
         <>
             {
