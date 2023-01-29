@@ -95,6 +95,8 @@ const ThankYou = ({ festinquiry, setFestInquiry }) => {
         return new File([u8arr], filename, { type: mime });
     }
 
+    install('GTM-5JW7F9W');
+
     useEffect(() => {
         if (festinquiry?.festCustomer) {
             priorityPass()
