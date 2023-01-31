@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from "react";
+import React, { useEffect, useState } from "react";
 import "./InfoCard.css";
 import CountUp from "react-countup";
 import { BsFlagFill } from "react-icons/bs";
@@ -11,22 +11,22 @@ import { useCountUp } from 'react-countup';
 function InfoCard() {
   const [counterOn, setCounterOn] = useState(false);
   const content = useRef(null);
-  
-  const onscroll = ()=>{
+
+  const onscroll = () => {
     const winScroll = document.documentElement.scrollTop;
     console.log(winScroll)
-  
-    if(winScroll>2200){
+
+    if (winScroll > 2200) {
       start();
     }
   }
-  
+
   useEffect(() => {
     window.addEventListener("scroll", onscroll);
 
     return () => window.removeEventListener("scroll", onscroll);
 
-    
+
   }, []);
 
   const countUpRef = React.useRef(null);
@@ -66,7 +66,7 @@ function InfoCard() {
               class="counter-content d-flex flex-column justify-content-center"
               style={{ height: "12rem" }}
             >
-              <span class="counter-value">
+              <span style={{ color: "white !important" }} class="counter-value">
                 {" "}
                 <p ref={countUpRef}></p>
 
@@ -85,7 +85,7 @@ function InfoCard() {
               style={{ height: "12rem" }}
             >
               <span class="counter-value">
-               6    {" "} Lakhs+ sqft
+                6    {" "} Lakhs+ sqft
               </span>
               <h3>Under Management</h3>
             </div>
