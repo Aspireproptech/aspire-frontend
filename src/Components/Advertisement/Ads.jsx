@@ -304,7 +304,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
                                     <div className="ad-card-img mb-4">
                                         <i class="fa-solid fa-building"></i>
                                     </div>
-                                    <h5>9 Projects<br /> 12 Days</h5>
+                                    <h5>9 Projects<br /> 12 + 12 Days</h5>
                                 </div>
                                 <div className="left-card">
                                     <div className="ad-card-img mb-4">
