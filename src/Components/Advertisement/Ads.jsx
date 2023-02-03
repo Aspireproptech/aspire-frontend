@@ -115,7 +115,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
                             line: "EMI Holiday Option from Select Banks and NBFCs"
                         },
                         {
-                            line: "Launch Offers applicable on first 21 units only"
+                            line: "Launch Offers applicable for 21 units"
                         },
                     ]
                 },
@@ -135,7 +135,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
                             line: "Upto 25% discount on Home Interiors"
                         },
                         {
-                            line: "AHF Offers applicable on first 12 units only"
+                            line: "AHF Offers extended for 5 units"
                         },
                     ]
                 },
@@ -155,7 +155,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
                             line: "Upto 25% discount on Home Interiors"
                         },
                         {
-                            line: "AHF Offers applicable on first 2 units only"
+                            line: "AHF Offers extended for 2 units"
                         },
                     ]
                 },
@@ -172,7 +172,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
                             line: "Get a discount of Rs.2 Lakhs for Spot Closures"
                         },
                         {
-                            line: "AHF Offers applicable on first 15 units only"
+                            line: "AHF Offers extended for 5 units"
                         },
                     ]
                 },
@@ -189,7 +189,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
                             line: "Get white goods of your choice worth Rs.2 Lakhs for Spot Closures"
                         },
                         {
-                            line: "AHF Offers applicable on first 6 units only"
+                            line: "AHF Offers extended for 2 units"
                         },
                     ]
                 },
@@ -206,7 +206,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
                             line: "Get white goods of your choice worth Rs.2 Lakhs for Spot Closures"
                         },
                         {
-                            line: "AHF Offers applicable on first 15 units only"
+                            line: "AHF Offers extended for 3 units"
                         },
                     ]
                 },
@@ -223,7 +223,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
                             line: "Upto 25% discount on Home Interiors"
                         },
                         {
-                            line: "AHF Offers applicable on first 12 units only"
+                            line: "AHF Offers extended for 3 units"
                         },
                     ]
                 },
@@ -240,7 +240,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
                             line: "Upto 25% discount on Home Interiors"
                         },
                         {
-                            line: "AHF Offers applicable on first 12 units only"
+                            line: "AHF Offers extended for 4 units"
                         },
                     ]
                 },
@@ -257,7 +257,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
                             line: "Upto 25% discount on Home Interiors"
                         },
                         {
-                            line: "AHF Offers applicable on first 10 units only"
+                            line: "AHF Offers extended for 5 units"
                         },
                     ]
                 },
