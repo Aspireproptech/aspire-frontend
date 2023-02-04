@@ -180,10 +180,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
                     head: "Speckles Patio",
                     offer: [
                         {
-                            line: "Flat Discount of Rs.300/- per sqft on basic rate"
-                        },
-                        {
-                            line: "Waiver of Car Parking Charges of Rs.4 Lakhs"
+                            line: "All-inclusive Box Price"
                         },
                         {
                             line: "Get white goods of your choice worth Rs.2 Lakhs for Spot Closures"
