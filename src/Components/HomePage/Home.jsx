@@ -22,7 +22,7 @@ function Home() {
     <>
       <div className=""></div>
       <HomeBuying />
-      <HomeFest />
+      {/* <HomeFest /> */}
       {/* <Help/> */}
       <div className="horrizontal"></div>
       <HomeChoice />

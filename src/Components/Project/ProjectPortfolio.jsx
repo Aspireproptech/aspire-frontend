@@ -46,10 +46,9 @@ function ProjectPortfolio() {
   useEffect(() => {
     fetchPortfolio();
   }, []);
-  console.log(portfolioItems);
+  console.log(propertyMap);
   return (
     <div>
-
       <div className="property">
         <Container>
           <Row className="project-property-height">
@@ -141,7 +140,7 @@ function ProjectPortfolio() {
                             </div>
                           </div>
 
-                          <Link to={`/property/${data._id}`}>
+                          <Link to={`/project/${data.name}`}>
                             <button>View Project</button>
                           </Link>
                         </div>

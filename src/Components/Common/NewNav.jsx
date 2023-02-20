@@ -10,7 +10,7 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { HashLink } from "react-router-hash-link";
-import HomeFest from "../../Assets/Ads/fest-header.png"
+import HomeFest from "../../Assets/Ads/fest-header.png";
 
 function NewNav() {
   const location = useLocation();
@@ -19,7 +19,7 @@ function NewNav() {
       <Container fluid className="Navbar">
         <Container>
           <Row>
-            <Col xs={3} className="logo">
+            {/* <Col xs={3} className="logo">
               <NavLink to={"/"}>
                 <img src={logo} alt="img" />
               </NavLink>
@@ -28,11 +28,9 @@ function NewNav() {
                   <img src={HomeFest} alt="" />
                 </div>
               </NavLink>
-            </Col>
+            </Col> */}
 
-
-
-            <Col xs={9} className="Links-Container">
+            <Col xs={12} className="Links-Container">
               <Col className="Links ">
                 <NavLink
                   className={location.pathname == "/" ? "Link-active" : ""}

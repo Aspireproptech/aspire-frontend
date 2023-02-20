@@ -1,0 +1,19 @@
+@media screen and (min-width: 250px) and (max-width:460px) {
+    .propertyCardStyle{
+        width:60% ;
+        height:fit-content !important
+    }
+}
+@media screen and (min-width: 460px) and (max-width:1280px) {
+    .propertyCardStyle{
+        width:60% ;
+        height:fit-content !important
+    }
+}
+
+
+.propertyCardStyle{
+    width:60% ;
+    height:60vh 
+    
+}

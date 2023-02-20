@@ -12,7 +12,7 @@ export const FetchPropertyData = () => API.get(`/prop/getAllProperty`);
 export const FetchUSP = (data) => API.post(`/prop/getUsp`, data);
 export const PostApplicationForm = (data) => API.post(`/cr/apply`, data);
 export const FetchSinglePropertyData = (id) =>
-  API.post(`/prop/getPropertyById`, id);
+  API.post(`/prop/getPropertyByName`, id);
 export const FetchSingleDeveloperData = (id) =>
   API.post(`/dev/getDeveloperById`, id);
 export const FetchCategoryBlog = (data) =>

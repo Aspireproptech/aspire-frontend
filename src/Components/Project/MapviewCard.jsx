@@ -54,7 +54,7 @@ function MapviewCard({ data }) {
             </div>
           </div>
 
-          <Link to={`/property/${data._id}`}>
+          <Link to={`/project/${data?.name}`}>
             <button>View Project</button>
           </Link>
         </div>

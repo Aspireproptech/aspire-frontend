@@ -61,7 +61,7 @@ function Property({ festinquiry, setFestInquiry }) {
     property: pName,
   });
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   console.log(pName);
   useEffect(() => {
@@ -111,7 +111,7 @@ function Property({ festinquiry, setFestInquiry }) {
   const fetchsingleproperty = async () => {
     try {
       const singleid = {
-        id: param.id,
+        name: param.id,
       };
       const data = await FetchSinglePropertyData(singleid);
       setpropertyData(data?.data?.data);
@@ -154,7 +154,7 @@ function Property({ festinquiry, setFestInquiry }) {
     setOpen(false);
   };
   const handleToggle = () => {
-    setOpen(!open);
+    // setOpen(!open);
   };
 
   const handleAmenities = () => {
@@ -197,57 +197,58 @@ function Property({ festinquiry, setFestInquiry }) {
     lastName: "",
     projectName: propertyData?.name,
     phone: "",
-    email: ""
+    email: "",
   });
 
-  const [showFest, setShowFest] = useState(false)
-  const [buttonText, setButtonText] = useState("Register for HOME FEST")
+  const [showFest, setShowFest] = useState(false);
+  const [buttonText, setButtonText] = useState("Register for HOME FEST");
 
   const handleChange = (e) => {
-    const { name, value } = e.target
-    setRegister({ ...register, [name]: value })
-  }
+    const { name, value } = e.target;
+    setRegister({ ...register, [name]: value });
+  };
 
   const handleClickFest = (text) => {
-    setButtonText(text)
+    setButtonText(text);
 
-    setShowFest(true)
-  }
+    setShowFest(true);
+  };
 
   const handleCloseFest = () => {
     setRegister({
-      ...register, firstName: "",
+      ...register,
+      firstName: "",
       lastName: "",
       phone: "",
-      email: ""
-    })
-    setShowFest(false)
-  }
+      email: "",
+    });
+    setShowFest(false);
+  };
 
   const handleClick = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
       const payload = {
         firstName: register.firstName,
         lastName: register.lastName,
         projectName: propertyData?.name,
         email: register.email,
-        number: register.phone
+        number: register.phone,
       };
       const data = await RegisterData(payload);
-      setFestInquiry({ festCustomer: payload, CustomerSeq: data.data.data })
-      navigate("/thank-you")
+      setFestInquiry({ festCustomer: payload, CustomerSeq: data.data.data });
+      navigate("/thank-you");
       setRegister({
         ...register,
         firstName: "",
         lastName: "",
         phone: "",
-        email: ""
-      })
+        email: "",
+      });
     } catch (error) {
       console.log(error);
     }
-  }
+  };
 
   return (
     <>
@@ -344,21 +345,67 @@ function Property({ festinquiry, setFestInquiry }) {
           </Modal.Body>
         </Modal>
 
-        <button onClick={() => handleClickFest("Register")} className="responsive-sideform-btn btn">
+        <button
+          onClick={() => handleClickFest("Register")}
+          className="responsive-sideform-btn btn"
+        >
           Home Fest
         </button>
 
         <Modal show={showFest} onHide={handleCloseFest} centered>
           <div className="register-box">
-            <h5>{buttonText}<i onClick={handleCloseFest} class="fa-solid fa-circle-xmark close-cancel-btn"></i></h5>
+            <h5>
+              {buttonText}
+              <i
+                onClick={handleCloseFest}
+                class="fa-solid fa-circle-xmark close-cancel-btn"
+              ></i>
+            </h5>
             <div className="register-field">
               <form onSubmit={handleClick}>
-                <input name="firstName" value={register.firstName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} required placeholder='First Name *' />
-                <input name="lastName" value={register.lastName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" onChange={handleChange} placeholder='Last Name' />
+                <input
+                  name="firstName"
+                  value={register.firstName}
+                  type="text"
+                  pattern="[a-zA-Z ]{2,30}"
+                  title="Only Character"
+                  onChange={handleChange}
+                  required
+                  placeholder="First Name *"
+                />
+                <input
+                  name="lastName"
+                  value={register.lastName}
+                  type="text"
+                  pattern="[a-zA-Z ]{2,30}"
+                  title="Only Character"
+                  onChange={handleChange}
+                  placeholder="Last Name"
+                />
                 <input value={propertyData?.name} readOnly type="text" />
-                <input type="text" value={register.phone} name="phone" required pattern="[0-9]{10}" title='Enter Valid Phone No.' onChange={handleChange} placeholder='Phone Number *' />
-                <input type="text" value={register.email} name="email" required onChange={handleChange} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter Valid Email" placeholder='Email *' />
-                <p>I Agree to the <a href="">Terms & Conditions.</a></p>
+                <input
+                  type="text"
+                  value={register.phone}
+                  name="phone"
+                  required
+                  pattern="[0-9]{10}"
+                  title="Enter Valid Phone No."
+                  onChange={handleChange}
+                  placeholder="Phone Number *"
+                />
+                <input
+                  type="text"
+                  value={register.email}
+                  name="email"
+                  required
+                  onChange={handleChange}
+                  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                  title="Enter Valid Email"
+                  placeholder="Email *"
+                />
+                <p>
+                  I Agree to the <a href="">Terms & Conditions.</a>
+                </p>
                 <div className="register-btn ">
                   <button className="w-auto px-3">Register</button>
                 </div>
@@ -371,12 +418,50 @@ function Property({ festinquiry, setFestInquiry }) {
           <h5>Register for HOME FEST</h5>
           <div className="register-field">
             <form onSubmit={handleClick}>
-              <input name="firstName" value={register.firstName} type="text" pattern="[a-zA-Z ]{2,30}" title="Only Character" required onChange={handleChange} placeholder='First Name*' />
-              <input name="lastName" value={register.lastName} type="text" pattern="[A-Za-z]{2,30}" title="Only Character" onChange={handleChange} placeholder='Last Name ' />
+              <input
+                name="firstName"
+                value={register.firstName}
+                type="text"
+                pattern="[a-zA-Z ]{2,30}"
+                title="Only Character"
+                required
+                onChange={handleChange}
+                placeholder="First Name*"
+              />
+              <input
+                name="lastName"
+                value={register.lastName}
+                type="text"
+                pattern="[A-Za-z]{2,30}"
+                title="Only Character"
+                onChange={handleChange}
+                placeholder="Last Name "
+              />
               <input value={propertyData?.name} type="text" />
-              <input type="phone" value={register.phone} maxLength={10} pattern="[0-9]{10}" title='Enter Valid Phone No.' name="phone" required onChange={handleChange} placeholder='Phone Number*' />
-              <input type="email" value={register.email} name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Enter Valid Email" required onChange={handleChange} placeholder='Email *' />
-              <p>I Agree to the <a href="">Terms & Conditions.</a></p>
+              <input
+                type="phone"
+                value={register.phone}
+                maxLength={10}
+                pattern="[0-9]{10}"
+                title="Enter Valid Phone No."
+                name="phone"
+                required
+                onChange={handleChange}
+                placeholder="Phone Number*"
+              />
+              <input
+                type="email"
+                value={register.email}
+                name="email"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                title="Enter Valid Email"
+                required
+                onChange={handleChange}
+                placeholder="Email *"
+              />
+              <p>
+                I Agree to the <a href="">Terms & Conditions.</a>
+              </p>
               <div className="register-btn ">
                 <button>Register</button>
               </div>
@@ -481,43 +566,49 @@ function Property({ festinquiry, setFestInquiry }) {
               <Col lg={9} className="property-navigate-container flex-wrap">
                 <a
                   href={"#overview"}
-                  className={`${location?.hash == "#overview" ? "navigate-active" : ""
-                    } property-navigate-links`}
+                  className={`${
+                    location?.hash == "#overview" ? "navigate-active" : ""
+                  } property-navigate-links`}
                 >
                   Overview
                 </a>
                 <a
                   href={"#amenities"}
-                  className={`${location?.hash == "#amenities" ? "navigate-active" : ""
-                    } property-navigate-links`}
+                  className={`${
+                    location?.hash == "#amenities" ? "navigate-active" : ""
+                  } property-navigate-links`}
                 >
                   Amenities
                 </a>
                 <a
                   href={"#location"}
-                  className={`${location?.hash == "#location" ? "navigate-active" : ""
-                    } property-navigate-links`}
+                  className={`${
+                    location?.hash == "#location" ? "navigate-active" : ""
+                  } property-navigate-links`}
                 >
                   Location
                 </a>
                 <a
                   href={"#units"}
-                  className={`${location?.hash == "#units" ? "navigate-active" : ""
-                    } property-navigate-links`}
+                  className={`${
+                    location?.hash == "#units" ? "navigate-active" : ""
+                  } property-navigate-links`}
                 >
                   Units
                 </a>
                 <a
                   href={"#about"}
-                  className={`${location?.hash == "#about" ? "navigate-active" : ""
-                    } property-navigate-links`}
+                  className={`${
+                    location?.hash == "#about" ? "navigate-active" : ""
+                  } property-navigate-links`}
                 >
                   About Developer
                 </a>
                 <a
                   href={"#faq"}
-                  className={`${location?.hash == "#faq" ? "navigate-active" : ""
-                    } property-navigate-links`}
+                  className={`${
+                    location?.hash == "#faq" ? "navigate-active" : ""
+                  } property-navigate-links`}
                 >
                   FAQs
                 </a>
@@ -606,8 +697,11 @@ function Property({ festinquiry, setFestInquiry }) {
                   style={{ wordWrap: "break-word" }}
                 ></div>
 
-                <a onClick={() => handleClickFest("Download Brochure | AHF 2023")}
-                  // href={propertyData?.broucher}
+                <a
+                  // onClick={() =>
+                  //   handleClickFest("Download Brochure | AHF 2023")
+                  // }
+                  href={propertyData?.broucher}
                   target="_blank"
                   className="broucher-btn mx-3 "
                   download
@@ -717,8 +811,9 @@ function Property({ festinquiry, setFestInquiry }) {
                       return (
                         <button
                           key={index}
-                          className={`${unit == index ? "property-units-head-active " : ""
-                            }`}
+                          className={`${
+                            unit == index ? "property-units-head-active " : ""
+                          }`}
                           onClick={() => {
                             setunitDetails(item?.detail);
                             setunit(index);
@@ -741,7 +836,14 @@ function Property({ festinquiry, setFestInquiry }) {
                 </Row>
                 <Row>
                   {unitDetails?.map((item, index) => {
-                    return <Singleunit handleClickFest={handleClickFest} key={index} data={item} propertyData={propertyData} />;
+                    return (
+                      <Singleunit
+                        handleClickFest={handleClickFest}
+                        key={index}
+                        data={item}
+                        propertyData={propertyData}
+                      />
+                    );
                   })}
                 </Row>
               </Col>
@@ -824,9 +926,7 @@ function Property({ festinquiry, setFestInquiry }) {
                     question={
                       "Q3. Will Aspire proptech charge me a brokerage fee?"
                     }
-                    answer={
-                      "No, Never! We don’t charge any brokerage."
-                    }
+                    answer={"No, Never! We don’t charge any brokerage."}
                   />
                   <CustomizedAccordions
                     question={"Q4. Do you offer home loan services?"}
@@ -973,7 +1073,9 @@ function Property({ festinquiry, setFestInquiry }) {
                 </Col>
                 <Col xs={9} lg={10}>
                   <h5 className="text-center">
-                    {propertyData?.ready ? "Ready to Move-In" : "Possession Soon"}
+                    {propertyData?.ready
+                      ? "Ready to Move-In"
+                      : "Possession Soon"}
                   </h5>
                 </Col>
               </Row>

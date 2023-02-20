@@ -23,7 +23,7 @@ function About() {
 
   return (
     <>
-      <HomeFest />
+      {/* <HomeFest /> */}
       <div className="container-fluid py-5">
         <div className="row px-4 d-flex about-card-img">
           <div

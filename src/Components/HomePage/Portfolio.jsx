@@ -40,7 +40,7 @@ function Portfolio() {
   return (
     <div>
       <Container className="portfolioContainer">
-        { }
+        {}
 
         <div className="propertyDescription">
           <div className="description">
@@ -58,7 +58,9 @@ function Portfolio() {
               <span>
                 <HomeIcon />{" "}
                 <h4>
-                  {PortfolioDetail?.ready ? "Ready to Move-In" : "Possession Soon"}{" "}
+                  {PortfolioDetail?.ready
+                    ? "Ready to Move-In"
+                    : "Possession Soon"}{" "}
                 </h4>
               </span>{" "}
               <span>
@@ -80,7 +82,7 @@ function Portfolio() {
             </div>
           </div>
 
-          <Link to={`/property/${PortfolioDetail?._id} `}>
+          <Link to={`/project/${PortfolioDetail?.name} `}>
             <button>View Project</button>
           </Link>
         </div>
@@ -101,8 +103,9 @@ function Portfolio() {
                   <Row
                     key={index}
                     onMouseOver={() => setPortfolioDetail(data)}
-                    className={`${active === index ? "activeportfolio " : ""
-                      } newhover portfolioItem  `}
+                    className={`${
+                      active === index ? "activeportfolio " : ""
+                    } newhover portfolioItem  `}
                     onClick={() => {
                       setactive(index);
                       setPortfolioDetail(data);
