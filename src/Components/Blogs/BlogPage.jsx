@@ -118,7 +118,7 @@ function BlogPage() {
           </div>
         </Row>
       </Container>
-      <HomeFest />
+      {/* <HomeFest /> */}
       <div id="knowledgeSeries" className="blogsDiv">
         <h3 className="blogMainHeading">Knowledge Series</h3>
         <Row className="d-flex justify-content-center">

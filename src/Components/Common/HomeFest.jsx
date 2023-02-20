@@ -8,11 +8,11 @@ const HomeFest = () => {
 
   return (
     <>
-      <NavLink to="/aspire-homefest2023">
+      {/* <NavLink to="/aspire-homefest2023">
         <div data-aos="fade-up" data-aos-duration="1000" className="fest-icon">
           <img src={HomePageFest} alt="" />
         </div>
-      </NavLink>
+      </NavLink> */}
     </>
   );
 };
