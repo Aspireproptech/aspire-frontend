@@ -1,6 +1,7 @@
 import React, { createElement, useEffect, useState } from "react";
 import html2canvas from "html2canvas";
 import { Col, Container, Row, Modal } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 import PatioPass from "../../Assets/Ads/patio-pass.png";
 import RoashanPass from "../../Assets/Ads/roshan-pass.png";
@@ -12,14 +13,13 @@ import GreenFieldsPass from "../../Assets/Ads/greenfields-pass.png";
 import PinnaclePass from "../../Assets/Ads/pinnacle-pass.png";
 import WatsoniaPass from "../../Assets/Ads/watsonia-pass.png";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 import { gtag, install } from "ga-gtag";
 
 const ThankYou = ({ festinquiry, setFestInquiry }) => {
   const [projectImg, setProjectImg] = useState();
   const { festCustomer, CustomerSeq } = festinquiry;
   const navigate = useNavigate();
-
+  console.log(festinquiry);
   const priorityPass = () => {
     if (festCustomer.projectName.toLowerCase().includes("speckles patio")) {
       setProjectImg(PatioPass);

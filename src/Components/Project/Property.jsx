@@ -28,6 +28,7 @@ import {
   FetchUSP,
   PostQuote,
   RegisterData,
+  RegisterDataBrochure,
 } from "../API/Api";
 import MapWithAMarker from "../Contact/Map";
 import ScrollTrigger from "react-scroll-trigger";
@@ -63,7 +64,7 @@ function Property({ festinquiry, setFestInquiry }) {
 
   const navigate = useNavigate();
 
-  console.log(pName);
+  console.log(propertyData?.broucher);
   useEffect(() => {
     setquote({
       name: "",
@@ -228,16 +229,24 @@ function Property({ festinquiry, setFestInquiry }) {
   const handleClick = async (e) => {
     e.preventDefault();
     try {
+      // const formData = new FormData();
+      //  formData.append("firstName",  register.firstName);
+      //  formData.append("lastName", register.lastName);
+      //  formData.append("projectName",  propertyData?.name);
+      //  formData.append("email",  register.email);
+      //  formData.append("number",  register.phone);
+      //  formData.append("brochure",  propertyData?.brochure);
       const payload = {
         firstName: register.firstName,
         lastName: register.lastName,
         projectName: propertyData?.name,
         email: register.email,
         number: register.phone,
+        brouchure: propertyData?.broucher,
       };
-      const data = await RegisterData(payload);
-      setFestInquiry({ festCustomer: payload, CustomerSeq: data.data.data });
-      navigate("/thank-you");
+      const data = await RegisterDataBrochure(payload);
+      setFestInquiry({ brouchure: propertyData?.broucher });
+      navigate("/thank-you/brouchure");
       setRegister({
         ...register,
         firstName: "",
@@ -698,10 +707,10 @@ function Property({ festinquiry, setFestInquiry }) {
                 ></div>
 
                 <a
-                  // onClick={() =>
-                  //   handleClickFest("Download Brochure | AHF 2023")
-                  // }
-                  href={propertyData?.broucher}
+                  onClick={() =>
+                    handleClickFest("Download Brochure | AHF 2023")
+                  }
+                  // href={propertyData?.broucher}
                   target="_blank"
                   className="broucher-btn mx-3 "
                   download

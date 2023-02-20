@@ -31,6 +31,7 @@ import CopyRight from "./Components/Common/CopyRight";
 import Disclaimer from "./Components/Common/Disclaimer";
 import PrivacyPolicy from "./Components/Common/PrivacyPolicy";
 import ThankYou from "./Components/Advertisement/ThankYou";
+import ThankYouBrouchure from "./Components/Advertisement/ThankYouBrouchure";
 
 const RedirectHome = ({ festinquiry }) => {
   const navigate = useNavigate();
@@ -95,6 +96,16 @@ function App() {
               />
               <Route exact path="/disclaimer" element={<Disclaimer />} />
               <Route exact path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route
+                exact
+                path="/thank-you/brouchure"
+                element={
+                  <ThankYouBrouchure
+                    festinquiry={festinquiry}
+                    setFestInquiry={setFestInquiry}
+                  />
+                }
+              />
               <Route
                 exact
                 path="/thank-you"
