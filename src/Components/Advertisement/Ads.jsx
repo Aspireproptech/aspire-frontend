@@ -344,7 +344,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
           </Col>
           <Col lg={4}>
             <div className="register-box">
-              <h5>Register for HOME FEST</h5>
+              <h5>Get a callback</h5>
               <div className="register-field">
                 <form onSubmit={handleClick}>
                   <input
@@ -650,7 +650,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
       <Modal show={show} onHide={handleClose} centered>
         <div className="register-box">
           <h5>
-            Register for HOME FEST
+            Get a callback
             <i
               onClick={handleClose}
               class="fa-solid fa-circle-xmark close-cancel-btn"

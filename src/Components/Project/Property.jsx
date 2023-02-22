@@ -61,7 +61,8 @@ function Property({ festinquiry, setFestInquiry }) {
     email: "",
     property: pName,
   });
-
+  const newName = pName?.replaceAll(" ", "-");
+  console.log(newName);
   const navigate = useNavigate();
 
   console.log(propertyData?.broucher);
@@ -202,7 +203,7 @@ function Property({ festinquiry, setFestInquiry }) {
   });
 
   const [showFest, setShowFest] = useState(false);
-  const [buttonText, setButtonText] = useState("Register for HOME FEST");
+  const [buttonText, setButtonText] = useState("Get the best quote!");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -347,7 +348,7 @@ function Property({ festinquiry, setFestInquiry }) {
                   />
                 </span>
                 <Row className="property-sideform-btn">
-                  <button onClick={() => quoteSubmit()}>Get Best Quote</button>
+                  <button onClick={() => quoteSubmit()}>Submit</button>
                 </Row>
               </Row>
             </div>
@@ -358,7 +359,7 @@ function Property({ festinquiry, setFestInquiry }) {
           onClick={() => handleClickFest("Register")}
           className="responsive-sideform-btn btn"
         >
-          Home Fest
+          Enquire Now
         </button>
 
         <Modal show={showFest} onHide={handleCloseFest} centered>
@@ -416,7 +417,7 @@ function Property({ festinquiry, setFestInquiry }) {
                   I Agree to the <a href="">Terms & Conditions.</a>
                 </p>
                 <div className="register-btn ">
-                  <button className="w-auto px-3">Register</button>
+                  <button className="w-auto px-3">Submit</button>
                 </div>
               </form>
             </div>
@@ -424,7 +425,7 @@ function Property({ festinquiry, setFestInquiry }) {
         </Modal>
 
         <div className="property-sideform register-box">
-          <h5>Register for HOME FEST</h5>
+          <h5>Get a callback</h5>
           <div className="register-field">
             <form onSubmit={handleClick}>
               <input
@@ -472,7 +473,7 @@ function Property({ festinquiry, setFestInquiry }) {
                 I Agree to the <a href="">Terms & Conditions.</a>
               </p>
               <div className="register-btn ">
-                <button>Register</button>
+                <button>Enquire now</button>
               </div>
             </form>
           </div>
@@ -707,9 +708,7 @@ function Property({ festinquiry, setFestInquiry }) {
                 ></div>
 
                 <a
-                  onClick={() =>
-                    handleClickFest("Download Brochure | AHF 2023")
-                  }
+                  onClick={() => handleClickFest("Download Brochure")}
                   // href={propertyData?.broucher}
                   target="_blank"
                   className="broucher-btn mx-3 "

@@ -19,18 +19,23 @@ function NewNav() {
       <Container fluid className="Navbar">
         <Container>
           <Row>
-            {/* <Col xs={3} className="logo">
-              <NavLink to={"/"}>
+            {/* <Col xs={3} className="logo"> */}
+            {/* <NavLink to={"/"}>
                 <img src={logo} alt="img" />
-              </NavLink>
-              <NavLink to="/aspire-homefest2023">
+              </NavLink> */}
+            {/* <NavLink to="/aspire-homefest2023">
                 <div className="fest-img">
                   <img src={HomeFest} alt="" />
                 </div>
-              </NavLink>
-            </Col> */}
+              </NavLink> */}
+            {/* </Col> */}
 
             <Col xs={12} className="Links-Container">
+              <Col className="logo">
+                <NavLink to={"/"}>
+                  <img src={logo} alt="img" />
+                </NavLink>
+              </Col>
               <Col className="Links ">
                 <NavLink
                   className={location.pathname == "/" ? "Link-active" : ""}
@@ -237,7 +242,7 @@ function NewNav() {
 
             <Col className="Links">
               <NavDropdown
-                id="nav-dropdown-dark-example"
+                // id="nav-dropdown-dark-example"
                 title="Resources"
                 menuVariant="dark"
                 style={{ color: "white" }}

@@ -23,7 +23,7 @@ function Wearehere() {
             </Row>
 
             <Row className=" WeAreHeree-Address">
-              <h4>Bangalore</h4>
+              <h4>Bengaluru</h4>
               <Col xs={7}>
                 <h5>
                   Address: No 45/11, First Floor, North Park Road, Kumara Park

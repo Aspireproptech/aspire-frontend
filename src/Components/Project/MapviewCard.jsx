@@ -12,7 +12,8 @@ import "../../Assets/HomePage/portfolio.css";
 import Loader from "../Common/Loader";
 function MapviewCard({ data }) {
   const [heightmap, setheightmap] = useState("450px");
-
+  const newName = data?.name.replaceAll(" ", "-");
+  console.log(newName);
   return (
     <>
       <div
