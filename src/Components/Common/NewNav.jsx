@@ -19,16 +19,16 @@ function NewNav() {
       <Container fluid className="Navbar">
         <Container>
           <Row>
-            {/* <Col xs={3} className="logo"> */}
-            {/* <NavLink to={"/"}>
+            <Col xs={3} className="logo mob-logo">
+              <NavLink to={"/"}>
                 <img src={logo} alt="img" />
-              </NavLink> */}
-            {/* <NavLink to="/aspire-homefest2023">
+              </NavLink>
+              {/* <NavLink to="/aspire-homefest2023">
                 <div className="fest-img">
                   <img src={HomeFest} alt="" />
                 </div>
               </NavLink> */}
-            {/* </Col> */}
+            </Col>
 
             <Col xs={12} className="Links-Container">
               <Col className="logo">

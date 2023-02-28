@@ -69,7 +69,14 @@
 .navbar-menu-icon svg {
   display: none;
 }
+.mob-logo {
+  display: none;
+}
 @media (max-width: 992px) {
+  .mob-logo {
+    display: block;
+  }
+
   .Links-Container {
     display: none;
   }
