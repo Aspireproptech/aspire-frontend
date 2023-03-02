@@ -13,6 +13,7 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import axios from "axios";
 import { FetchPropertyData } from "../API/Api";
 import Loader from "../Common/Loader";
+import { formatString } from "../../helper";
 function Portfolio() {
   const [indexColor, setindexColor] = useState(0);
   const [active, setactive] = useState(0);
@@ -82,7 +83,7 @@ function Portfolio() {
             </div>
           </div>
 
-          <Link to={`/project/${PortfolioDetail?.name} `}>
+          <Link to={`/project/${formatString(PortfolioDetail?.name)} `}>
             <button>View Project</button>
           </Link>
         </div>

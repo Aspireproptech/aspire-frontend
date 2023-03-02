@@ -46,6 +46,7 @@ import { Carousel } from "react-responsive-carousel";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import HomeFest from "../Common/HomeFest";
+import { decodeString } from "../../helper";
 
 function Property({ festinquiry, setFestInquiry }) {
   const [propertyData, setpropertyData] = useState({});
@@ -113,7 +114,7 @@ function Property({ festinquiry, setFestInquiry }) {
   const fetchsingleproperty = async () => {
     try {
       const singleid = {
-        name: param.id,
+        name: decodeString(param.id),
       };
       const data = await FetchSinglePropertyData(singleid);
       setpropertyData(data?.data?.data);
@@ -126,7 +127,7 @@ function Property({ festinquiry, setFestInquiry }) {
   const fetchDeveloper = async () => {
     try {
       const singleid = {
-        id: param.id,
+        id: decodeString(param.id),
       };
       const data = await FetchSingleDeveloperData(singleid);
     } catch (error) {
@@ -184,7 +185,7 @@ function Property({ festinquiry, setFestInquiry }) {
   const getUspData = async () => {
     try {
       const payload = {
-        id: param.id,
+        id: decodeString(param.id),
       };
       const data = await FetchUSP(payload);
       setUSPData(data?.data?.data?.usp);
@@ -478,7 +479,7 @@ function Property({ festinquiry, setFestInquiry }) {
             </form>
           </div>
         </div>
-        {/* 
+        {/*
         <div className="property-sideform p-4 col-lg-4">
           <div className="property-side-form-sticky">
             <Row className=" property-sideform-head-container">
@@ -553,7 +554,7 @@ function Property({ festinquiry, setFestInquiry }) {
                   {/* {
                                         propertyData?.pictures?.map((item, index) => {
                                             return (
-                                         
+
                                         })
                                     } */}
                   <Carousel>
@@ -988,7 +989,7 @@ function Property({ festinquiry, setFestInquiry }) {
               {/* <Col xs={12} className="ArrowIcon  d-flex align-items-center ">
                        <span>
                        <ArrowForwardIcon/>
-                       </span> 
+                       </span>
                       </Col> */}
             </Row>
           </div>

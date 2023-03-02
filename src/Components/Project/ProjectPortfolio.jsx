@@ -14,6 +14,7 @@ import Loader from "../../Components/Common/Loader";
 import Portfolio from "../HomePage/Portfolio";
 import { FetchPropertyData } from "../API/Api";
 import HomeFest from "../Common/HomeFest";
+import { formatString } from "../../helper";
 
 function ProjectPortfolio() {
   const [mapview, setmapview] = useState(0);
@@ -140,7 +141,7 @@ function ProjectPortfolio() {
                             </div>
                           </div>
 
-                          <Link to={`/project/${data.name}`}>
+                          <Link to={`/project/${formatString(data.name)}`}>
                             <button>View Project</button>
                           </Link>
                         </div>
