@@ -2,6 +2,7 @@ import React, { createElement, useEffect, useState } from "react";
 import html2canvas from "html2canvas";
 import { Col, Container, Row, Modal } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { gtag, install } from "ga-gtag";
 
 const ThankYouBrouchure = ({ festinquiry }) => {
   console.log(festinquiry?.brouchure);
@@ -22,6 +23,14 @@ const ThankYouBrouchure = ({ festinquiry }) => {
     a.click();
     document.body.removeChild(a);
   };
+  install("GTM-5JW7F9W");
+
+  useEffect(() => {
+    gtag("event", "conversion", {
+      send_to: "AW-11076591953/c94fCJmZkYkYENHC3aEp",
+    });
+  }, []);
+
   return (
     <div>
       <div className="thank-you-container">
