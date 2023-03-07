@@ -248,7 +248,7 @@ function Property({ festinquiry, setFestInquiry }) {
       };
       const data = await RegisterDataBrochure(payload);
       setFestInquiry({ brouchure: propertyData?.broucher });
-      navigate("/thank-you/brouchure");
+      navigate("/thank-you");
       setRegister({
         ...register,
         firstName: "",

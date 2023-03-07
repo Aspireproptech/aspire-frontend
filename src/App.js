@@ -98,7 +98,7 @@ function App() {
               <Route exact path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route
                 exact
-                path="/thank-you/brouchure"
+                path="/thank-you"
                 element={
                   <ThankYouBrouchure
                     festinquiry={festinquiry}
@@ -106,7 +106,7 @@ function App() {
                   />
                 }
               />
-              <Route
+              {/* <Route
                 exact
                 path="/thank-you"
                 element={
@@ -115,7 +115,7 @@ function App() {
                     setFestInquiry={setFestInquiry}
                   />
                 }
-              />
+              /> */}
             </Routes>
             <BottomFoot />
             <CopyRight />

@@ -20,6 +20,7 @@ const ThankYouBrouchure = ({ festinquiry }) => {
     a.href = festinquiry?.brouchure;
     a.download = festinquiry?.brouchure.split("/").pop();
     document.body.appendChild(a);
+    a.target = "_blank";
     a.click();
     document.body.removeChild(a);
   };
