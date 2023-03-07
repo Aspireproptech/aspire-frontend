@@ -150,6 +150,9 @@ body {
   .pass-img {
     width: 80%;
   }
+  .thank-you-row {
+    padding: 30px;
+  }
   .thank-you-desc {
     margin-top: 25px;
   }
