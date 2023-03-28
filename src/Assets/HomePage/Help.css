@@ -1,4 +1,4 @@
-.helpSection{
+.helpSection {
     width: 90%;
     margin: auto;
     text-align: left;
@@ -6,40 +6,42 @@
     margin-top: 100px;
 }
 
-.promiseSection{
+.promiseSection {
     width: 90%;
     margin: auto;
 }
 
-.helpDiv{
+.helpDiv {
     background: url("../Images/HelpBg.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
-.helpSection h4{
+.helpSection h4 {
     font-size: 30px;
     color: #303030;
     font-weight: 600;
 }
 
-.helpPara{
+.helpPara {
     width: 75%;
     font-weight: 500;
     line-height: 28px;
     margin: 20px 0;
 }
-.WhyUsli{
+.WhyUsli {
     font-weight: 500;
     line-height: 28px;
     margin: 20px 80px;
 }
-.portfolioItem{
+.portfolioItem {
     cursor: pointer;
 }
-.portfolioItem:hover{
+.portfolioItem:hover {
     font-weight: bold;
+    background-color: rgba(244, 126, 32, 1);
+    color: white;
 }
-.aspirePromise-img{
+.aspirePromise-img {
     width: 30%;
     padding: 58px;
     color: white;
@@ -50,7 +52,7 @@
     bottom: 0%;
 }
 
-@media (max-width: 568px){
+@media (max-width: 568px) {
     .aspirePromise-img {
         width: 100%;
         padding: 50px;
@@ -58,5 +60,4 @@
         border-radius: 0;
         /* top: 0; */
     }
-
 }

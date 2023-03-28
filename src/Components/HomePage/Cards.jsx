@@ -37,7 +37,7 @@ function Cards() {
               <h4 className="emiHead">Blogs</h4>
               <br />
               <Link className="text-decoration-none" to={"/blogs"}>
-                <button className="emiBtn">View articles</button>
+                <button className="emiBtn">View Articles</button>
               </Link>
             </Col>
             <Col>
