@@ -26,7 +26,7 @@ function TopNav() {
         <NavLink className={ location.pathname=='/about' ?('active'):('inactive') } to={"/about"} >About Us</NavLink>
         {/* <NavLink className={ location.pathname=='/home' ?('active'):('inactive') } to={"/home"} >Home Loan</NavLink> */}
         <NavLink className={ location.pathname=='/blogs' ?('active'):('inactive') } to={"/blogs"} >Resources</NavLink>
-        <NavLink className={ location.pathname=='/career' ?('active'):('inactive') } to={"/career"} >Careers</NavLink>
+        <NavLink className={ location.pathname=='/career' ?('active'):('inactive') } to={"/careers"} >Careers</NavLink>
          {/* <NavLink  to={'/partners'}>
           <div style={{backgroundColor: "#F47E20", fontWeight: "600", borderRadius: "20px", padding: "10px 18px", color:"white"}}>Partners</div>
         </NavLink> */}

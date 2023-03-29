@@ -121,7 +121,7 @@ function About() {
             </div>
             <div className="col about-joinus-content ">
               <h4>Join Us</h4>
-              <Link to="/career">
+              <Link to="/careers">
                 <button>
                   Explore Career{" "}
                   <ArrowRightAltIcon style={{ fontSize: "1.8rem" }} />{" "}

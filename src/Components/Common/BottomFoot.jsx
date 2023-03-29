@@ -149,11 +149,11 @@ function BottomFoot() {
                     Blogs
                   </Link>
                   <Link
-                    to="/career"
+                    to="/careers"
                     className="mt-1 text-decoration-none"
                     style={{ color: "white" }}
                   >
-                    Career
+                    Careers
                   </Link>
                   <Link
                     to="/disclaimer"

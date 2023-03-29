@@ -5,12 +5,13 @@ import Home from "./Components/HomePage/Home";
 import ContactUs from "./Components/Contact/ContactUs";
 import { useState, useEffect } from "react";
 import {
-  BrowserRouter,
-  Route,
-  Routes,
-  useLocation,
-  useNavigate,
+    BrowserRouter,
+    Route,
+    Routes,
+    useLocation,
+    useNavigate,
 } from "react-router-dom";
+import  { HelmetProvider } from "react-helmet-async";
 import BlogPage from "./Components/Blogs/BlogPage";
 import About from "./Components/About/About";
 import Career from "./Components/Career/Career";
@@ -34,79 +35,128 @@ import ThankYou from "./Components/Advertisement/ThankYou";
 import ThankYouBrouchure from "./Components/Advertisement/ThankYouBrouchure";
 
 const RedirectHome = ({ festinquiry }) => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  useEffect(() => {
-    const isProfile = location.pathname.includes("/thank-you");
-    if (isProfile && !festinquiry) {
-      navigate("/");
-    }
-  }, []);
+    const navigate = useNavigate();
+    const location = useLocation();
+    useEffect(() => {
+        const isProfile = location.pathname.includes("/thank-you");
+        if (isProfile && !festinquiry) {
+            navigate("/");
+        }
+    }, []);
 };
 
 function App() {
-  const [loading, setloading] = useState(true);
-  useEffect(() => {
-    const timer = setTimeout(() => setloading(false), 1500);
-    return () => clearTimeout(timer);
-  }, []);
+    const [loading, setloading] = useState(true);
+    useEffect(() => {
+        const timer = setTimeout(() => setloading(false), 1500);
+        return () => clearTimeout(timer);
+    }, []);
 
-  const [festinquiry, setFestInquiry] = useState({});
+    const [festinquiry, setFestInquiry] = useState({});
 
-  return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <div className="App">
-        {loading ? (
-          <Loader />
-        ) : (
-          <>
-            <NewNav />
-            <Routes>
-              <Route exact path="/" element={<Home />} />
-              <Route exact path="/about" element={<About />} />
-              <Route exact path="/loader" element={<Loader />} />
-              <Route exact path="/homeloan" element={<Homeloan />} />
-              <Route
-                exact
-                path="/project/:id"
-                element={
-                  <Property
-                    festinquiry={festinquiry}
-                    setFestInquiry={setFestInquiry}
-                  />
-                }
-              />
-              <Route exact path="/career" element={<Career />} />
-              <Route exact path="/career/:id" element={<CareerIndividual />} />
-              <Route exact path="/contact" element={<ContactUs />} />
-              <Route exact path="/partners" element={<Partner />} />
-              <Route exact path="/blogs" element={<BlogPage />} />
-              <Route exact path="/blogs/:id" element={<Singleblog />} />
-              <Route exact path="/projects" element={<Project />} />
-              <Route
-                exact
-                path="/aspire-homefest2023"
-                element={
-                  <Ads
-                    festinquiry={festinquiry}
-                    setFestInquiry={setFestInquiry}
-                  />
-                }
-              />
-              <Route exact path="/disclaimer" element={<Disclaimer />} />
-              <Route exact path="/privacy-policy" element={<PrivacyPolicy />} />
-              <Route
-                exact
-                path="/thank-you"
-                element={
-                  <ThankYouBrouchure
-                    festinquiry={festinquiry}
-                    setFestInquiry={setFestInquiry}
-                  />
-                }
-              />
-              {/* <Route
+    return (
+        <HelmetProvider>
+            <BrowserRouter>
+                <ScrollToTop />
+                <div className="App">
+                    {loading ? (
+                        <Loader />
+                    ) : (
+                        <>
+                            <NewNav />
+                            <Routes>
+                                <Route exact path="/" element={<Home />} />
+                                <Route
+                                    exact
+                                    path="/about"
+                                    element={<About />}
+                                />
+                                <Route
+                                    exact
+                                    path="/loader"
+                                    element={<Loader />}
+                                />
+                                <Route
+                                    exact
+                                    path="/homeloan"
+                                    element={<Homeloan />}
+                                />
+                                <Route
+                                    exact
+                                    path="/project/:id"
+                                    element={
+                                        <Property
+                                            festinquiry={festinquiry}
+                                            setFestInquiry={setFestInquiry}
+                                        />
+                                    }
+                                />
+                                <Route
+                                    exact
+                                    path="/careers"
+                                    element={<Career />}
+                                />
+                                <Route
+                                    exact
+                                    path="/careers/:id"
+                                    element={<CareerIndividual />}
+                                />
+                                <Route
+                                    exact
+                                    path="/contact"
+                                    element={<ContactUs />}
+                                />
+                                <Route
+                                    exact
+                                    path="/partners"
+                                    element={<Partner />}
+                                />
+                                <Route
+                                    exact
+                                    path="/blogs"
+                                    element={<BlogPage />}
+                                />
+                                <Route
+                                    exact
+                                    path="/blogs/:id"
+                                    element={<Singleblog />}
+                                />
+                                <Route
+                                    exact
+                                    path="/projects"
+                                    element={<Project />}
+                                />
+                                <Route
+                                    exact
+                                    path="/aspire-homefest2023"
+                                    element={
+                                        <Ads
+                                            festinquiry={festinquiry}
+                                            setFestInquiry={setFestInquiry}
+                                        />
+                                    }
+                                />
+                                <Route
+                                    exact
+                                    path="/disclaimer"
+                                    element={<Disclaimer />}
+                                />
+                                <Route
+                                    exact
+                                    path="/privacy-policy"
+                                    element={<PrivacyPolicy />}
+                                />
+                                <Route
+                                    exact
+                                    path="/thank-you"
+                                    element={
+                                        <ThankYouBrouchure
+                                            festinquiry={festinquiry}
+                                            setFestInquiry={setFestInquiry}
+                                        />
+                                    }
+                                />
+                                {/* <Route
                 exact
                 path="/thank-you"
                 element={
@@ -116,14 +166,15 @@ function App() {
                   />
                 }
               /> */}
-            </Routes>
-            <BottomFoot />
-            <CopyRight />
-          </>
-        )}
-      </div>
-    </BrowserRouter>
-  );
+                            </Routes>
+                            <BottomFoot />
+                            <CopyRight />
+                        </>
+                    )}
+                </div>
+            </BrowserRouter>
+        </HelmetProvider>
+    );
 }
 
 export default App;

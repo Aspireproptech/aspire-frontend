@@ -1,96 +1,96 @@
-.blogsDiv{
+.blogsDiv {
     margin: auto;
-    background: linear-gradient(180deg, #FFFFFF 13.02%, #EAEBFF 100%);
+    background: linear-gradient(180deg, #ffffff 13.02%, #eaebff 100%);
     border-radius: 20px;
     padding: 20px 0;
 }
-.blogMainHeading{
+.blogMainHeading {
     margin: 70px 60px 30px 60px;
     font-size: 1.8rem;
     font-weight: 700;
-
 }
 /* overlay */
-.Blog-Maincontainer{
+.Blog-Maincontainer {
     position: relative;
 }
-.blogTrend-overlay{
+.blogTrend-overlay {
     background-color: var(--blueColor);
     color: white;
     position: absolute;
     bottom: -50px;
     left: 25%;
     border-radius: 20px;
+    cursor: pointer;
 }
-.blogTrend-overlay h5{
+.blogTrend-overlay h5 {
     font-size: 16px;
     color: var(--orangeColor);
 }
-.blogTrend-overlay h3{
+.blogTrend-overlay h3 {
     font-size: 25px;
     font-weight: 700;
 }
-.blogTrend-overlay-footer img{
+.blogTrend-overlay-footer img {
     width: 30px;
     height: 30px;
     border-radius: 50%;
     margin-right: 10px;
 }
-.blogTrend-overlay-footer h6{
+.blogTrend-overlay-footer h6 {
     font-size: 10px;
     margin: 0;
     padding: 0;
 }
 
-.blogTrend-overlay-footer-link{
+.blogTrend-overlay-footer-link {
     color: white;
     text-decoration: none;
     font-size: 14px;
 }
 
-.blogWriter{
+.blogWriter {
     display: flex;
     align-items: center;
     color: rgba(88, 88, 88, 0.9);
     margin-bottom: 10px;
 }
 
-.blogCardHeading{
+.blogCardHeading {
     margin-top: 10px;
     font-weight: 600;
     color: #303030;
     font-size: 25px;
 }
 
-.blogCol{
+.blogCol {
     display: flex;
     justify-content: center;
 }
 
-.blogPara{
+.blogPara {
     color: rgba(88, 88, 88, 0.9);
 }
 
-.blogCardContent{
+.blogCardContent {
     width: 0%;
     margin-left: 10px;
 }
 
-.SubContentHeading h5{
+.SubContentHeading h5 {
     margin-top: 10px;
     font-size: 1rem;
 }
-.blogCardContent{
+.blogCardContent {
     width: 23vw;
 }
-.blogCardContent img{
+.blogCardContent img {
     width: 100%;
 }
-.blogCardContent h3{
+.blogCardContent h3 {
     font-size: 1rem;
     font-weight: 700;
 }
-.BlogsRow{
+.BlogsRow {
     height: 60%;
     padding-bottom: 30px;
     overflow-x: scroll;
@@ -99,89 +99,88 @@
     height: 5px;
 }
 .BlogsRow::-webkit-scrollbar-track {
-    background: #e4e4e4; 
+    background: #e4e4e4;
     border-radius: 10px;
 }
 .BlogsRow::-webkit-scrollbar-thumb {
-    background: rgb(186, 185, 185); 
+    background: rgb(186, 185, 185);
     border-radius: 50px;
 }
-.ArrowIcon svg{
+.ArrowIcon svg {
     color: gray;
     font-size: 4rem;
     padding: 15px;
     cursor: pointer;
     border-radius: 50%;
-    background-color:  rgba(232, 232, 232, 0.83);
+    background-color: rgba(232, 232, 232, 0.83);
 }
-.blogsDiv hr{
+.blogsDiv hr {
     width: 90%;
     margin-left: 60px;
     height: 1px;
 }
 
-
 /* blog main */
-.Blog-Maincontainer{
-    margin-top: 80px ;
+.Blog-Maincontainer {
+    margin-top: 80px;
 }
-.Blog-heading{
+.Blog-heading {
     font-size: 3rem;
     font-weight: 800;
     color: rgba(28, 27, 77, 1);
     word-break: break-all;
 }
-.Blog-SubHeading{
+.Blog-SubHeading {
     font-size: 1.7rem;
     font-weight: 600;
     color: rgba(244, 126, 32, 1);
     margin-bottom: 70px;
 }
-.Blog-Image{
+.Blog-Image {
     width: 50%;
+    cursor: pointer;
 }
 
-
-@media (max-width: 992px){
+@media (max-width: 992px) {
     .blogMainHeading {
         margin: 70px 60px 30px 20px;
         font-size: 20px;
         font-weight: 700;
     }
-    .blogCardContent{
+    .blogCardContent {
         width: 80%;
     }
-    .SubContentHeading h5{
+    .SubContentHeading h5 {
         font-size: 12px;
     }
 }
-@media (max-width: 568px){
+@media (max-width: 568px) {
     .Singleblog-Head {
         font-size: 40px !important;
     }
     .Singleblog-tags {
         padding: 4px 15px;
     }
-    .RelatedblogCardContent h3{
+    .RelatedblogCardContent h3 {
         font-size: 14px;
     }
-    .singleblog-author-desc h6{
+    .singleblog-author-desc h6 {
         padding-left: 0;
     }
-    .singleblog-related-blogs{
+    .singleblog-related-blogs {
         padding: 0;
     }
-    .singleblog-anyComments h5{
+    .singleblog-anyComments h5 {
         padding-left: 0;
     }
     .singleblog-anyComments {
-         border-right: none;
+        border-right: none;
         padding: 0px 10px;
     }
-    .singleblog-signmeup{
+    .singleblog-signmeup {
         padding: 0;
     }
-    .singleblog-signmeup h3{
+    .singleblog-signmeup h3 {
         font-size: 40px;
     }
 }
