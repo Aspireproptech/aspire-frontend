@@ -158,8 +158,17 @@ function ProjectPortfolio() {
                                                                 {" "}
                                                                 <BedroomChildIcon />{" "}
                                                                 <h4>
-                                                                    {data?.BHK}
-                                                                    ,BHK
+                                                                    {data?.unitDetails
+                                                                        .map(
+                                                                            (
+                                                                                i
+                                                                            ) =>
+                                                                                i.bhk
+                                                                        )
+                                                                        .join(
+                                                                            ", "
+                                                                        )}{" "}
+                                                                    BHK
                                                                 </h4>{" "}
                                                             </span>
                                                         </div>

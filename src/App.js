@@ -11,7 +11,7 @@ import {
     useLocation,
     useNavigate,
 } from "react-router-dom";
-import  { HelmetProvider } from "react-helmet-async";
+import { HelmetProvider } from "react-helmet-async";
 import BlogPage from "./Components/Blogs/BlogPage";
 import About from "./Components/About/About";
 import Career from "./Components/Career/Career";
@@ -33,6 +33,7 @@ import Disclaimer from "./Components/Common/Disclaimer";
 import PrivacyPolicy from "./Components/Common/PrivacyPolicy";
 import ThankYou from "./Components/Advertisement/ThankYou";
 import ThankYouBrouchure from "./Components/Advertisement/ThankYouBrouchure";
+import WhatsApps from "./Components/Common/WhatsApps";
 
 const RedirectHome = ({ festinquiry }) => {
     const navigate = useNavigate();
@@ -64,6 +65,7 @@ function App() {
                     ) : (
                         <>
                             <NewNav />
+                            <WhatsApps />
                             <Routes>
                                 <Route exact path="/" element={<Home />} />
                                 <Route

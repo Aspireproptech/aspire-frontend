@@ -3,13 +3,11 @@ import "../../Assets/Homeloan/homeloan.css";
 import homeloanbanner from "../../Assets/Images/homeLoan1.jpg";
 import right from "../../Assets/Images/homeright.svg";
 import left from "../../Assets/Images/homeleft.svg";
-import partner from "../../Assets/Images/Company1.png";
 import Slider from "@mui/material/Slider";
 import CurrencyInput from "react-currency-input-field";
 import Chart from "./Chart";
 import Graphcards from "../Partners/Graphcards";
 import Perfect from "../HomePage/Perfect";
-import Community from "../HomePage/Community";
 import { Row, Col, Container } from "react-bootstrap";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
@@ -23,9 +21,7 @@ import {
     PostEligilityData,
     PostTalkToExpertData,
 } from "../API/Api";
-import { height } from "@mui/system";
 import HomeFest from "../Common/HomeFest";
-import { useMemo } from "react";
 import { toast, ToastContainer } from "react-toastify";
 
 function Homeloan() {
@@ -175,7 +171,7 @@ function Homeloan() {
     // home loan
     const [interest, setinterest] = useState();
     const [LoanData, setLoanData] = useState({
-        loan: 800000,
+        loan: 8000000,
         year: 20,
         rate: 8.75,
     });

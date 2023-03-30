@@ -298,6 +298,13 @@ function NewNav() {
                             <NavDropdown
                                 // id="nav-dropdown-dark-example"
                                 title="Resources"
+                                className={
+                                    location.pathname == "/blogs"
+                                        ? "Link-active"
+                                        : location.pathname == "/careers"
+                                        ? "Link-active"
+                                        : ""
+                                }
                                 menuVariant="dark"
                                 style={{ color: "white" }}
                             >

@@ -5,38 +5,38 @@ import { useNavigate } from "react-router-dom";
 import { gtag, install } from "ga-gtag";
 
 const ThankYouBrouchure = ({ festinquiry }) => {
-  console.log(festinquiry?.brouchure);
-  const navigate = useNavigate();
-  const [isDownload, setIsdownload] = useState(true);
-  // useEffect(() => {
-  //   if (isDownload) {
-  //     setTimeout(handleDownload, 2000);
-  //     setIsdownload(false);
-  //   }
-  // }, [isDownload]);
+    console.log(festinquiry?.brouchure);
+    const navigate = useNavigate();
+    const [isDownload, setIsdownload] = useState(true);
+    // useEffect(() => {
+    //   if (isDownload) {
+    //     setTimeout(handleDownload, 2000);
+    //     setIsdownload(false);
+    //   }
+    // }, [isDownload]);
 
-  const handleDownload = () => {
-    const a = document.createElement("a");
-    a.href = festinquiry?.brouchure;
-    a.download = festinquiry?.brouchure.split("/").pop();
-    document.body.appendChild(a);
-    a.target = "_blank";
-    a.click();
-    document.body.removeChild(a);
-  };
-  install("GTM-5JW7F9W");
+    const handleDownload = () => {
+        const a = document.createElement("a");
+        a.href = festinquiry?.brouchure;
+        a.download = festinquiry?.brouchure.split("/").pop();
+        document.body.appendChild(a);
+        a.target = "_blank";
+        a.click();
+        document.body.removeChild(a);
+    };
+    install("GTM-5JW7F9W");
 
-  useEffect(() => {
-    gtag("event", "conversion", {
-      send_to: "AW-11076591953/c94fCJmZkYkYENHC3aEp",
-    });
-  }, []);
+    useEffect(() => {
+        gtag("event", "conversion", {
+            send_to: "AW-11076591953/c94fCJmZkYkYENHC3aEp",
+        });
+    }, []);
 
-  return (
-    <div>
-      <div className="thank-you-container">
-        <Row className="thank-you-row">
-          {/* <Col lg={5}>
+    return (
+        <div>
+            <div className="thank-you-container">
+                <Row className="thank-you-row">
+                    {/* <Col lg={5}>
                                 <div className="pass-img" id="pass">
                                     <img src={projectImg} style={{ width: "100%", height: "100%" }} alt="" />
                                     <div className="user-id">
@@ -44,27 +44,34 @@ const ThankYouBrouchure = ({ festinquiry }) => {
                                     </div>
                                 </div>
                             </Col> */}
-          <Col lg={12} className="thank-you-desc">
-            <h3>Thank You for Contacting Us</h3>
-            <div className="thank-you-message">
-              <p className="mt-4">We Have Recieved your Message.</p>
-              <p className="mt-4">We Will Reach You Immediately.</p>
+                    <Col lg={12} className="thank-you-desc">
+                        <h3>Thank You for Contacting Us</h3>
+                        <div className="thank-you-message">
+                            <p className="mt-4">
+                                We Have Received your Message.
+                            </p>
+                            <p className="mt-4">
+                                We Will Reach You Immediately.
+                            </p>
+                        </div>
+                        {festinquiry?.brochure && (
+                            <div
+                                onClick={handleDownload}
+                                className="pass-download-btn mt-4"
+                            >
+                                <button>
+                                    {" "}
+                                    {/* <i class="fa-solid fa-download"></i>
+                                     */}
+                                    Download Brochure
+                                </button>
+                            </div>
+                        )}
+                    </Col>
+                </Row>
             </div>
-            {festinquiry?.brouchure && (
-              <div onClick={handleDownload} className="pass-download-btn mt-4">
-                <button>
-                  {" "}
-                  {/* <i class="fa-solid fa-download"></i>
-                   */}
-                  Download Brouchure
-                </button>
-              </div>
-            )}
-          </Col>
-        </Row>
-      </div>
-    </div>
-  );
+        </div>
+    );
 };
 
 export default ThankYouBrouchure;

@@ -1,41 +1,65 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
 }
-p{
-  margin-bottom: 0;
+p {
+    margin-bottom: 0;
 }
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.row>*{
-  padding: 0;
-  padding-left: 0;
-  padding-right: 0;
+.row > * {
+    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
 }
-.row{
-  --bs-gutter-x: 0;
+.row {
+    --bs-gutter-x: 0;
 }
 :root {
-  --orangeColor:#f47e20;
-  --blueColor:rgba(28, 27, 77, 1);
+    --orangeColor: #f47e20;
+    --blueColor: rgba(28, 27, 77, 1);
 }
 
-.hr-divider{
-  height: 2px;
-  border: 1.5px solid black;
+.hr-divider {
+    height: 2px;
+    border: 1.5px solid black;
 }
 /* .css-1f8sh1y{
 height:200px !important
 } */
+
+
+/* for mobile */
+
+    .whatsapp-icon {
+        margin-top: 10px;
+    }
+    .whatsapp_float {
+        display: block;
+        position: fixed;
+        background-color: #25d366;
+        color: #fff;
+        border-radius: 50px;
+        text-align: center;
+        width: 40px;
+        height: 40px;
+        bottom: 20px;
+        right: 10px;
+        font-size: 22px;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 100;
+        text-decoration: none !important;
+    }
+

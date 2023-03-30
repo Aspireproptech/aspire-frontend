@@ -8,32 +8,32 @@ import { useRef } from "react";
 import { useCountUp } from "react-countup";
 
 function InfoCard() {
-    const [counterOn, setCounterOn] = useState(false);
+    // const [counterOn, setCounterOn] = useState(false);
     const content = useRef(null);
 
-    const onscroll = () => {
-        const winScroll = document.documentElement.scrollTop;
-        console.log(winScroll);
-        if (winScroll > 2200) {
-            start();
-        }
-    };
+    // const onscroll = () => {
+    //     const winScroll = document.documentElement.scrollTop;
+    //     console.log(winScroll);
+    //     if (winScroll > 2200) {
+    //         // start();
+    //     }
+    // };
 
-    useEffect(() => {
-        window.addEventListener("scroll", onscroll);
-        return () => window.removeEventListener("scroll", onscroll);
-    }, []);
+    // useEffect(() => {
+    //     window.addEventListener("scroll", onscroll);
+    //     return () => window.removeEventListener("scroll", onscroll);
+    // }, []);
 
-    const countUpRef = React.useRef(null);
-    const { start, pauseResume, reset, update } = useCountUp({
-        ref: countUpRef,
-        start: 0,
-        end: 1250,
-        duration: 2,
-        delay: 1,
-    });
+    // const countUpRef = React.useRef(null);
+    // const { start, pauseResume, reset, update } = useCountUp({
+    //     ref: countUpRef,
+    //     start: 0,
+    //     end: 1250,
+    //     duration: 2,
+    //     delay: 1,
+    // });
 
-    console.log(countUpRef);
+    // console.log(countUpRef);
     return (
         <>
             <div ref={content} class="row d-flex justify-content-between">
@@ -80,6 +80,7 @@ function InfoCard() {
                             >
                                 {" "}
                                 <CountUp
+                                    tagName="span"
                                     start={0}
                                     end={1250}
                                     delay={2}

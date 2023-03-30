@@ -1,0 +1,46 @@
+.Spin_loader {
+    width: 40px;
+    height: 40px;
+    
+    stroke-width: 5px;
+    stroke: #fff;
+    fill: transparent;
+    stroke-dasharray: 157.1;
+    stroke-dashoffset: 0px;
+    animation: rot 4s infinite linear, clr 9s infinite linear;
+}
+
+@keyframes rot {
+    0% {
+        transform: rotate(0deg);
+        stroke-dashoffset: 157.1;
+    }
+    50% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        transform: rotate(360deg);
+        stroke-dashoffset: -157.1;
+    }
+}
+
+@keyframes clr {
+    0% {
+        stroke: var(--blueColor);
+    }
+    20% {
+        stroke: var(--blueColor);
+    }
+    40% {
+        stroke: var(--blueColor);
+    }
+    60% {
+        stroke: var(--blueColor);
+    }
+    80% {
+        stroke: var(--blueColor);
+    }
+    100% {
+        stroke: var(--blueColor);
+    }
+}

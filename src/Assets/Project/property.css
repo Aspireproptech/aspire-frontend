@@ -281,6 +281,7 @@
 }
 .Property-singleunit-img {
     width: 15%;
+    cursor: pointer;
 }
 .Property-singleunit-desc {
     width: 15%;

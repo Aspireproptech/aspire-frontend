@@ -47,8 +47,10 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import HomeFest from "../Common/HomeFest";
 import { decodeString } from "../../helper";
+import SpinLoader from "../Common/SpinLoader";
 
 function Property({ festinquiry, setFestInquiry }) {
+    const [isLoading, setIsLoading] = useState(false);
     const [propertyData, setpropertyData] = useState({});
     const [unit, setunit] = useState(0);
     const [showModal, setshowModal] = useState(true);
@@ -213,7 +215,6 @@ function Property({ festinquiry, setFestInquiry }) {
 
     const handleClickFest = (text) => {
         setButtonText(text);
-
         setShowFest(true);
     };
 
@@ -230,6 +231,7 @@ function Property({ festinquiry, setFestInquiry }) {
 
     const handleClick = async (e) => {
         e.preventDefault();
+        setIsLoading(true);
         try {
             // const formData = new FormData();
             //  formData.append("firstName",  register.firstName);
@@ -249,6 +251,7 @@ function Property({ festinquiry, setFestInquiry }) {
             const data = await RegisterDataBrochure(payload);
             setFestInquiry({ brouchure: propertyData?.broucher });
             navigate("/thank-you");
+            setIsLoading(false);
             setRegister({
                 ...register,
                 firstName: "",
@@ -425,11 +428,18 @@ function Property({ festinquiry, setFestInquiry }) {
                                 />
                                 <p>
                                     I Agree to the{" "}
-                                    <a href="">Terms & Conditions.</a>
+                                    <Link to="/privacy-policy">
+                                        Terms & Conditions.
+                                    </Link>
                                 </p>
                                 <div className="register-btn ">
-                                    <button className="w-auto px-3">
-                                        Submit
+                                    <button className="px-3">
+                                        {isLoading &&
+                                        buttonText === "Download Brochure" ? (
+                                            <SpinLoader />
+                                        ) : (
+                                            "Submit"
+                                        )}
                                     </button>
                                 </div>
                             </form>
@@ -438,7 +448,7 @@ function Property({ festinquiry, setFestInquiry }) {
                 </Modal>
 
                 <div className="property-sideform register-box">
-                    <h5>Get a callback</h5>
+                    <h5>Get a Callback</h5>
                     <div className="register-field">
                         <form onSubmit={handleClick}>
                             <input
@@ -484,10 +494,20 @@ function Property({ festinquiry, setFestInquiry }) {
                             />
                             <p>
                                 I Agree to the{" "}
-                                <a href="">Terms & Conditions.</a>
+                                <Link to="/privacy-policy">
+                                    Terms & Conditions.
+                                </Link>
                             </p>
-                            <div className="register-btn ">
-                                <button>Enquire now</button>
+                            <div className="register-btn">
+                                <button>
+                                    {" "}
+                                    {isLoading &&
+                                    buttonText !== "Download Brochure" ? (
+                                        <SpinLoader />
+                                    ) : (
+                                        "Enquire Now"
+                                    )}
+                                </button>
                             </div>
                         </form>
                     </div>
