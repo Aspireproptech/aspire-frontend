@@ -1,105 +1,111 @@
-.separatorDiv{
+.separatorDiv {
     height: 5px;
     width: 200px;
     border-radius: 10px;
-    background: linear-gradient(90deg, #13184F 0%, #F47E20 94.96%);
+    background: linear-gradient(90deg, #13184f 0%, #f47e20 94.96%);
     margin-top: 70px;
     margin-bottom: 15px;
     /* margin-left: 100px; */
-
 }
-.WeAreHeree{
-  border-radius: 15px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+.WeAreHeree {
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .WeAreHeree-head {
-  padding: 20px 0;
+    padding: 20px 0;
 }
-.WeAreHeree-head h3{
-  font-size: 2rem;
-  margin: 40px 0;
-  font-weight: 400;
+.WeAreHeree-head h3 {
+    font-size: 2rem;
+    margin: 40px 0;
+    font-weight: 400;
 }
-.WeAreHeree-Address h4{
-     font-size: 1.2rem;
-     font-weight: 600;
+.WeAreHeree-Address h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
 }
-.WeAreHeree-Address h5{
-     font-size: 1rem;
-     font-weight: 400;
-     line-height: 40px;
+.WeAreHeree-Address h5 {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 40px;
 }
-.contactinfo{
-  display: flex;
-  margin: 10px 0;
+.contactinfo {
+    display: flex;
+    margin: 10px 0;
 }
-.contactinfo svg{
-  margin-right: 20px;
+.contactinfo svg {
+    margin-right: 20px;
 }
-.contactinfo h5{
-  font-size: 1rem;
+.contactinfo h5 {
+    font-size: 1rem;
 }
-.WeAreHeree-btn button{
-  width: 30%;
-  background-color: rgba(245, 124, 30, 1);
-  color: white;
-  border-radius: 5px;
-  border: none;
-  font-size: 1rem;
-  padding: 10px 15px;
-  margin-bottom: 40px;
+.WeAreHeree-btn button {
+    width: 30%;
+    background-color: rgba(245, 124, 30, 1);
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 1rem;
+    padding: 10px 15px;
+    margin-bottom: 40px;
 }
-
-
 
 /* getintouch */
-.GetInTouch{
-  background: #F3E6C4;
-  margin-top: 70px;
+.GetInTouch {
+    background: #f3e6c4;
+    margin-top: 70px;
 }
-.GetInTouch-imgsection img{
-  width: 90%;
+.GetInTouch-imgsection img {
+    width: 90%;
 }
-.GetInTouch-head h3{
-  font-size: 2.2rem ;
-  font-weight: 600;
+.GetInTouch-head h3 {
+    font-size: 2.2rem;
+    font-weight: 600;
 }
-.GetInTouch-subhead{
-  margin: 20px 0;
+.GetInTouch-subhead {
+    margin: 20px 0;
 }
-.GetInTouch-subhead h5{
-  font-size: 1rem ;
-  font-weight: 400;
-
+.GetInTouch-subhead h5 {
+    font-size: 1rem;
+    font-weight: 400;
 }
-.GetInTouch-inputs{
-  display: flex;
-  flex-direction: column;
+.GetInTouch-inputs {
+    display: flex;
+    flex-direction: column;
 }
-.GetInTouch-inputs input{
-  padding: 10px 20px;
-  margin: 10px 0;
-  width: 90%;
-  border-radius: 20px;
-  background: transparent;
-  border: 2px solid rgba(244, 126, 32, 1);
+.GetInTouch-inputs textarea {
+    padding: 10px 20px;
+    margin: 10px 0;
+    width: 90%;
+    border-radius: 20px;
+    background: transparent;
+    border: 2px solid rgba(244, 126, 32, 1);
+    resize: none;
 }
-.GetInTouch-btn button{
-  width: 24%;
-  background-color: rgba(245, 124, 30, 1);
-  color: white;
-  border-radius: 10px;
-  border: none;
-  font-size: 1rem;
-  margin: 20px 15px;
-  padding: 10px 15px;
+.GetInTouch-inputs input {
+    padding: 10px 20px;
+    margin: 10px 0;
+    width: 90%;
+    border-radius: 20px;
+    background: transparent;
+    border: 2px solid rgba(244, 126, 32, 1);
 }
-@media (max-width: 992px){
-  .GetInTouch-btn button{
-    width: 38%;
-    margin: 20px 5px;
-  }
-  .WeAreHeree-btn button{
-    width: 50%;
-  }
+.GetInTouch-btn button {
+    width: 120px;
+    height: 40px;
+    background-color: rgba(245, 124, 30, 1);
+    color: white;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    margin: 20px 15px;
+    padding: 10px 15px;
+}
+@media (max-width: 992px) {
+    .GetInTouch-btn button {
+        width: 38%;
+        margin: 20px 5px;
+    }
+    .WeAreHeree-btn button {
+        width: 50%;
+    }
 }

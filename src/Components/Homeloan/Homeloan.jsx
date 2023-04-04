@@ -23,8 +23,11 @@ import {
 } from "../API/Api";
 import HomeFest from "../Common/HomeFest";
 import { toast, ToastContainer } from "react-toastify";
+import SpinLoader from "../Common/SpinLoader";
 
 function Homeloan() {
+    const [isLoading, setIsLoading] = useState(false);
+    const [isLoadingEB, setIsLoadingEB] = useState(false);
     const [show1, setShow] = useState(false);
     const [show2, setShow2] = useState(false);
     const [TrendingLoan, setTrendingLoan] = useState([]);
@@ -37,6 +40,7 @@ function Homeloan() {
 
     const [homeLoanEligibilty, sethomeLoanEligibilty] = useState({
         name: "",
+        email: "",
         number: "",
         reqLoan: "",
         occupation: "",
@@ -60,12 +64,23 @@ function Homeloan() {
     };
 
     // submit btn
-
     const handleTalkToExprertSubmit = async () => {
+        setIsLoading(true);
+        if (
+            expertData.name === "" ||
+            expertData.email === "" ||
+            expertData.number === ""
+        ) {
+            toast.error("Please fill all the fields!");
+            setIsLoading(false);
+            return;
+        }
         try {
             const data = await PostTalkToExpertData(expertData);
-            console.log(data);
             if (data?.status === 200) {
+                setIsLoading(false);
+                handleClose1();
+
                 toast.success(" We Will Contact you soon!", {
                     position: "bottom-left",
 
@@ -78,8 +93,8 @@ function Homeloan() {
                     theme: "light",
                 });
             }
-            handleClose1();
         } catch (error) {
+            setIsLoading(false);
             console.log(error);
             toast.error("Something is wrong!", {
                 position: "bottom-left",
@@ -94,13 +109,29 @@ function Homeloan() {
         }
     };
     console.log(expertData);
-    // console.log(homeLoanEligibilty)
 
     const handleEligibilitySubmit = async () => {
+        setIsLoadingEB(true);
+        if (
+            homeLoanEligibilty.name === "" ||
+            homeLoanEligibilty.number === "" ||
+            homeLoanEligibilty.reqLoan === "" ||
+            homeLoanEligibilty.occupation === "" ||
+            homeLoanEligibilty.monthlySalary === "" ||
+            homeLoanEligibilty.EMI === "" ||
+            homeLoanEligibilty.tenure === "" ||
+            homeLoanEligibilty.email === ""
+        ) {
+            setIsLoadingEB(false);
+            toast.error("Please fill all the fields!");
+            return;
+        }
         try {
             const data = await PostEligilityData(homeLoanEligibilty);
             console.log(data);
             if (data?.status === 200) {
+                setIsLoadingEB(false);
+                handleClose2();
                 toast.success("We'll review your eligibility, stay tuned!", {
                     position: "bottom-left",
                     autoClose: 10000,
@@ -110,10 +141,21 @@ function Homeloan() {
                     draggable: true,
                     theme: "light",
                 });
+                sethomeLoanEligibilty({
+                    name: "",
+                    email: "",
+                    number: "",
+                    reqLoan: "",
+                    occupation: "",
+                    monthlySalary: "",
+                    EMI: "",
+                    tenure: "",
+                    date: "",
+                });
             }
-            handleClose2();
         } catch (error) {
             console.log(error);
+            setIsLoadingEB(false);
             toast.error("Something is wrong!", {
                 position: "bottom-left",
                 autoClose: 5000,
@@ -609,13 +651,16 @@ function Homeloan() {
 
                             <Button
                                 variant="primary"
+                                className={isLoading && "pt-0"}
                                 onClick={handleTalkToExprertSubmit}
                                 style={{
                                     backgroundColor: "var(--orangeColor)",
                                     border: "none",
+                                    width: "120px",
+                                    height: "40px",
                                 }}
                             >
-                                Submit
+                                {isLoading ? <SpinLoader /> : "Submit"}
                             </Button>
                         </Form>
                     </Modal.Body>
@@ -666,11 +711,26 @@ function Homeloan() {
                                     autoComplete="current-password"
                                 />
                             </Form.Group>
+                            {/* Email */}
+                            <Form.Group
+                                className="mb-3 col-4 px-2"
+                                controlId="formBasicEmail"
+                            >
+                                <TextField
+                                    id="outlined-password-input"
+                                    name="email"
+                                    onChange={handleChange1}
+                                    size="small"
+                                    label="Email"
+                                    type="email"
+                                    autoComplete="current-password"
+                                />
+                            </Form.Group>
 
                             {/* req loan */}
 
                             <Form.Group
-                                className="mb-3 col-4 px-2"
+                                className="mb-3 col-4 px-2 my-3"
                                 controlId="formBasicPassword"
                             >
                                 <TextField
@@ -711,9 +771,9 @@ function Homeloan() {
                                     }}
                                 >
                                     <option>Occupation Type</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
+                                    <option value="1">Self Employed</option>
+                                    <option value="2">Salaried</option>
+                                    <option value="3">Others</option>
                                 </Form.Select>
                             </Form.Group>
 
@@ -794,14 +854,16 @@ function Homeloan() {
 
                         <Button
                             variant="primary"
-                            className="ms-2 my-3 p-2"
+                            className={`ms-2 my-3 p-2 ${isLoadingEB && "pt-0"}`}
                             onClick={handleEligibilitySubmit}
                             style={{
                                 backgroundColor: "var(--orangeColor)",
                                 border: "none",
+                                width: "150px",
+                                height: "40px",
                             }}
                         >
-                            Check Eligibility
+                            {isLoadingEB ? <SpinLoader /> : "Check Eligibility"}
                         </Button>
                     </Modal.Body>
                 </Modal>

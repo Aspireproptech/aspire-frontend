@@ -21,11 +21,13 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useParams } from "react-router-dom";
 import {
+    AddEnquiry,
     FetchCategoryBlog,
     FetchFeatureBlog,
     FetchSingleDeveloperData,
     FetchSinglePropertyData,
     FetchUSP,
+    PostPriceData,
     PostQuote,
     RegisterData,
     RegisterDataBrochure,
@@ -218,6 +220,8 @@ function Property({ festinquiry, setFestInquiry }) {
         setShowFest(true);
     };
 
+    console.log(buttonText);
+
     const handleCloseFest = () => {
         setRegister({
             ...register,
@@ -233,13 +237,6 @@ function Property({ festinquiry, setFestInquiry }) {
         e.preventDefault();
         setIsLoading(true);
         try {
-            // const formData = new FormData();
-            //  formData.append("firstName",  register.firstName);
-            //  formData.append("lastName", register.lastName);
-            //  formData.append("projectName",  propertyData?.name);
-            //  formData.append("email",  register.email);
-            //  formData.append("number",  register.phone);
-            //  formData.append("brochure",  propertyData?.brochure);
             const payload = {
                 firstName: register.firstName,
                 lastName: register.lastName,
@@ -248,7 +245,23 @@ function Property({ festinquiry, setFestInquiry }) {
                 number: register.phone,
                 brouchure: propertyData?.broucher,
             };
-            const data = await RegisterDataBrochure(payload);
+            if (buttonText === "Get Price and Offers") {
+                const data = await PostPriceData({
+                    name: register.firstName + " " + register.lastName,
+                    phone: register.phone,
+                    email: register.email,
+                    property: propertyData?.name,
+                });
+            } else if (buttonText === "Download Brochure") {
+                const data = await RegisterDataBrochure(payload);
+            } else {
+                const data = await AddEnquiry({
+                    name: register.firstName + " " + register.lastName,
+                    phone: register.phone,
+                    email: register.email,
+                    project: propertyData?.name,
+                });
+            }
             setFestInquiry({ brouchure: propertyData?.broucher });
             navigate("/thank-you");
             setIsLoading(false);
