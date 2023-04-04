@@ -36,6 +36,7 @@ const style = {
 };
 
 function CareerIndividual() {
+    const [isLoading, setIsLoading] = useState(false);
     const [SingleCareer, setSingleCareer] = useState();
     const param = useParams();
 
@@ -86,6 +87,7 @@ function CareerIndividual() {
     };
 
     const PostData = async () => {
+        setIsLoading(true);
         if (
             !ApplicationData.name ||
             !ApplicationData.number ||
@@ -94,6 +96,7 @@ function CareerIndividual() {
             !ApplicationData.experience ||
             !ApplicationData.previousIndustry
         ) {
+            setIsLoading(false);
             toast.error("Please fill all the fields!");
             return;
         }
@@ -101,8 +104,10 @@ function CareerIndividual() {
         try {
             const data = await PostApplicationForm(ApplicationData);
             if (data?.status === 200) {
-                toast.success("We will contact you soon!");
+                setIsLoading(false);
                 handleClose();
+
+                toast.success("We will contact you soon!");
                 setApplicationData({
                     ...ApplicationData,
                     name: "",
@@ -119,7 +124,6 @@ function CareerIndividual() {
         }
     };
 
-    console.log(ApplicationData);
     return (
         <>
             <ToastContainer
@@ -348,7 +352,7 @@ function CareerIndividual() {
                             onClick={PostData}
                             className="career-single-btn"
                         >
-                            Submit
+                            {isLoading ? "Submitting" : "Submit"}
                         </button>
                     </div>
                 </Fade>
