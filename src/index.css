@@ -40,26 +40,41 @@ p {
 height:200px !important
 } */
 
-
 /* for mobile */
 
-    .whatsapp-icon {
-        margin-top: 10px;
-    }
-    .whatsapp_float {
-        display: block;
-        position: fixed;
-        background-color: #25d366;
-        color: #fff;
-        border-radius: 50px;
-        text-align: center;
-        width: 40px;
-        height: 40px;
-        bottom: 20px;
-        right: 10px;
-        font-size: 22px;
-        box-shadow: 2px 2px 3px #999;
-        z-index: 100;
-        text-decoration: none !important;
-    }
+.whatsapp_float {
+    display: flex !important;
+    align-items: center;
+    position: fixed;
+    color: #fff;
+    width: 100%;
+    height: 60px;
+    bottom: 0px;
+    right: 0px;
+    z-index: 99999;
+}
+.whatsapp_float .callNow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    text-decoration: none !important;
+    font-size: 18px;
+}
 
+.whatsapp_float .whatsApp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #25d366;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 18px;
+}
+.whatsapp_float span {
+    margin-left: 6px;
+}
