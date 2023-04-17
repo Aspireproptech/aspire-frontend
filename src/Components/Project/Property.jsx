@@ -591,6 +591,10 @@ function Property({ festinquiry, setFestInquiry }) {
                             // style={{ width: "100%" }}
                             className="property-first-img col-lg-8"
                         >
+                            <Row className="property-overview-head d-block d-md-none">
+                                <h4>{propertyData?.name}</h4>
+                                <h5>{propertyData?.city}</h5>
+                            </Row>
                             <div
                                 id="carouselExampleControls"
                                 className="carousel slide"
@@ -702,7 +706,7 @@ function Property({ festinquiry, setFestInquiry }) {
                                 id="overview"
                                 className="property-overview"
                             >
-                                <Row className="property-overview-head">
+                                <Row className="property-overview-head d-none d-md-block">
                                     <h4>{propertyData?.name}</h4>
                                     <h5>{propertyData?.city}</h5>
                                 </Row>

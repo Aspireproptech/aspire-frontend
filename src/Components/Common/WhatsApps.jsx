@@ -1,6 +1,6 @@
 const WhatsApps = () => {
     return (
-        <div class="whatsapp_float d-md-block d-lg-none">
+        <div class="whatsapp_float d-block d-lg-none">
             <a href="tel:+919886660229" className="callNow">
                 <i class="fa-solid fa-phone"></i>
                 <span>Call Now</span>

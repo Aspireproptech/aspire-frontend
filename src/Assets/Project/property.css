@@ -15,6 +15,12 @@
     position: relative;
     top: -425px;
 }
+
+@media screen and (max-width: 768px) {
+    .property-Single {
+        padding: 60px 0;
+    }
+}
 /* sideform */
 .property-sideform-head-container {
     border-radius: 20px;
