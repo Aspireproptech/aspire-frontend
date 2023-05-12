@@ -1,716 +1,727 @@
 .property-Single {
-    background: #ebebeb;
-    padding: 100px 0;
-    position: relative;
+  background: #ebebeb;
+  padding: 100px 0;
+  position: relative;
 }
 .property-first-img img {
-    width: 95%;
+  width: 95%;
 }
 
 .property-first-img .carousel-status {
-    top: 5px !important;
-    right: 30px !important;
+  top: 5px !important;
+  right: 30px !important;
 }
 .property-block {
-    position: relative;
-    top: -425px;
+  position: relative;
+  top: -425px;
 }
 
 @media screen and (max-width: 768px) {
-    .property-Single {
-        padding: 60px 0;
-    }
+  .property-Single {
+    padding: 60px 0;
+  }
 }
 /* sideform */
 .property-sideform-head-container {
-    border-radius: 20px;
-    background-color: rgba(128, 128, 128, 0.1);
-    display: flex;
-    align-items: center;
-    padding: 10px 15px;
-    z-index: 1;
+  border-radius: 20px;
+  background-color: rgba(128, 128, 128, 0.1);
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  z-index: 1;
 }
 
 .stick {
-    position: sticky;
-    top: 200px;
+  position: sticky;
+  top: 200px;
 }
 .responsive-sideform-btn {
-    display: none;
+  display: none;
 }
 .property-sideform {
-    background-color: white;
-    border-radius: 30px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    position: sticky;
-    display: inline-block;
-    right: 0;
-    left: 67vw;
-    width: 30%;
-    top: 100px;
-    z-index: 1000;
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  position: sticky;
+  display: inline-block;
+  right: 0;
+  left: 67vw;
+  width: 30%;
+  top: 100px;
+  z-index: 1000;
 }
 .property-sideform-avatar {
-    width: 70px;
-    height: 45px;
-    border-radius: 50%;
+  width: 70px;
+  height: 45px;
+  border-radius: 50%;
 }
 .property-sideform-head {
-    margin-left: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .property-sideform-head h4 {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 .broucher-btn {
-    padding: 10px;
-    background-color: var(--blueColor);
-    color: white;
-    border-radius: 8px;
-    text-decoration: none;
+  padding: 10px;
+  background-color: var(--blueColor);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
 }
 .property-sideform-head h5 {
-    font-size: 1rem;
-    color: var(--orangeColor);
+  font-size: 1rem;
+  color: var(--orangeColor);
 }
 .property-sideform-input {
-    margin: 20px 0;
-    padding: 0;
+  margin: 20px 0;
+  padding: 0;
 }
 
 .property-sideform-input span {
-    padding: 0;
-    margin: 5px 0;
-    width: 100%;
+  padding: 0;
+  margin: 5px 0;
+  width: 100%;
 }
 
 .property-sideform-input span input {
-    padding: 15px 20px;
-    width: 100%;
-    border-radius: 10px;
-    border: 0.5px solid rgba(128, 128, 128, 0.3);
+  padding: 15px 20px;
+  width: 100%;
+  border-radius: 10px;
+  border: 0.5px solid rgba(128, 128, 128, 0.3);
 }
 .property-sideform-btn button {
-    padding: 15px;
-    border: none;
-    background-color: var(--blueColor);
-    color: white;
-    border-radius: 0 20px 0 0;
+  padding: 15px;
+  border: none;
+  background-color: var(--blueColor);
+  color: white;
+  border-radius: 0 20px 0 0;
 }
 
 /* navigate */
 
 .property-navigate-container {
-    padding: 40px 0;
-    display: flex;
+  padding: 40px 0;
+  display: flex;
 }
 .property-navigate-links {
-    margin-right: 4vw;
-    text-decoration: none;
-    color: rgb(143, 142, 142);
-    font-size: 1rem;
-    padding-bottom: 2px;
+  margin-right: 4vw;
+  text-decoration: none;
+  color: rgb(143, 142, 142);
+  font-size: 1rem;
+  padding-bottom: 2px;
 }
 .property-navigate-links:hover {
-    color: var(--orangeColor);
+  color: var(--orangeColor);
 }
 .navigate-active {
-    color: black;
-    transition: 0.2s;
-    border-bottom: 2px solid black;
+  color: black;
+  transition: 0.2s;
+  border-bottom: 2px solid black;
 }
 
 /* overview */
 .property-overview {
-    margin: 30px 0;
+  margin: 30px 0;
 }
 .property-overview-head h4 {
-    font-size: 2.5rem;
-    font-weight: 600;
+  font-size: 2.5rem;
+  font-weight: 600;
 }
 .property-overview-head h5 {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: gray;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: gray;
 }
 .property-overview-btn-container {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 .property-overview-btn {
-    text-align: center;
-    padding: 10px;
-    width: 85%;
-    margin: 5px 0;
-    background-color: var(--orangeColor);
-    border-radius: 25px;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
+  text-align: center;
+  padding: 10px;
+  width: 85%;
+  margin: 5px 0;
+  background-color: var(--orangeColor);
+  border-radius: 25px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
 }
 .property-overview-btn svg {
-    font-size: 1.8rem;
-    color: black;
-    margin-right: 4px;
+  font-size: 1.8rem;
+  color: black;
+  margin-right: 4px;
 }
 .property-overview-btn h5 {
-    margin-bottom: 0;
-    font-size: 1rem;
+  margin-bottom: 0;
+  font-size: 1rem;
 }
 .property-overview-btn p {
-    margin-bottom: 0;
-    font-size: 1rem;
-    margin-right: 2px;
+  margin-bottom: 0;
+  font-size: 1rem;
+  margin-right: 2px;
 }
 
 /* description */
 
 .property-overview-description {
-    margin: 20px 0;
-    background-color: white;
-    border-radius: 20px;
-    padding: 20px 0;
+  margin: 20px 0;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px 0;
 }
 .property-overview-description h5 {
-    padding: 10px 30px;
-    font-size: 1.5rem;
+  padding: 10px 30px;
+  font-size: 1.5rem;
 }
 .property-overview-description h6 {
-    font-size: 1rem;
-    padding: 15px 30px;
-    color: gray;
-    font-weight: 400;
+  font-size: 1rem;
+  padding: 15px 30px;
+  color: gray;
+  font-weight: 400;
 }
 
 /* amenity */
 
 .property-amenity {
-    margin: 20px 0;
-    background-color: white;
-    border-radius: 20px;
-    padding: 20px 0;
+  margin: 20px 0;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px 0;
 }
 .property-amenity h5 {
-    padding: 10px 30px;
-    font-size: 1.5rem;
+  padding: 10px 30px;
+  font-size: 1.5rem;
 }
 .property-amenity h6 {
-    font-size: 1rem;
-    padding: 15px 15px;
-    color: gray;
-    font-weight: 400;
+  font-size: 1rem;
+  padding: 15px 15px;
+  color: gray;
+  font-weight: 400;
 }
 .property-amenity-content-container {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 10px 30px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px 30px;
 }
 .property-amenity-container {
-    display: flex;
-    flex-wrap: wrap;
-    overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
 }
 .property-amenity-content {
-    display: flex;
-    align-items: center;
-    width: 30%;
+  display: flex;
+  align-items: center;
+  width: 30%;
 }
 .property-amenity-content svg {
-    background-color: var(--orangeColor);
-    border-radius: 50%;
-    padding: 2px;
-    color: white;
+  background-color: var(--orangeColor);
+  border-radius: 50%;
+  padding: 2px;
+  color: white;
 }
 .property-amenity-content h6 {
-    margin-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
 /* location */
 .property-location {
-    margin: 20px 0;
-    background-color: white;
-    border-radius: 20px;
-    padding: 20px 0;
+  margin: 20px 0;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px 0;
 }
 .property-location h5 {
-    padding: 10px 30px;
-    font-size: 1.5rem;
+  padding: 10px 30px;
+  font-size: 1.5rem;
 }
 
 /* units */
 .property-units {
-    margin: 20px 0;
-    background-color: white;
-    border-radius: 20px;
-    padding: 20px 0;
+  margin: 20px 0;
+  background-color: white;
+  border-radius: 20px;
+  padding: 20px 0;
 }
 .property-units h5 {
-    padding: 10px 30px;
-    font-size: 1.5rem;
+  padding: 10px 30px;
+  font-size: 1.5rem;
 }
 .property-units-head {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 .property-units-head button {
-    padding: 10px;
-    margin: 0 15px;
-    width: 20%;
-    border: none;
-    font-weight: 600;
-    background-color: transparent;
-    color: var(--orangeColor);
+  padding: 10px;
+  margin: 0 15px;
+  width: 20%;
+  border: none;
+  font-weight: 600;
+  background-color: transparent;
+  color: var(--orangeColor);
 }
 .property-units-head-active {
-    border-radius: 30px;
-    background-color: var(--orangeColor) !important;
-    color: white !important;
+  border-radius: 30px;
+  background-color: var(--orangeColor) !important;
+  color: white !important;
 }
 .property-units-SubHead {
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
 }
 .property-units-SubHead h5 {
-    font-size: 1.2rem;
-    width: 15%;
-    padding: 0;
-    text-align: center;
+  font-size: 1.2rem;
+  width: 15%;
+  padding: 0;
+  text-align: center;
 }
 
 /* single unit card */
 .Property-singleunit {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
 }
 .Property-singleunit-img {
-    width: 15%;
-    cursor: pointer;
+  width: 15%;
+  cursor: pointer;
 }
 .Property-singleunit-desc {
-    width: 15%;
-    text-align: center;
+  width: 15%;
+  text-align: center;
 }
 
 /* about dev */
 .property-aboutDeveloper {
-    margin: 40px 0;
-    background-color: white;
-    padding: 20px 90px;
+  margin: 40px 0;
+  background-color: white;
+  padding: 20px 90px;
 }
 .property-aboutDeveloper-head {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 .property-aboutDeveloper-head h5 {
-    font-size: 1.6rem;
-    font-weight: 600;
+  font-size: 1.6rem;
+  font-weight: 600;
 }
 .property-aboutDeveloper-head h6 {
-    font-size: 1.1rem;
-    font-weight: 400;
-    margin-top: 10px;
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-top: 10px;
 }
 
 .property-aboutDeveloper-work {
-    margin: 40px 0;
-    display: flex;
-    align-items: center;
+  margin: 40px 0;
+  display: flex;
+  align-items: center;
 }
 .property-aboutDeveloper-img {
-    height: 90px;
-    width: 90px;
-    border-radius: 50%;
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
 }
 .property-aboutDeveloper-work-side h6 {
-    margin-left: 20px;
-    display: flex;
+  margin-left: 20px;
+  display: flex;
 }
 .property-aboutDeveloper-work-side h6 p {
-    margin-right: 10px;
-    background-color: var(--orangeColor);
-    border-radius: 50%;
-    height: 20px;
-    width: 20px;
+  margin-right: 10px;
+  background-color: var(--orangeColor);
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
 }
 .property-aboutDeveloper-desc {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 .property-aboutDeveloper-desc h6 {
-    font-size: 1rem;
-    font-weight: 400;
-    color: grey;
+  font-size: 1rem;
+  font-weight: 400;
+  color: grey;
 }
 
 /* faq */
 .property-FAQ {
-    padding: 10px 30px;
-    font-size: 2rem;
+  padding: 10px 30px;
+  font-size: 2rem;
 }
 .property-FAQ-head h5 {
-    padding: 10px 30px;
-    font-size: 2rem;
-    padding-bottom: 20px;
+  padding: 10px 30px;
+  font-size: 2rem;
+  padding-bottom: 20px;
 }
 .propert-FAQ-accordian {
-    background-color: #ebebeb;
-    border-radius: 20px;
+  background-color: #ebebeb;
+  border-radius: 20px;
 }
 
 /* //usp */
 .property-USP-content {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
-    margin-right: 15px;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-right: 15px;
+  align-items: center;
 }
 .property-USP-content h6 {
-    padding: 0;
-    padding-left: 10px;
-    margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  margin: 0;
 }
 .property-USP-content img {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
 }
 
 /* modal */
 .property-animation-modal {
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 60px 0;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    height: 100vh;
-    z-index: 100000;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 60px 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  z-index: 100000;
 }
 .property-overview-head-modal h4 {
-    font-size: 2rem;
-    font-weight: 600;
-    color: white;
-    text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  text-align: center;
 }
 .property-overview-head-modal h5 {
-    font-size: 1.2rem;
-    font-weight: 400;
-    text-align: center;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-align: center;
 
-    color: rgb(169, 167, 167);
+  color: rgb(169, 167, 167);
 }
 .property-overview-btn-container-modal {
-    margin: 20px 0;
-    position: relative;
-    width: 70%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin: 20px 0;
+  position: relative;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .property-overview-btn-modal {
-    text-align: center;
-    padding: 10px 20px;
-    width: 200px;
-    margin: 3px 0;
-    background-color: var(--orangeColor);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  text-align: center;
+  padding: 10px 20px;
+  width: 200px;
+  margin: 3px 0;
+  background-color: var(--orangeColor);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .property-overview-btn-modal svg {
-    font-size: 1.8rem;
-    color: white;
+  font-size: 1.8rem;
+  color: white;
 }
 .property-overview-btn-modal h5 {
-    margin-bottom: 0;
-    font-size: 0.9rem;
-    text-align: start;
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  text-align: start;
 }
 
 /* animation */
 
 .locationOn {
-    animation-name: locationOn;
-    animation-duration: 6s;
-    width: 35%;
-    position: relative;
-    top: 10%;
-    z-index: 100000;
-    left: 0;
-    animation-iteration-count: calc(1);
-    animation-direction: normal;
+  animation-name: locationOn;
+  animation-duration: 6s;
+  width: 35%;
+  position: relative;
+  top: 10%;
+  z-index: 100000;
+  left: 0;
+  animation-iteration-count: calc(1);
+  animation-direction: normal;
 }
 @keyframes locationOn {
-    0% {
-        left: -740px;
-        width: 100%;
-    }
-    50% {
-        left: 0;
-        width: 35%;
-    }
+  0% {
+    left: -740px;
+    width: 100%;
+  }
+  50% {
+    left: 0;
+    width: 35%;
+  }
 }
 
 .money {
-    animation-name: money;
-    animation-duration: 5s;
-    position: relative;
-    top: 12%;
-    width: 35%;
-    animation-iteration-count: calc(1);
-    animation-direction: normal;
+  animation-name: money;
+  animation-duration: 5s;
+  position: relative;
+  top: 12%;
+  width: 35%;
+  animation-iteration-count: calc(1);
+  animation-direction: normal;
 }
 @keyframes money {
-    0% {
-        left: 740px;
-        width: 100%;
-    }
-    50% {
-        left: 0;
-        width: 35%;
-    }
+  0% {
+    left: 740px;
+    width: 100%;
+  }
+  50% {
+    left: 0;
+    width: 35%;
+  }
 }
 
 .area {
-    animation-name: area;
-    animation-duration: 4s;
-    position: relative;
-    top: 14%;
-    animation-iteration-count: calc(1);
-    width: 35%;
+  animation-name: area;
+  animation-duration: 4s;
+  position: relative;
+  top: 14%;
+  animation-iteration-count: calc(1);
+  width: 35%;
 
-    animation-direction: normal;
+  animation-direction: normal;
 }
 @keyframes area {
-    0% {
-        left: -740px;
-        width: 100%;
-    }
-    50% {
-        width: 35%;
-        left: 0;
-    }
+  0% {
+    left: -740px;
+    width: 100%;
+  }
+  50% {
+    width: 35%;
+    left: 0;
+  }
 }
 .bhk {
-    animation-name: bhk;
-    animation-duration: 3s;
-    position: relative;
-    top: 16%;
-    width: 35%;
-    animation-iteration-count: calc(1);
-    animation-direction: normal;
+  animation-name: bhk;
+  animation-duration: 3s;
+  position: relative;
+  top: 16%;
+  width: 35%;
+  animation-iteration-count: calc(1);
+  animation-direction: normal;
 }
 @keyframes bhk {
-    0% {
-        left: 740px;
-        width: 100%;
-    }
-    50% {
-        width: 35%;
-        left: 0;
-    }
+  0% {
+    left: 740px;
+    width: 100%;
+  }
+  50% {
+    width: 35%;
+    left: 0;
+  }
 }
 .units {
-    animation-name: units;
-    animation-duration: 2s;
-    position: relative;
-    top: 18%;
-    width: 35%;
-    animation-iteration-count: calc(1);
-    animation-direction: normal;
+  animation-name: units;
+  animation-duration: 2s;
+  position: relative;
+  top: 18%;
+  width: 35%;
+  animation-iteration-count: calc(1);
+  animation-direction: normal;
 }
 @keyframes units {
-    0% {
-        left: -740px;
-        width: 100%;
-    }
-    50% {
-        left: 0;
-        width: 35%;
-    }
+  0% {
+    left: -740px;
+    width: 100%;
+  }
+  50% {
+    left: 0;
+    width: 35%;
+  }
 }
 .move {
-    animation-name: move;
-    animation-duration: 2s;
-    position: relative;
-    top: 20%;
-    width: 35%;
-    animation-iteration-count: calc(1);
-    animation-direction: normal;
+  animation-name: move;
+  animation-duration: 2s;
+  position: relative;
+  top: 20%;
+  width: 35%;
+  animation-iteration-count: calc(1);
+  animation-direction: normal;
 }
 @keyframes move {
+  0% {
+    bottom: -740px;
+    width: 100%;
+  }
+  50% {
+    bottom: 0;
+    width: 35%;
+  }
+}
+
+@media (max-width: 992px) {
+  .property-sideform {
+    display: none;
+  }
+  .locationOn {
+  }
+  .property-block {
+    top: unset;
+  }
+  .property-animation-modal {
+    z-index: 10000000000000;
+    height: 100vh;
+  }
+  .property-overview-btn-modal {
+    flex-direction: row;
+    width: 100%;
+  }
+  @keyframes locationOn {
     0% {
-        bottom: -740px;
-        width: 100%;
+      left: -740px;
+      width: 200%;
     }
     50% {
-        bottom: 0;
-        width: 35%;
+      left: 0;
+      width: 100%;
     }
-}
+  }
+  @keyframes money {
+    0% {
+      left: 740px;
+      width: 200%;
+    }
+    50% {
+      left: 0;
+      width: 100%;
+    }
+  }
+  @keyframes area {
+    0% {
+      left: -740px;
+      width: 200%;
+    }
+    50% {
+      width: 100%;
+      left: 0;
+    }
+  }
+  @keyframes bhk {
+    0% {
+      left: 740px;
+      width: 200%;
+    }
+    50% {
+      width: 100%;
+      left: 0;
+    }
+  }
+  @keyframes units {
+    0% {
+      left: -740px;
+      width: 200%;
+    }
+    50% {
+      left: 0;
+      width: 100%;
+    }
+  }
 
-@media (max-width: 992px) {
-    .property-sideform {
-        display: none;
+  @keyframes move {
+    0% {
+      bottom: -740px;
+      width: 200%;
     }
-    .locationOn {
+    50% {
+      bottom: 0;
+      width: 100%;
     }
-    .property-block {
-        top: unset;
-    }
-    .property-animation-modal {
-        z-index: 10000000000000;
-        height: 100vh;
-    }
-    .property-overview-btn-modal {
-        flex-direction: row;
-        width: 100%;
-    }
-    @keyframes locationOn {
-        0% {
-            left: -740px;
-            width: 200%;
-        }
-        50% {
-            left: 0;
-            width: 100%;
-        }
-    }
-    @keyframes money {
-        0% {
-            left: 740px;
-            width: 200%;
-        }
-        50% {
-            left: 0;
-            width: 100%;
-        }
-    }
-    @keyframes area {
-        0% {
-            left: -740px;
-            width: 200%;
-        }
-        50% {
-            width: 100%;
-            left: 0;
-        }
-    }
-    @keyframes bhk {
-        0% {
-            left: 740px;
-            width: 200%;
-        }
-        50% {
-            width: 100%;
-            left: 0;
-        }
-    }
-    @keyframes units {
-        0% {
-            left: -740px;
-            width: 200%;
-        }
-        50% {
-            left: 0;
-            width: 100%;
-        }
-    }
+  }
 
-    @keyframes move {
-        0% {
-            bottom: -740px;
-            width: 200%;
-        }
-        50% {
-            bottom: 0;
-            width: 100%;
-        }
-    }
-
-    .responsive-sideform-btn {
-        transform: rotate(-90deg);
-        color: white;
-        display: flex;
-        /* border-radius: 50%; */
-        border: none;
-        background-color: var(--blueColor);
-        position: fixed;
-        right: -40px;
-        /* right: -24px; */
-        top: 296px;
-        z-index: 99999999;
-    }
-    .responsive-sideform-btn svg {
-        color: white;
-        font-size: 2rem;
-    }
-    .property-sideform-modal {
-        z-index: 999999999999;
-    }
+  .responsive-sideform-btn {
+    transform: rotate(-90deg);
+    color: white;
+    display: flex;
+    /* border-radius: 50%; */
+    border: none;
+    background-color: var(--blueColor);
+    position: fixed;
+    right: -40px;
+    /* right: -24px; */
+    top: 296px;
+    z-index: 99999999;
+  }
+  .responsive-sideform-btn svg {
+    color: white;
+    font-size: 2rem;
+  }
+  .property-sideform-modal {
+    z-index: 999999999999;
+  }
 }
 .load-more-btn {
-    border: 2px solid var(--blueColor);
-    background-color: var(--blueColor);
-    color: white;
-    padding: 5px;
-    display: flex;
-    align-items: center;
-    border-radius: 5px;
+  border: 2px solid var(--blueColor);
+  background-color: var(--blueColor);
+  color: white;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
 }
 @media (max-width: 992px) {
-    .property-amenity-content {
-        width: 50%;
-    }
+  .property-amenity-content {
+    width: 50%;
+  }
 }
 
 @media (max-width: 568px) {
-    .property-aboutDeveloper {
-        margin: 40px 0;
-        background-color: white;
-        padding: 20px 20px;
-    }
-    .property-navigate-container {
-        padding: 20px 0;
-        display: flex;
-    }
-    .property-first-img img {
-        width: 100%;
-    }
-    .property-first-img {
-        width: 100% !important;
-    }
-    .property-overview-head h4 {
-        font-size: 30px;
-    }
-    .property-overview-head h5 {
-        font-size: 16px;
-        margin-bottom: 20px;
-    }
-    .property-amenity-content {
-        width: 100%;
-    }
+  .property-aboutDeveloper {
+    margin: 40px 0;
+    background-color: white;
+    padding: 20px 20px;
+  }
+  .property-navigate-container {
+    padding: 20px 0;
+    display: flex;
+  }
+  .property-first-img img {
+    width: 100%;
+  }
+  .property-first-img {
+    width: 100% !important;
+  }
+  .property-overview-head h4 {
+    font-size: 30px;
+  }
+  .property-overview-head h5 {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .property-amenity-content {
+    width: 100%;
+  }
 }
 .getprice-btn {
-    background-color: var(--blueColor);
-    padding: 10px;
-    color: white;
-    border: none;
-    border-radius: 10px;
+  background-color: var(--blueColor);
+  padding: 10px;
+  color: white;
+  border: none;
+  border-radius: 10px;
 }
 
 .Modal-Closer {
-    position: fixed;
-    top: 5%;
-    right: 5%;
-    background-color: transparent;
-    border: none;
+  position: fixed;
+  top: 5%;
+  right: 5%;
+  background-color: transparent;
+  border: none;
 }
 .Modal-Closer svg {
-    font-size: 2.2rem;
-    background-color: transparent;
-    color: white;
+  font-size: 2.2rem;
+  background-color: transparent;
+  color: white;
+}
+
+.video-carousel {
+  height: 20rem;
+}
+
+.video-carousel iframe {
+  height: 100%;
+  width: 100% !important;
+  margin: 0 !important;
+  border-radius: 15px;
 }

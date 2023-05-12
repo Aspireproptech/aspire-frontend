@@ -3,7 +3,8 @@ import BottomFoot from "../Common/BottomFoot";
 import NewNav from "../Common/NewNav";
 import { Col, Container, Row } from "react-bootstrap";
 import "../../Assets/Project/property.css";
-import p1 from "../../Assets/Images/p1.svg";
+// import p1 from "../../Assets/Images/p1.svg";
+import p1 from "../../Assets/Ads/Adds.jpg";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import PaidIcon from "@mui/icons-material/Paid";
@@ -54,6 +55,8 @@ import SpinLoader from "../Common/SpinLoader";
 function Property({ festinquiry, setFestInquiry }) {
     const [isLoading, setIsLoading] = useState(false);
     const [propertyData, setpropertyData] = useState({});
+    const [pictures, setPictures] = useState([])
+
     const [unit, setunit] = useState(0);
     const [showModal, setshowModal] = useState(true);
     const [showSideform, setshowSideform] = useState(false);
@@ -114,6 +117,7 @@ function Property({ festinquiry, setFestInquiry }) {
         }
     };
 
+    console.log(pictures)
     // api call
     const fetchsingleproperty = async () => {
         try {
@@ -122,6 +126,12 @@ function Property({ festinquiry, setFestInquiry }) {
             };
             const data = await FetchSinglePropertyData(singleid);
             setpropertyData(data?.data?.data);
+            let arr = []
+            data?.data?.data?.pictures.map((item) => {
+                arr.push({ link: item, type: "image" })
+            })
+            arr.push({ type: "video", link: "https://www.youtube.com/embed/7e90gBu4pas" })
+            setPictures(arr)
             console.log(data?.data?.data);
             setunitDetails(data?.data?.data?.unitDetails[0]?.detail);
         } catch (error) {
@@ -448,7 +458,7 @@ function Property({ festinquiry, setFestInquiry }) {
                                 <div className="register-btn ">
                                     <button className="px-3">
                                         {isLoading &&
-                                        buttonText === "Download Brochure" ? (
+                                            buttonText === "Download Brochure" ? (
                                             <SpinLoader />
                                         ) : (
                                             "Submit"
@@ -515,7 +525,7 @@ function Property({ festinquiry, setFestInquiry }) {
                                 <button>
                                     {" "}
                                     {isLoading &&
-                                    buttonText !== "Download Brochure" ? (
+                                        buttonText !== "Download Brochure" ? (
                                         <SpinLoader />
                                     ) : (
                                         "Enquire Now"
@@ -608,19 +618,21 @@ function Property({ festinquiry, setFestInquiry }) {
                                         })
                                     } */}
                                     <Carousel>
-                                        {propertyData?.pictures?.map(
-                                            (item, index) => {
-                                                return (
-                                                    <div>
-                                                        <img
-                                                            src={`${item}`}
-                                                            alt="noe"
-                                                        />
-                                                    </div>
-                                                );
-                                            }
-                                        )}
+                                        {propertyData?.pictures?.map((item, index) => {
+                                            return (
+                                                <div>
+                                                    <img
+                                                        src={`${item}`}
+                                                        alt="noe"
+                                                    />
+                                                </div>
+                                            );
+                                        })}
+
                                     </Carousel>
+                                </div>
+                                <div className="video-carousel">
+                                    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0"></iframe>
                                 </div>
                             </div>
                         </div>
@@ -635,61 +647,55 @@ function Property({ festinquiry, setFestInquiry }) {
                             >
                                 <a
                                     href={"#overview"}
-                                    className={`${
-                                        location?.hash == "#overview"
-                                            ? "navigate-active"
-                                            : ""
-                                    } property-navigate-links`}
+                                    className={`${location?.hash == "#overview"
+                                        ? "navigate-active"
+                                        : ""
+                                        } property-navigate-links`}
                                 >
                                     Overview
                                 </a>
                                 <a
                                     href={"#amenities"}
-                                    className={`${
-                                        location?.hash == "#amenities"
-                                            ? "navigate-active"
-                                            : ""
-                                    } property-navigate-links`}
+                                    className={`${location?.hash == "#amenities"
+                                        ? "navigate-active"
+                                        : ""
+                                        } property-navigate-links`}
                                 >
                                     Amenities
                                 </a>
                                 <a
                                     href={"#location"}
-                                    className={`${
-                                        location?.hash == "#location"
-                                            ? "navigate-active"
-                                            : ""
-                                    } property-navigate-links`}
+                                    className={`${location?.hash == "#location"
+                                        ? "navigate-active"
+                                        : ""
+                                        } property-navigate-links`}
                                 >
                                     Location
                                 </a>
                                 <a
                                     href={"#units"}
-                                    className={`${
-                                        location?.hash == "#units"
-                                            ? "navigate-active"
-                                            : ""
-                                    } property-navigate-links`}
+                                    className={`${location?.hash == "#units"
+                                        ? "navigate-active"
+                                        : ""
+                                        } property-navigate-links`}
                                 >
                                     Units
                                 </a>
                                 <a
                                     href={"#about"}
-                                    className={`${
-                                        location?.hash == "#about"
-                                            ? "navigate-active"
-                                            : ""
-                                    } property-navigate-links`}
+                                    className={`${location?.hash == "#about"
+                                        ? "navigate-active"
+                                        : ""
+                                        } property-navigate-links`}
                                 >
                                     About Developer
                                 </a>
                                 <a
                                     href={"#faq"}
-                                    className={`${
-                                        location?.hash == "#faq"
-                                            ? "navigate-active"
-                                            : ""
-                                    } property-navigate-links`}
+                                    className={`${location?.hash == "#faq"
+                                        ? "navigate-active"
+                                        : ""
+                                        } property-navigate-links`}
                                 >
                                     FAQs
                                 </a>
@@ -749,7 +755,7 @@ function Property({ festinquiry, setFestInquiry }) {
                                                                     ?.unitDetails
                                                                     .length -
                                                                     1 ===
-                                                                index
+                                                                    index
                                                                     ? null
                                                                     : ","}
                                                             </p>
@@ -825,11 +831,10 @@ function Property({ festinquiry, setFestInquiry }) {
                                         <div
                                             className="property-amenity-container"
                                             style={{
-                                                height: `${
-                                                    showAmenity
-                                                        ? `${100}%`
-                                                        : `${16}vh`
-                                                }`,
+                                                height: `${showAmenity
+                                                    ? `${100}%`
+                                                    : `${16}vh`
+                                                    }`,
                                             }}
                                         >
                                             {propertyData?.amenities?.map(
@@ -934,11 +939,10 @@ function Property({ festinquiry, setFestInquiry }) {
                                                 return (
                                                     <button
                                                         key={index}
-                                                        className={`${
-                                                            unit == index
-                                                                ? "property-units-head-active "
-                                                                : ""
-                                                        }`}
+                                                        className={`${unit == index
+                                                            ? "property-units-head-active "
+                                                            : ""
+                                                            }`}
                                                         onClick={() => {
                                                             setunitDetails(
                                                                 item?.detail
@@ -1211,7 +1215,7 @@ function Property({ festinquiry, setFestInquiry }) {
                                                     {propertyData?.unitDetails
                                                         .length -
                                                         1 ===
-                                                    index
+                                                        index
                                                         ? null
                                                         : ","}
                                                 </h5>
