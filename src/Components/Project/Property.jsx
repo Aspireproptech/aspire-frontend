@@ -631,9 +631,7 @@ function Property({ festinquiry, setFestInquiry }) {
 
                                     </Carousel>
                                 </div>
-                                <div className="video-carousel">
-                                    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0"></iframe>
-                                </div>
+
                             </div>
                         </div>
                     </Container>
@@ -870,6 +868,14 @@ function Property({ festinquiry, setFestInquiry }) {
                                         </div>
                                     </Col>
                                 </Row>
+                            </Col>
+                        </Row>
+
+                        <Row>
+                            <Col className="property-amenity p-0" lg={8}>
+                                <div className="video-carousel">
+                                    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0"></iframe>
+                                </div>
                             </Col>
                         </Row>
 
