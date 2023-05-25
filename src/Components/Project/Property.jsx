@@ -62,6 +62,7 @@ function Property({ festinquiry, setFestInquiry }) {
     const [showSideform, setshowSideform] = useState(false);
     const [unitDetails, setunitDetails] = useState();
     const [showAmenity, setshowAmenity] = useState(false);
+    const [youtubelink, setYouTubeLink] = useState("")
     const pName = propertyData?.name;
     const [quote, setquote] = useState({
         name: "",
@@ -125,6 +126,9 @@ function Property({ festinquiry, setFestInquiry }) {
                 name: decodeString(param.id),
             };
             const data = await FetchSinglePropertyData(singleid);
+            const link = getYoutubeLink(data?.data?.data?.name);
+            setYouTubeLink(link);
+            console.log(data?.data?.data?.name);
             setpropertyData(data?.data?.data);
             let arr = []
             data?.data?.data?.pictures.map((item) => {
@@ -156,6 +160,18 @@ function Property({ festinquiry, setFestInquiry }) {
         handleToggle(true);
         getUspData();
     }, [param.id]);
+
+    const getYoutubeLink = (name) => {
+        if (name === "Terraza by SA Lifetsyle") {
+            return `https://www.youtube.com/embed/eQdWSLMF4MM`
+        } else if (name === "Pyramid Bilberry") {
+            return "https://www.youtube.com/embed/EEuwMYfZrHU"
+        } else if (name == "Sree Urban Pinnacle") {
+            return "https://www.youtube.com/embed/5kk0O2TuZ5k"
+        } else {
+            return ""
+        }
+    }
 
     // best quote
 
@@ -871,15 +887,19 @@ function Property({ festinquiry, setFestInquiry }) {
                             </Col>
                         </Row>
 
-                        <Row>
-                            <Col className="property-amenity p-0" lg={8}>
-                                <div className="video-carousel">
-                                    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0"></iframe>
-                                </div>
-                            </Col>
-                        </Row>
+                        {
+                            youtubelink && (
+                                <Row>
+                                    <Col className="property-amenity p-0" lg={8}>
+                                        <div className="video-carousel">
+                                            <iframe src={youtubelink} frameborder="0"></iframe>
+                                        </div>
+                                    </Col>
+                                </Row>
+                            )
+                        }
 
-                        {/* <Row id="amenities">
+                        {/* <Row id="amenities">embed
               <Col className="property-amenity" lg={8}>
                 <h5>Project USP</h5>
                 <hr />
