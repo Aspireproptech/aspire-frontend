@@ -59,9 +59,37 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
   const handleShowEnquiry = (projName) => {
     setShowEnquiry(true);
   };
+  const [OfferDate, setOfferDate] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+  })
 
-  const today = new Date()
-  const lastDate = new Date("2023-11-30")
+
+  function getDateDiffInDHM(startDate, endDate) {
+    const diffMs = Math.abs(endDate.getTime() - startDate.getTime());
+    const totalMinutes = Math.floor(diffMs / (1000 * 60));
+    const days = Math.floor(totalMinutes / (24 * 60));
+    const hours = Math.floor((totalMinutes - (days * 24 * 60)) / 60);
+    const minutes = totalMinutes - (days * 24 * 60) - (hours * 60);
+    setOfferDate({
+      days: days, hours: hours, minutes: minutes
+    })
+  }
+
+  const endDate = new Date("2023-11-30T00:00:43.000Z");
+  endDate.setHours(0, 0, 0, 0)
+
+  useEffect(() => {
+    const startDate = new Date();
+    getDateDiffInDHM(startDate, endDate)
+    setInterval(() => {
+      const startDate = new Date();
+      getDateDiffInDHM(startDate, endDate)
+    }, 60000)
+
+  }, [])
+  console.log(OfferDate); // { days: 30, hours: 0, minutes: 0 }
 
   const [register, setRegister] = useState({
     firstName: "",
@@ -532,6 +560,9 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
 
       <div className="mt-5">
         <img className="w-100" src={DiwaliBanner} alt="" />
+        <div className="d-flex justify-content-center offer-box mt-3">
+          <h3>OFFER ENDS IN {OfferDate.days > 9 ? <span>{OfferDate.days}d</span> : <span>0{OfferDate.days}d</span>} : {OfferDate.hours > 9 ? <span>{OfferDate.hours}h</span> : <span>0{OfferDate.hours}h</span>} : {OfferDate.minutes > 9 ? <span>{OfferDate.minutes}m</span> : <span>0{OfferDate.minutes}m</span>}</h3>
+        </div>
       </div>
       {/* ----------- Project List ---------- */}
       <div className="sec4-container mt-5">
@@ -681,7 +712,11 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
 
             <br />
             <br />
-            Enquire Now
+            <div className="GetInTouch-btn">
+              <button onClick={handleShowEnquiry}>
+                Enquire Now
+              </button>
+            </div>
             <br />
             <br />
             Stay tuned for updates and be a part of the grand celebration! 🪔🏡✨
@@ -844,26 +879,6 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
                 <option value="3 BHK" >3 BHK</option>
                 <option value="4 BHK" >4 BHK</option>
               </select>
-              <input
-                type="text"
-                value={register.phone}
-                name="phone"
-                required
-                pattern="[0-9]{10}"
-                title="Enter Valid Phone No."
-                onChange={handleChange}
-                placeholder="Phone Number *"
-              />
-              <input
-                type="text"
-                value={register.email}
-                name="email"
-                required
-                onChange={handleChange}
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-                title="Enter Valid Email"
-                placeholder="Email *"
-              />
               <p>
                 I Agree to the <a href="">Terms & Conditions.</a>
               </p>

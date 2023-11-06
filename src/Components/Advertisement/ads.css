@@ -393,6 +393,13 @@ select {
   font-size: 41px;
   font-weight: 600;
 }
+.offer-box span{
+  color: #13184f;
+  font-size: 32px;
+  background: rgba(178, 178, 178, 0.542);
+  border-radius: 5px;
+  padding: 3px 6px;
+}
 
 @media only screen and (max-width: 1920px) {
   .site-img {
