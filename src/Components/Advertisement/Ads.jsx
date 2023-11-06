@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { Col, Container, Row, Modal } from "react-bootstrap";
-import AdsImage from "../../Assets/Ads/Adds.jpg";
+import AdsImage from "../../Assets/Ads/banner2.png";
 import AdsMobileImage from "../../Assets/Ads/Adds-mobile.jpg";
 
 import Portfolio from "../HomePage/Portfolio";
@@ -13,6 +13,7 @@ import HomeIcon from "@mui/icons-material/Home";
 import BedroomChildIcon from "@mui/icons-material/BedroomChild";
 import { Link, useNavigate } from "react-router-dom";
 import { FetchPropertyData, ImageEmailData, RegisterData } from "../API/Api";
+import DiwaliBanner from "../../Assets/Ads/diwali-banner.png"
 
 import PatioPass from "../../Assets/Ads/patio-pass.png";
 import RoashanPass from "../../Assets/Ads/roshan-pass.png";
@@ -95,176 +96,195 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
   const fetchPortfolio = async () => {
     try {
       const { data } = await FetchPropertyData();
+      console.log(data)
       var arr = [];
       const val = data?.data.filter((e) => e.name !== "SLV Icon");
       const seq = [
-        "Speckles Patio",
+        "Sohan Exotica",
+        "Terraza",
         "Sree Urban Pinnacle",
-        "Terraza by SA Lifetsyle",
         "Pyramid Bilberry",
-        "Amigo Estella",
-        "Pyramid Watsonia",
-        "Aryav Greenfields",
-        "Alpine Pyramid",
-        "Roshan Gardenia",
+        "Revanata",
+        "High Cliff",
       ];
       const offerDetail = [
         {
+          location: "Sahakar Nagar",
+          price: "1.15 Cr Onwards",
+          home: "Under Construction",
+          blocks: "3 & 4 BHK",
+          head: "Sohan Exotica",
+          offer: [
+            {
+              line: "Get 10 gm Gold Coin on Spot Closures",
+            },
+            {
+              line: "No Floor Rise Charges",
+            },
+            {
+              line: "Upto 20% Discount on Home Interiors",
+            },
+            {
+              line: "Offers applicable only for first 6 bookings during the offer period.",
+            },
+          ],
+        },
+        {
+          location: "Thanisandra Main Road",
+          price: "1.36 Cr Onwards",
+          home: "Ready to Move-In",
+          blocks: "3, 3.5 & 4 BHK",
+          head: "Terraza",
+          offer: [
+            {
+              line: "Get 1 Extra Car Park Complimentary",
+            },
+            {
+              line: "No Floor Rise Charges",
+            },
+            {
+              line: "Upto 20% Discount on Home Interiors",
+            },
+            {
+              line: "Offers applicable only for first 6 bookings during the offer period.",
+            },
+          ],
+        },
+        {
+          location: "Off Thanisandra Main Road",
+          price: "57 Lakh Onwards",
+          home: "Possession Soon",
+          blocks: "2 & 3 BHK",
           head: "Sree Urban Pinnacle",
           offer: [
             {
-              line: "Exclusive Launch Price* of Rs.3990/- per sqft (basic rate)",
+              line: "Discount of Rs.2,00,001/- on Spot Closures",
             },
             {
-              line: "50% discount on other charges or EMI Waiver for 15 months",
+              line: "EMI Holiday Option From Selected Banks & NBFCs",
             },
             {
-              line: "EMI Holiday Option from Select Banks and NBFCs",
+              line: "Upto 20% Discount on Home Interiors",
             },
             {
-              line: "Launch Offers applicable for 21 units",
+              line: "Offers applicable only for first 6 bookings during the offer period.",
             },
           ],
         },
         {
+          location: "Off Thanisandra Main Road",
+          price: "42 Lakhs Onwards",
+          home: "Ready to Move-In",
+          blocks: "2 & 3 BHK",
           head: "Pyramid Bilberry",
           offer: [
             {
-              line: "Waiver of Car Parking Charges worth Rs. 2 Lakhs",
+              line: "Earn upto 6% Rental Yield",
             },
             {
-              line: "Flat Discount of Rs.250/- per sqft on basic rate",
+              line: "Fully Furnished with Interiors",
             },
             {
-              line: "Get a 65” Branded LED TV for Spot Closures",
+              line: "Immediate Possession",
             },
             {
-              line: "Upto 25% discount on Home Interiors",
-            },
-            {
-              line: "AHF Offers extended for 5 units",
+              line: "Last few units left. Hurry!",
             },
           ],
         },
         {
-          head: "Pyramid Watsonia",
+          location: "Off Belathur, Whitefield",
+          price: "70 Lakhs onwards",
+          home: "Under Construction",
+          blocks: "2 & 3 BHK",
+          head: "Revanata",
           offer: [
             {
-              line: "Waiver of Car Parking Charges worth Rs. 2 Lakhs",
+              line: "Attractive Launch Offers",
             },
             {
-              line: "Flat Discount of Rs.300/- per sqft on basic rate",
+              line: "Premium Units Available",
             },
             {
-              line: "Get a 65” Branded LED TV for Spot Closures",
+              line: "Upto 20% Discount on Home Interiors",
             },
             {
-              line: "Upto 25% discount on Home Interiors",
-            },
-            {
-              line: "AHF Offers extended for 2 units",
+              line: "Offers applicable only for first 5 bookings during the offer period.",
             },
           ],
         },
         {
-          head: "Terraza by SA Lifetsyle",
+          location: "Panathur Main Road",
+          price: "1.29 Cr Onwards",
+          home: "Under Construction",
+          blocks: "2, 2.5 & 3 BHK",
+          head: "High Cliff",
           offer: [
             {
-              line: "Flat Discount of Rs.300/- per sqft on basic rate",
+              line: "Attractive Re-Launch Offers",
             },
             {
-              line: "Get 1 Car Park Extra for FREE (worth Rs. 4 Lakhs)",
+              line: "Premium Units Available",
             },
             {
-              line: "Get a discount of Rs.2 Lakhs for Spot Closures",
+              line: "Upto 20% Discount on Home Interiors",
             },
             {
-              line: "AHF Offers extended for 5 units",
+              line: "Offers applicable only for first 7 bookings during the offer period.",
             },
           ],
         },
-        {
-          head: "Speckles Patio",
-          offer: [
-            {
-              line: "All-inclusive Box Price",
-            },
-            {
-              line: "Get white goods of your choice worth Rs.2 Lakhs for Spot Closures",
-            },
-            {
-              line: "AHF Offers extended for 2 units",
-            },
-          ],
-        },
-        {
-          head: "Roshan Gardenia",
-          offer: [
-            {
-              line: "Flat Discount of Rs.350/- per sqft on basic rate",
-            },
-            {
-              line: "Waiver of Car Parking Charges, FRC & PLC Charges",
-            },
-            {
-              line: "Get white goods of your choice worth Rs.2 Lakhs for Spot Closures",
-            },
-            {
-              line: "AHF Offers extended for 3 units",
-            },
-          ],
-        },
-        {
-          head: "Alpine Pyramid",
-          offer: [
-            {
-              line: "Flat Discount of Rs.500/- per sqft on basic rate",
-            },
-            {
-              line: "Complete waiver of all other charges",
-            },
-            {
-              line: "Upto 25% discount on Home Interiors",
-            },
-            {
-              line: "AHF Offers extended for 3 units",
-            },
-          ],
-        },
-        {
-          head: "Amigo Estella",
-          offer: [
-            {
-              line: "Flat Discount of Rs.200/- per sqft on basic rate",
-            },
-            {
-              line: "Attractive offers on Home Loans",
-            },
-            {
-              line: "Upto 25% discount on Home Interiors",
-            },
-            {
-              line: "AHF Offers extended for 4 units",
-            },
-          ],
-        },
-        {
-          head: "Aryav Greenfields",
-          offer: [
-            {
-              line: "Flat Discount of Rs.200/- per sqft on basic rate",
-            },
-            {
-              line: "Reduced charges for Car Parking and Amenities",
-            },
-            {
-              line: "Upto 25% discount on Home Interiors",
-            },
-            {
-              line: "AHF Offers extended for 5 units",
-            },
-          ],
-        },
+        // {
+        //   head: "Alpine Pyramid",
+        //   offer: [
+        //     {
+        //       line: "Flat Discount of Rs.500/- per sqft on basic rate",
+        //     },
+        //     {
+        //       line: "Complete waiver of all other charges",
+        //     },
+        //     {
+        //       line: "Upto 25% discount on Home Interiors",
+        //     },
+        //     {
+        //       line: "AHF Offers extended for 3 units",
+        //     },
+        //   ],
+        // },
+        // {
+        //   head: "Amigo Estella",
+        //   offer: [
+        //     {
+        //       line: "Flat Discount of Rs.200/- per sqft on basic rate",
+        //     },
+        //     {
+        //       line: "Attractive offers on Home Loans",
+        //     },
+        //     {
+        //       line: "Upto 25% discount on Home Interiors",
+        //     },
+        //     {
+        //       line: "AHF Offers extended for 4 units",
+        //     },
+        //   ],
+        // },
+        // {
+        //   head: "Aryav Greenfields",
+        //   offer: [
+        //     {
+        //       line: "Flat Discount of Rs.200/- per sqft on basic rate",
+        //     },
+        //     {
+        //       line: "Reduced charges for Car Parking and Amenities",
+        //     },
+        //     {
+        //       line: "Upto 25% discount on Home Interiors",
+        //     },
+        //     {
+        //       line: "AHF Offers extended for 5 units",
+        //     },
+        //   ],
+        // },
       ];
 
       for (let i = 0; i < seq.length; i++) {
@@ -288,7 +308,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
 
   useEffect(() => {
     fetchPortfolio();
-    document.title = "Aspire Proptech | Home Fest 2023";
+    document.title = "Aspire Proptech | Grand Diwali Home Festival 2023";
   }, []);
 
   return (
@@ -322,15 +342,15 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
                     <i class="fa-solid fa-building"></i>
                   </div>
                   <h5>
-                    9 Projects
-                    <br /> 12 + 12 Days
+                    6 Projects
+                    <br /> 20 Days
                   </h5>
                 </div>
                 <div className="left-card">
                   <div className="ad-card-img mb-4">
                     <i class="fa-solid fa-indian-rupee-sign"></i>
                   </div>
-                  <h5>Homes From 40 Lakhs to 2.5 Cr</h5>
+                  <h5>Homes From 42 Lakhs to 2.5 Cr</h5>
                 </div>
 
                 <div className="left-card">
@@ -411,27 +431,33 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
         </Row>
       </Container>
       <div className="sec3-container mt-5">
-        <h3>Your Dream Home is Here</h3>
+        <h3>Unwrap the gift of Homeownership this Diwali!</h3>
         <div className="sec-list mt-3">
           <p>
-            We present to you <strong>Aspire Home Fest 2023</strong> - a fest
-            that promises to take you a step closer to the home of your dreams.
+            Get ready to sparkle and shine this Diwali with our <strong> Grand Diwali Home Festival ! </strong>
+            It's not just another fest; it's a carnival of dreams where your ultimate home wishes come true.
+
             <br />
             <br />
-            With <strong>9 projects</strong> to choose from, in various{" "}
-            <strong>prime locations of North, East, and South Bangalore</strong>
-            , and with offers that are difficult to resist,{" "}
-            <strong>Aspire Home Fest</strong> brings you the best opportunity in
-            2023 to finally get the home you desire!
+            We've sprinkled the festival spirit across  <strong>6 remarkable projects,</strong> all nestled in the most coveted corners of
+            <strong> North & East Bangalore.</strong>
+            It's like a treasure hunt for your perfect abode, and we've hidden them in the
+
+            <strong>most prime locations!</strong>
             <br />
             <br />
-            <strong>Register now</strong> to get exclusive deals and offers that
-            make home buying a lot easier, simpler, and lighter on your pocket.
+            But what's the magic, you ask?
+            <br />
+            <br />
+            Brace yourself for a twist in the tale – <strong>unbeatable deals and offers </strong>that will make you dance with joy and offers that will light up your world brighter than a thousand diyas.
+            <br /><br />
+            Why wait? It's time to light up your life with exclusive Diwali deals and offers that will make your home buying journey a firework of delight! 🔥💫
+
           </p>
         </div>
       </div>
       {/* ------------ Tiles ----------- */}
-      <Container fluid className="mt-5">
+      {/* <Container fluid className="mt-5">
         <div className="sec5">
           <h3>4 Easy Steps to Buy Your Dream Home</h3>
         </div>
@@ -473,7 +499,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
                     <strong>‘Priority Pass’</strong> during the site visit.
                   </h5>
                 </div>
-                {/* <p>Our team delivers quality and on time as per our promises</p> */}
+                
               </div>
             </div>
           </Col>
@@ -489,7 +515,11 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
             </div>
           </Col>
         </Row>
-      </Container>
+      </Container> */}
+
+      <div className="mt-5">
+        <img className="w-100" src={DiwaliBanner} alt="" />
+      </div>
       {/* ----------- Project List ---------- */}
       <div className="sec4-container mt-5">
         <h3 className="project-heading">Projects</h3>
@@ -569,7 +599,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
                                   >
                                     {item?.bhk}
                                     {index === data?.unitDetails.length - 2 ||
-                                    index === data?.unitDetails.length - 1
+                                      index === data?.unitDetails.length - 1
                                       ? null
                                       : ","}
                                   </p>
@@ -624,7 +654,29 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
           </Container>
         </div>
       </div>
+      {/* --------------------- new section  ------------- */}
+      <div className="sec3-container mt-5">
+        <h3>Sparkling Surprises</h3>
+        <div className="sec-list mt-3">
+          <p>
+            Join us in celebrating Diwali and the joy of new beginnings with our soon-to-be-launched residential projects. Your dream home is just around the corner!
+
+
+            <br />
+            <br />
+            As we gear up for these remarkable projects, we're curious – what does your dream home look like?
+
+            <br />
+            <br />
+            Enquire Now
+            <br />
+            <br />
+            Stay tuned for updates and be a part of the grand celebration! 🪔🏡✨
+          </p>
+        </div>
+      </div>
       {/* --------------------- Contact Us ------------- */}
+
       <AdsContact />
 
       {/* {

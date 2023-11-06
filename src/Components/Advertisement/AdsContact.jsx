@@ -43,7 +43,7 @@ const AdsContact = () => {
                         <Row className=" GetInTouch-subhead">
                             <Col xs={11}>
                                 <h5>
-                                    Are you wondering how to get the most out of Aspire Home Fest 2023? We've got you covered.
+                                    Are you wondering how to get the most out of Grand Diwali Home Festival 2023?  We've got you covered.
                                     <br /><br />
                                     Just call us and we've got a team of experts ready to answer any questions you might have. From general inquiries to specific questions about the event, we'll be happy to help you out.
                                     <br /><br />
