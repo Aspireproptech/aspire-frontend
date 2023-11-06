@@ -42,6 +42,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
   const [PortfolioDetail, setPortfolioDetail] = useState();
   const [propertyMap, setPropertyMap] = useState({});
   const [show, setShow] = useState(false);
+  const [showEnquiry, setShowEnquiry] = useState(false);
   const [showPass, setShowPass] = useState(false);
   const [passSeq, setPassSeq] = useState({});
   const [projectImg, setProjectImg] = useState();
@@ -49,11 +50,18 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
   const navigate = useNavigate();
 
   const handleClose = () => setShow(false);
+  const handleCloseEnquiry = () => setShowEnquiry(false);
   const handleShow = (projName) => {
     console.log(projName);
     setRegister({ ...register, projectName: projName });
     setShow(true);
   };
+  const handleShowEnquiry = (projName) => {
+    setShowEnquiry(true);
+  };
+
+  const today = new Date()
+  const lastDate = new Date("2023-11-30")
 
   const [register, setRegister] = useState({
     firstName: "",
@@ -61,6 +69,8 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
     projectName: "",
     phone: "",
     email: "",
+    location: "",
+    configuration: "",
   });
 
   const handleChange = (e) => {
@@ -77,6 +87,8 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
         projectName: register.projectName,
         email: register.email,
         number: register.phone,
+        location: register.location,
+        configuration: register.configuration,
       };
       const data = await RegisterData(payload);
       setFestInquiry({ festCustomer: payload, CustomerSeq: data.data.data });
@@ -87,6 +99,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
         projectName: "Please choose project name",
         phone: "",
         email: "",
+
       });
     } catch (error) {
       console.log(error);
@@ -102,10 +115,10 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
       const seq = [
         "Sohan Exotica",
         "Terraza",
-        "Sree Urban Pinnacle",
-        "Pyramid Bilberry",
-        "Revanata",
         "High Cliff",
+        "Sree Urban Pinnacle",
+        "Revanta",
+        "Pyramid Bilberry",
       ];
       const offerDetail = [
         {
@@ -197,7 +210,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
           price: "70 Lakhs onwards",
           home: "Under Construction",
           blocks: "2 & 3 BHK",
-          head: "Revanata",
+          head: "Revanta",
           offer: [
             {
               line: "Attractive Launch Offers",
@@ -738,6 +751,99 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
                                     ))
                                 }
                             </select> */}
+              <input
+                type="text"
+                value={register.phone}
+                name="phone"
+                required
+                pattern="[0-9]{10}"
+                title="Enter Valid Phone No."
+                onChange={handleChange}
+                placeholder="Phone Number *"
+              />
+              <input
+                type="text"
+                value={register.email}
+                name="email"
+                required
+                onChange={handleChange}
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                title="Enter Valid Email"
+                placeholder="Email *"
+              />
+              <p>
+                I Agree to the <a href="">Terms & Conditions.</a>
+              </p>
+              <div className="register-btn ">
+                <button>Register</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </Modal>
+      <Modal show={showEnquiry} onHide={handleCloseEnquiry} centered>
+        <div className="register-box">
+          <h5>
+            Enquiry Form
+            <i
+              onClick={handleCloseEnquiry}
+              class="fa-solid fa-circle-xmark close-cancel-btn"
+            ></i>
+          </h5>
+          <div className="register-field">
+            <form onSubmit={handleClick}>
+              <input
+                name="firstName"
+                value={register.firstName}
+                type="text"
+                pattern="[a-zA-Z ]{2,30}"
+                title="Only Character"
+                onChange={handleChange}
+                required
+                placeholder="First Name*"
+              />
+              <input
+                name="lastName"
+                value={register.lastName}
+                type="text"
+                pattern="[a-zA-Z ]{2,30}"
+                title="Only Character"
+                onChange={handleChange}
+                placeholder="Last Name "
+              />
+              <input
+                type="text"
+                value={register.phone}
+                name="phone"
+                required
+                pattern="[0-9]{10}"
+                title="Enter Valid Phone No."
+                onChange={handleChange}
+                placeholder="Phone Number *"
+              />
+              <input
+                type="text"
+                value={register.email}
+                name="email"
+                required
+                onChange={handleChange}
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                title="Enter Valid Email"
+                placeholder="Email *"
+              />
+              {/* <input value={register.projectName} readOnly type="text" /> */}
+              <select onChange={handleChange} name="location">
+                <option value="" selected>Select Location</option>
+                <option value="North Banglore" >North Banglore</option>
+                <option >East Banglore</option>
+              </select>
+              <select onChange={handleChange} name="configuration">
+                <option value="" >Select Configuration</option>
+                <option value="Studio" >Studio</option>
+                <option value="2 BHK" >2 BHK</option>
+                <option value="3 BHK" >3 BHK</option>
+                <option value="4 BHK" >4 BHK</option>
+              </select>
               <input
                 type="text"
                 value={register.phone}
