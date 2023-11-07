@@ -393,7 +393,7 @@ select {
   font-size: 41px;
   font-weight: 600;
 }
-.offer-box span{
+.offer-box span {
   color: #13184f;
   font-size: 32px;
   background: rgba(178, 178, 178, 0.542);
@@ -648,5 +648,15 @@ select {
   }
   .comming-soon h4 {
     text-align: center;
+  }
+  .offer-box span {
+    color: #13184f;
+    font-size: 18px;
+    background: rgba(178, 178, 178, 0.542);
+    border-radius: 5px;
+    padding: 3px;
+  }
+  .offer-box h3 {
+    font-size: 18px !important;
   }
 }

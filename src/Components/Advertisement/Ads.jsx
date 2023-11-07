@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Col, Container, Row, Modal } from "react-bootstrap";
 import AdsImage from "../../Assets/Ads/banner2.png";
-import AdsMobileImage from "../../Assets/Ads/Adds-mobile.jpg";
+import AdsMobileImage from "../../Assets/Ads/mobile-banner.png";
 
 import Portfolio from "../HomePage/Portfolio";
 import "./ads.css";
