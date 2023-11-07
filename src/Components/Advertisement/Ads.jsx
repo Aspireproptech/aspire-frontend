@@ -713,11 +713,10 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
             <br />
             <br />
             <div className="GetInTouch-btn">
-              <button onClick={handleShowEnquiry}>
+              <button className="m-0" style={{height:"auto",width:"175px"}} onClick={handleShowEnquiry}>
                 Enquire Now
               </button>
             </div>
-            <br />
             <br />
             Stay tuned for updates and be a part of the grand celebration! 🪔🏡✨
           </p>
