@@ -125,7 +125,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
         lastName: register.lastName,
         projectName: register.projectName,
         email: register.email,
-        phone: register.phone,
+        number: register.phone,
       };
       const data = await RegisterData(payload);
       setFestInquiry({ festCustomer: payload, CustomerSeq: data.data.data });
@@ -134,7 +134,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
         firstName: "",
         lastName: "",
         projectName: "Please choose project name",
-        phone: "",
+        number: "",
         email: "",
 
       });
@@ -160,7 +160,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
         firstName: "",
         lastName: "",
         projectName: "Please choose project name",
-        phone: "",
+        number: "",
         email: "",
       });
     } catch (error) {
