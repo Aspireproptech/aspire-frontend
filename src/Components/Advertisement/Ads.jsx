@@ -12,7 +12,7 @@ import LocalAtmIcon from "@mui/icons-material/LocalAtm";
 import HomeIcon from "@mui/icons-material/Home";
 import BedroomChildIcon from "@mui/icons-material/BedroomChild";
 import { Link, useNavigate } from "react-router-dom";
-import { FetchPropertyData, ImageEmailData, RegisterData } from "../API/Api";
+import { FetchPropertyData, ImageEmailData, ProjectEnquiry, RegisterData } from "../API/Api";
 import DiwaliBanner from "../../Assets/Ads/diwali-banner.png"
 
 import PatioPass from "../../Assets/Ads/patio-pass.png";
@@ -97,6 +97,13 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
     projectName: "",
     phone: "",
     email: "",
+  });
+  const [enquiry, setEnquiry] = useState({
+    firstName: "",
+    lastName: "",
+    projectName: "",
+    phone: "",
+    email: "",
     location: "",
     configuration: "",
   });
@@ -104,6 +111,10 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setRegister({ ...register, [name]: value });
+  };
+  const handleEnquiryChange = (e) => {
+    const { name, value } = e.target;
+    setEnquiry({ ...enquiry, [name]: value });
   };
 
   const handleClick = async (e) => {
@@ -114,9 +125,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
         lastName: register.lastName,
         projectName: register.projectName,
         email: register.email,
-        number: register.phone,
-        location: register.location,
-        configuration: register.configuration,
+        phone: register.phone,
       };
       const data = await RegisterData(payload);
       setFestInquiry({ festCustomer: payload, CustomerSeq: data.data.data });
@@ -128,6 +137,31 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
         phone: "",
         email: "",
 
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const handleEnquiryClick = async (e) => {
+    e.preventDefault();
+    try {
+      const payload = {
+        firstName: enquiry.firstName,
+        lastName: enquiry.lastName,
+        projectName: enquiry.projectName,
+        email: enquiry.email,
+        number: enquiry.phone,
+        location: enquiry.location,
+        configuration: enquiry.configuration,
+      };
+      const data = await ProjectEnquiry(payload);
+      navigate("/thank-you");
+      setRegister({
+        firstName: "",
+        lastName: "",
+        projectName: "Please choose project name",
+        phone: "",
+        email: "",
       });
     } catch (error) {
       console.log(error);
@@ -713,7 +747,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
             <br />
             <br />
             <div className="GetInTouch-btn">
-              <button className="m-0" style={{height:"auto",width:"175px"}} onClick={handleShowEnquiry}>
+              <button className="m-0" style={{ height: "auto", width: "175px" }} onClick={handleShowEnquiry}>
                 Enquire Now
               </button>
             </div>
@@ -818,60 +852,60 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
       <Modal show={showEnquiry} onHide={handleCloseEnquiry} centered>
         <div className="register-box">
           <h5>
-            Enquiry Form
+            New Launch Projects Enquiry
             <i
               onClick={handleCloseEnquiry}
               class="fa-solid fa-circle-xmark close-cancel-btn"
             ></i>
           </h5>
           <div className="register-field">
-            <form onSubmit={handleClick}>
+            <form onSubmit={handleEnquiryClick}>
               <input
                 name="firstName"
-                value={register.firstName}
+                value={enquiry.firstName}
                 type="text"
                 pattern="[a-zA-Z ]{2,30}"
                 title="Only Character"
-                onChange={handleChange}
+                onChange={handleEnquiryChange}
                 required
                 placeholder="First Name*"
               />
               <input
                 name="lastName"
-                value={register.lastName}
+                value={enquiry.lastName}
                 type="text"
                 pattern="[a-zA-Z ]{2,30}"
                 title="Only Character"
-                onChange={handleChange}
+                onChange={handleEnquiryChange}
                 placeholder="Last Name "
               />
               <input
                 type="text"
-                value={register.phone}
+                value={enquiry.phone}
                 name="phone"
                 required
                 pattern="[0-9]{10}"
                 title="Enter Valid Phone No."
-                onChange={handleChange}
+                onChange={handleEnquiryChange}
                 placeholder="Phone Number *"
               />
               <input
                 type="text"
-                value={register.email}
+                value={enquiry.email}
                 name="email"
                 required
-                onChange={handleChange}
+                onChange={handleEnquiryChange}
                 pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
                 title="Enter Valid Email"
                 placeholder="Email *"
               />
-              {/* <input value={register.projectName} readOnly type="text" /> */}
-              <select onChange={handleChange} name="location">
+              {/* <input value={enquiry.projectName} readOnly type="text" /> */}
+              <select onChange={handleEnquiryChange} name="location">
                 <option value="" selected>Select Location</option>
                 <option value="North Banglore" >North Banglore</option>
                 <option >East Banglore</option>
               </select>
-              <select onChange={handleChange} name="configuration">
+              <select onChange={handleEnquiryChange} name="configuration">
                 <option value="" >Select Configuration</option>
                 <option value="Studio" >Studio</option>
                 <option value="2 BHK" >2 BHK</option>
@@ -882,7 +916,7 @@ const Ads = ({ festinquiry, setFestInquiry }) => {
                 I Agree to the <a href="">Terms & Conditions.</a>
               </p>
               <div className="register-btn ">
-                <button>Register</button>
+                <button>Submit</button>
               </div>
             </form>
           </div>
