@@ -8,11 +8,7 @@ function HomeBuying() {
   return (
     <div className='perfectSection homeBuyTop'>
       <div className='perfectWriteDiv'>
-        <div className="navigate-logo">
-          <Link to={'/aspire-homefest2023'}>
-            <img src={Logo} alt="nav-logo" />
-          </Link>
-        </div>
+       
         <h2 className='homeBuyingHead'>Home Buying Simplified</h2>
         <br />
         <Container>
