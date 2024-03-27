@@ -144,10 +144,10 @@ function Property({ festinquiry, setFestInquiry }) {
     };
     const fetchDeveloper = async () => {
         try {
-            const singleid = {
-                id: decodeString(param.id),
+            const payload = {
+                id: "63b7bb9b6a438c0773da9688"
             };
-            const data = await FetchSingleDeveloperData(singleid);
+            const data = await FetchSingleDeveloperData(payload);
         } catch (error) {
             console.log(error);
         }
@@ -215,8 +215,12 @@ function Property({ festinquiry, setFestInquiry }) {
     const getUspData = async () => {
         try {
             const payload = {
-                id: decodeString(param.id),
+                id: "65fd5f53ff88e8d15e14baa8"
             };
+
+           
+            
+            console.log("check",payload)
             const data = await FetchUSP(payload);
             setUSPData(data?.data?.data?.usp);
         } catch (error) {
