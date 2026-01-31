@@ -78,7 +78,7 @@ function BottomFoot() {
                                 <CallIcon />
                                 <h4>
                                     Call
-                                    <h5>+91 9886660229</h5>
+                                    <h5>+91 9148448258</h5>
                                 </h4>
                             </div>
                             <button>
@@ -87,7 +87,7 @@ function BottomFoot() {
                                         textDecoration: "none",
                                         color: "white",
                                     }}
-                                    href="tel:+91 9886660229"
+                                    href="tel:+91 9148448258"
                                 >
                                     Call Now
                                 </a>
