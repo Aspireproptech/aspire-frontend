@@ -35,7 +35,7 @@ function Wearehere() {
             <Row className="my-lg-5 my-3 d-flex flex-column">
               <span className="contactinfo">
                 <CallIcon />
-                <h5>+91 9886660229</h5>
+                <h5>+91 9148448258</h5>
               </span>
               <span className="contactinfo">
                 <EmailIcon />
