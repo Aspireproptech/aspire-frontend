@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import GoogleMapReact from "google-map-react";
 import LocationOn from "@mui/icons-material/LocationOn";
+
+
+
 function Map(props) {
+    useEffect(() => {
+  console.log(process.env.REACT_APP_GOOGLE_MAP_KEY);
+}, []);
     const location = {
         address: props?.location,
         lat: props?.lat,
@@ -14,7 +20,7 @@ function Map(props) {
                 {location?.lat && (
                     <GoogleMapReact
                         bootstrapURLKeys={{
-                            key: "AIzaSyB14oZ3M9HW-pYKIsIwCfyYhFKsg3FX6v0",
+                            key: process.env.REACT_APP_GOOGLE_MAP_KEY,
                         }}
                         center={location}
                         defaultZoom={16}
