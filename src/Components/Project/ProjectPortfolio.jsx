@@ -154,6 +154,7 @@ function ProjectPortfolio() {
                                                                         : "Possession Soon"}{" "}
                                                                 </h4>
                                                             </span>
+                                                            
                                                             <span>
                                                                 {" "}
                                                                 <BedroomChildIcon />{" "}
