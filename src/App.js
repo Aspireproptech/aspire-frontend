@@ -113,16 +113,16 @@ function App() {
                                     path="/partners"
                                     element={<Partner />}
                                 />
-                                <Route
+                                {/* <Route
                                     exact
                                     path="/blogs"
                                     element={<BlogPage />}
-                                />
-                                <Route
+                                /> */}
+                                {/* <Route
                                     exact
                                     path="/blogs/:id"
                                     element={<Singleblog />}
-                                />
+                                /> */}
                                 <Route
                                     exact
                                     path="/projects"

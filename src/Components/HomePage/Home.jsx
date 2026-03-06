@@ -26,7 +26,7 @@ function Home() {
       {/* <Help/> */}
       <div className="horrizontal"></div>
       <HomeChoice />
-      <div className="helpSection">
+      {/* <div className="helpSection">
         <div className="separatorDiv"></div>
         <h4>Project Portfolio</h4>
         <div className="helpPara">
@@ -38,7 +38,7 @@ function Home() {
           </p>
         </div>
         <Portfolio />
-      </div>
+      </div> */}
       <Perfect />
       <Community />
       <Promise />

@@ -475,7 +475,7 @@ function Homeloan() {
 
             {/* blue heading */}
 
-            <div className="container-fluid homeloan-blueheading-container">
+            {/* <div className="container-fluid homeloan-blueheading-container">
                 <div className="container homeloan-blueheading">
                     <div className="row d-flex">
                         <div className="d-flex justify-content-between align-items-center">
@@ -486,11 +486,11 @@ function Homeloan() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* trending offers */}
 
-            <div className="container-fluid homeload-trending-container py-5">
+            {/* <div className="container-fluid homeload-trending-container py-5">
                 <div className="container">
                     <div className="row py-4">
                         <h3>Trending loans & offers</h3>
@@ -512,7 +512,7 @@ function Homeloan() {
                         })}
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* our Partner */}
             {/* <div className="container-fluid homeloan-ourpartner-container py-5">
@@ -542,7 +542,7 @@ function Homeloan() {
 
             {/* blue heading */}
 
-            <div className="container-fluid homeloan-blueheading-container">
+            {/* <div className="container-fluid homeloan-blueheading-container">
                 <div className="container homeloan-blueheading">
                     <div className="row d-flex">
                         <div className="d-flex justify-content-between align-items-center">
@@ -553,9 +553,9 @@ function Homeloan() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
-            <div
+            {/* <div
                 style={{ backgroundColor: "#ebebeb" }}
                 className="container-fluid py-5 px-0"
             >
@@ -572,16 +572,16 @@ function Homeloan() {
                                         <HomeBlogCard key={index} data={item} />
                                     );
                                 })}
-                            </Col>
+                            </Col> */}
                             {/* <Col xs={12} className="ArrowIcon  d-flex align-items-center ">
                        <span>
                        <ArrowForwardIcon/>
                        </span> 
                       </Col> */}
-                        </Row>
+                        {/* </Row>
                     </div>
                 </div>
-            </div>
+            </div> */}
 
             {/* perfect home */}
             <div className="container-fluid homeloan-perfecthome px-0 pt-2">

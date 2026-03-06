@@ -48,7 +48,7 @@ function NewNav() {
                                     Home
                                 </NavLink>
                             </Col>
-                            <Col className="Links ">
+                            {/* <Col className="Links ">
                                 <NavLink
                                     className={
                                         location.pathname == "/projects"
@@ -59,7 +59,7 @@ function NewNav() {
                                 >
                                     Projects
                                 </NavLink>
-                            </Col>
+                            </Col> */}
                             <Col className="Links">
                                 <NavLink
                                     className={
@@ -116,7 +116,7 @@ function NewNav() {
                                                 backgroundColor: "transparent",
                                             }}
                                         >
-                                            <HashLink
+                                            {/* <HashLink
                                                 style={{
                                                     padding: "8px 15px",
                                                     display: "flex",
@@ -124,7 +124,7 @@ function NewNav() {
                                                 to="/blogs"
                                             >
                                                 All Blogs
-                                            </HashLink>
+                                            </HashLink> */}
                                             <HashLink
                                                 style={{
                                                     padding: "8px 15px",
@@ -135,7 +135,7 @@ function NewNav() {
                                                 Careers
                                             </HashLink>
 
-                                            <HashLink
+                                            {/* <HashLink
                                                 style={{
                                                     padding: "8px  15px",
                                                     display: "flex",
@@ -143,8 +143,8 @@ function NewNav() {
                                                 to="/blogs#knowledgeSeries"
                                             >
                                                 Knowledge Series
-                                            </HashLink>
-                                            <HashLink
+                                            </HashLink> */}
+                                            {/* <HashLink
                                                 style={{
                                                     padding: "8px 15px",
                                                     display: "flex",
@@ -170,7 +170,7 @@ function NewNav() {
                                                 to="/blogs#others"
                                             >
                                                 Other Blogs
-                                            </HashLink>
+                                            </HashLink> */}
                                         </NavDropdown.Item>
                                     </NavDropdown>
                                     {/* <div class="dropdown-menu">

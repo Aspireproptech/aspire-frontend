@@ -146,13 +146,13 @@ function BottomFoot() {
                             <Col xs={6} style={{ color: "white" }}>
                                 <h5 className="mb-2 ">Info</h5>
                                 <div className="d-flex flex-column">
-                                    <Link
+                                    {/* <Link
                                         to="/blogs"
                                         className="mt-1 text-decoration-none"
                                         style={{ color: "white" }}
                                     >
                                         Blogs
-                                    </Link>
+                                    </Link> */}
                                     <Link
                                         to="/careers"
                                         className="mt-1 text-decoration-none"

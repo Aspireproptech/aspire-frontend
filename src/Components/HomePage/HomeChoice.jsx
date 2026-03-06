@@ -28,11 +28,11 @@ function HomeChoice() {
                                 className=" mx-md-0"
                                 style={{ display: "flex" }}
                             >
-                                <Link to="/projects">
+                                {/* <Link to="/projects">
                                     <button className="Link-special-banner">
                                         View Projects in Bangalore
                                     </button>
-                                </Link>
+                                </Link> */}
                             </Row>
                         </Col>
                     </Row>

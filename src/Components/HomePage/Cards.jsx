@@ -36,9 +36,9 @@ function Cards() {
             <Col className="d-flex flex-column justify-content-center">
               <h4 className="emiHead">Blogs</h4>
               <br />
-              <Link className="text-decoration-none" to={"/blogs"}>
+              {/* <Link className="text-decoration-none" to={"/blogs"}>
                 <button className="emiBtn">View Articles</button>
-              </Link>
+              </Link> */}
             </Col>
             <Col>
               <img src={Blogs} alt="" style={{ width: "80%" }} />
